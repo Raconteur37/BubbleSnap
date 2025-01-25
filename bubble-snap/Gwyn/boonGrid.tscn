@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkuw0waghrcos"]
+
+[ext_resource type="PackedScene" uid="uid://cy5ooh6h6ryxf" path="res://Boons/boonTemplate.tscn" id="2_l421o"]
+
+[node name="GridContainer" type="GridContainer"]
+anchors_preset = -1
+anchor_right = 0.154
+anchor_bottom = 0.552
+offset_right = -5.68002
+offset_bottom = -0.160034
+size_flags_horizontal = 0
+size_flags_vertical = 0
+columns = 3
+
+[node name="PanelContainer" parent="." instance=ExtResource("2_l421o")]
+layout_mode = 2
+
+[node name="PanelContainer2" parent="." instance=ExtResource("2_l421o")]
+layout_mode = 2
+
+[node name="PanelContainer3" parent="." instance=ExtResource("2_l421o")]
+layout_mode = 2
+
+[node name="PanelContainer4" parent="." instance=ExtResource("2_l421o")]
+layout_mode = 2
+
+[node name="PanelContainer5" parent="." instance=ExtResource("2_l421o")]
+layout_mode = 2
+
+[node name="PanelContainer6" parent="." instance=ExtResource("2_l421o")]
+layout_mode = 2

@@ -13,8 +13,3 @@ func _ready() -> void:
 	else:
 		boonLabel.set("theme_override_font_sizes/font_size", 18)
 		
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass

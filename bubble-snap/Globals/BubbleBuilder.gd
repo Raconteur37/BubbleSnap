@@ -30,3 +30,4 @@ func _input(event):
 		match event.keycode:
 			KEY_W:
 				buildBubbles()
+				GameManager.startGame()

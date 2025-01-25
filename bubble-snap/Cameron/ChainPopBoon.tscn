@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://csqjkh101cola"]
 
-[ext_resource type="Script" path="res://Cameron/double_pop_boon.gd" id="1_incj0"]
+[ext_resource type="Script" path="res://Cameron/chain_pop_boon.gd" id="1_incj0"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6tafd"]
 
