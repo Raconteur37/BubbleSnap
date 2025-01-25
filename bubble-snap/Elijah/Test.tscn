@@ -5,8 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://b7vta2c4devx0" path="res://Elijah/UI/MainScene/ItemBar.png" id="3_xftlw"]
 [ext_resource type="Texture2D" uid="uid://dmgedf6v7ru72" path="res://Elijah/UI/MainScene/Banner.png" id="4_ymfhu"]
 [ext_resource type="Texture2D" uid="uid://m5wt36m45nku" path="res://Elijah/UI/MainScene/Border.png" id="5_w6s4c"]
-[ext_resource type="Texture2D" uid="uid://d08nu4i3as5iu" path="res://Elijah/UI/MainScene/Boons.png" id="6_vk4f7"]
 [ext_resource type="Texture2D" uid="uid://b5d86vmrcqvmf" path="res://Elijah/UI/MainScene/Bursts.png" id="7_7vonx"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_451k0"]
+load_path = "res://.godot/imported/Boons.png-643ab0402091bc3da979d1624ce33b45.ctex"
 
 [node name="MainGameScene" type="Node2D"]
 
@@ -53,6 +55,7 @@ texture = ExtResource("3_r2yen")
 stretch_mode = 4
 
 [node name="MainGrid" type="GridContainer" parent="CanvasLayer/BubbleBase"]
+layout_mode = 0
 offset_left = 47.0001
 offset_top = 38.0
 offset_right = 87.0001
@@ -83,7 +86,7 @@ offset_right = 56.1199
 offset_bottom = 47.4
 grow_horizontal = 0
 grow_vertical = 2
-texture = ExtResource("6_vk4f7")
+texture = SubResource("CompressedTexture2D_451k0")
 
 [node name="BoonGrid" type="GridContainer" parent="CanvasLayer/Boon"]
 layout_mode = 0
