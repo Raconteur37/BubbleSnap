@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dkuw0waghrcos"]
 
-[ext_resource type="PackedScene" uid="uid://cy5ooh6h6ryxf" path="res://Gwyn/boonTemplate.tscn" id="2_l421o"]
+[ext_resource type="PackedScene" uid="uid://cy5ooh6h6ryxf" path="res://Boons/boonTemplate.tscn" id="2_l421o"]
 
 [node name="GridContainer" type="GridContainer"]
 anchors_preset = -1

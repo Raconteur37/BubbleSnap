@@ -1,8 +1,10 @@
 extends Control
 
 const boonName = "Chain Pop"
+const description = "Whenever a bubble is popped, there is a [color=red]10[/color]% it pops another random bubble"
+const icon = "balls"
 
-var activateChance = 30
+var activateChance = 10
 
 var activateType = "Pop"
 var rarity = "Rare"

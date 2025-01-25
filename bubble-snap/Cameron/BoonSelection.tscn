@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://dt0a8guvloc5"]
+[gd_scene load_steps=15 format=3 uid="uid://dt0a8guvloc5"]
 
 [ext_resource type="Texture2D" uid="uid://bh51715bi0pvy" path="res://Elijah/UI/Upgrade/Upgrade_Background.png" id="1_3kq4k"]
+[ext_resource type="Script" path="res://Cameron/boon_selection.gd" id="1_rwjtg"]
 [ext_resource type="Texture2D" uid="uid://m5wt36m45nku" path="res://Elijah/UI/MainScene/Border.png" id="2_q884h"]
 [ext_resource type="Texture2D" uid="uid://dpa0o8rkg484u" path="res://Elijah/UI/Upgrade/Upgrade_Common.png" id="3_4ms2t"]
 
@@ -22,6 +23,67 @@ gradient = SubResource("Gradient_mk5pr")
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_let4h"]
 gradient = SubResource("Gradient_0aann")
 
+[sub_resource type="Animation" id="Animation_4qrka"]
+resource_name = "Appear"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Background Border:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_guody"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Background Border:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3sjvi"]
+_data = {
+"Appear": SubResource("Animation_4qrka"),
+"RESET": SubResource("Animation_guody")
+}
+
 [node name="BoonSelection" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -29,20 +91,21 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_rwjtg")
 
 [node name="Background" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_3kq4k")
 
 [node name="Background Border" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("2_q884h")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
@@ -55,6 +118,7 @@ offset_bottom = 1959.0
 layout_mode = 2
 
 [node name="ItemOne" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+visible = false
 layout_mode = 2
 texture = ExtResource("3_4ms2t")
 
@@ -78,7 +142,7 @@ offset_right = 175.0
 offset_bottom = 306.0
 texture = SubResource("GradientTexture2D_ji6jd")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/HBoxContainer/ItemOne"]
+[node name="ItemOneDescription" type="RichTextLabel" parent="VBoxContainer/HBoxContainer/ItemOne"]
 layout_mode = 0
 offset_left = 68.0
 offset_top = 552.0
@@ -89,6 +153,7 @@ bbcode_enabled = true
 text = "[color=red]This is a test[/color] message for debugging and seeing how long a message can be as you can see we can write a long ass description whenever we want and it doesnt really effect anything w in the chat."
 
 [node name="ItemTwo" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+visible = false
 layout_mode = 2
 texture = ExtResource("3_4ms2t")
 
@@ -111,7 +176,17 @@ offset_right = 181.0
 offset_bottom = 307.0
 texture = SubResource("GradientTexture2D_er1mv")
 
+[node name="ItemTwoDescription" type="RichTextLabel" parent="VBoxContainer/HBoxContainer/ItemTwo"]
+offset_left = 68.0
+offset_top = 552.0
+offset_right = 473.0
+offset_bottom = 913.0
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+text = "[color=red]This is a test[/color] message for debugging and seeing how long a message can be as you can see we can write a long ass description whenever we want and it doesnt really effect anything w in the chat."
+
 [node name="ItemThree" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+visible = false
 layout_mode = 2
 texture = ExtResource("3_4ms2t")
 
@@ -133,3 +208,26 @@ offset_top = 264.0
 offset_right = 181.0
 offset_bottom = 304.0
 texture = SubResource("GradientTexture2D_let4h")
+
+[node name="ItemThreeDescription" type="RichTextLabel" parent="VBoxContainer/HBoxContainer/ItemThree"]
+offset_left = 68.0
+offset_top = 552.0
+offset_right = 473.0
+offset_bottom = 913.0
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+text = "[color=red]This is a test[/color] message for debugging and seeing how long a message can be as you can see we can write a long ass description whenever we want and it doesnt really effect anything w in the chat."
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_3sjvi")
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
