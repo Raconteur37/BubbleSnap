@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7vta2c4devx0"
-path="res://.godot/imported/ItemBar.png-2f2e8c05bbf0e6129336085309a5e3fc.ctex"
+uid="uid://dqvp5kc3xui6c"
+path="res://.godot/imported/Bubble_Pressed_Dark_Shrink.png-31118f1e2b6fb947eba5ca3b74cc8e97.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Elijah/ItemBar.png"
-dest_files=["res://.godot/imported/ItemBar.png-2f2e8c05bbf0e6129336085309a5e3fc.ctex"]
+source_file="res://Elijah/Bubbles/Bubble_Pressed_Dark_Shrink.png"
+dest_files=["res://.godot/imported/Bubble_Pressed_Dark_Shrink.png-31118f1e2b6fb947eba5ca3b74cc8e97.ctex"]
 
 [params]
 

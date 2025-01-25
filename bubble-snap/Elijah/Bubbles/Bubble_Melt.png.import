@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5d86vmrcqvmf"
-path="res://.godot/imported/Bursts.png-b8f7e61003146d028d14b2b443f2c77b.ctex"
+uid="uid://bse6d8pnu4ygu"
+path="res://.godot/imported/Bubble_Melt.png-4d58f400622bcea8a01b7e89d8880e52.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Elijah/Bursts.png"
-dest_files=["res://.godot/imported/Bursts.png-b8f7e61003146d028d14b2b443f2c77b.ctex"]
+source_file="res://Elijah/Bubbles/Bubble_Melt.png"
+dest_files=["res://.godot/imported/Bubble_Melt.png-4d58f400622bcea8a01b7e89d8880e52.ctex"]
 
 [params]
 

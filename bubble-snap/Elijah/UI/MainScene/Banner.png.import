@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dmgedf6v7ru72"
-path="res://.godot/imported/Banner.png-db2c0f106052e65dda3202d6d740442e.ctex"
+path="res://.godot/imported/Banner.png-34c3e35a57c3d675023cbaf7ce26e9d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Elijah/Banner.png"
-dest_files=["res://.godot/imported/Banner.png-db2c0f106052e65dda3202d6d740442e.ctex"]
+source_file="res://Elijah/UI/MainScene/Banner.png"
+dest_files=["res://.godot/imported/Banner.png-34c3e35a57c3d675023cbaf7ce26e9d4.ctex"]
 
 [params]
 
