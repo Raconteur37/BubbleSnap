@@ -1,6 +1,6 @@
 extends Node
 
-var bubbles = 9
+var bubbles = 81
 
 var mainGrid
 

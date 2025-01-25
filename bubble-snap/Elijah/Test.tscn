@@ -1,16 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://brfvfyfvosup7"]
+[gd_scene load_steps=8 format=3 uid="uid://brfvfyfvosup7"]
 
 [ext_resource type="Texture2D" uid="uid://b6urxmv7aa31o" path="res://Elijah/UI/MainScene/Background.png" id="1_fuw6c"]
 [ext_resource type="Texture2D" uid="uid://cveykpkfvns5b" path="res://Elijah/UI/MainScene/BubbleBase.png" id="3_r2yen"]
 [ext_resource type="Texture2D" uid="uid://b7vta2c4devx0" path="res://Elijah/UI/MainScene/ItemBar.png" id="3_xftlw"]
-[ext_resource type="Texture2D" uid="uid://ck3p4mi41jwoo" path="res://Elijah/Bubbles/Bubble_01.png" id="4_65736"]
 [ext_resource type="Texture2D" uid="uid://dmgedf6v7ru72" path="res://Elijah/UI/MainScene/Banner.png" id="4_ymfhu"]
 [ext_resource type="Texture2D" uid="uid://m5wt36m45nku" path="res://Elijah/UI/MainScene/Border.png" id="5_w6s4c"]
-[ext_resource type="Texture2D" uid="uid://dqvp5kc3xui6c" path="res://Elijah/Bubbles/Bubble_Pressed_Dark_Shrink.png" id="5_wjb4t"]
-[ext_resource type="Texture2D" uid="uid://inbadhqhynej" path="res://Elijah/Bubbles/Bubble_Highlight.png" id="6_c3510"]
 [ext_resource type="Texture2D" uid="uid://d08nu4i3as5iu" path="res://Elijah/UI/MainScene/Boons.png" id="6_vk4f7"]
 [ext_resource type="Texture2D" uid="uid://b5d86vmrcqvmf" path="res://Elijah/UI/MainScene/Bursts.png" id="7_7vonx"]
-[ext_resource type="Texture2D" uid="uid://bnoo3p60cyty1" path="res://Elijah/Bubbles/Bubble_Popped_Dark.png" id="7_olh4y"]
 
 [node name="MainGameScene" type="Node2D"]
 
@@ -56,20 +52,11 @@ grow_vertical = 2
 texture = ExtResource("3_r2yen")
 stretch_mode = 4
 
-[node name="TextureButton" type="TextureButton" parent="CanvasLayer/BubbleBase"]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.022
-anchor_right = 0.947
-anchor_bottom = 0.935
-offset_left = 162.0
-offset_top = 83.434
-offset_right = -519.13
-offset_bottom = -541.055
-texture_normal = ExtResource("4_65736")
-texture_pressed = ExtResource("5_wjb4t")
-texture_hover = ExtResource("6_c3510")
-texture_disabled = ExtResource("7_olh4y")
+[node name="MainGrid" type="GridContainer" parent="CanvasLayer/BubbleBase"]
+offset_left = 47.0001
+offset_top = 38.0
+offset_right = 87.0001
+offset_bottom = 78.0
 
 [node name="Burst" type="TextureRect" parent="CanvasLayer"]
 anchors_preset = -1
@@ -97,6 +84,13 @@ offset_bottom = 47.4
 grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("6_vk4f7")
+
+[node name="BoonGrid" type="GridContainer" parent="CanvasLayer/Boon"]
+layout_mode = 0
+offset_left = 47.0001
+offset_top = 194.0
+offset_right = 87.0001
+offset_bottom = 234.0
 
 [node name="Banner" type="TextureRect" parent="CanvasLayer"]
 anchors_preset = -1

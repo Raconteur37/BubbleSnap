@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dt55d558jpaq1"
+path="res://.godot/imported/Bubble Pop.mp3-e46978e8c49b70d57f5601124684d38d.mp3str"
+
+[deps]
+
+source_file="res://Cameron/Bubble Pop.mp3"
+dest_files=["res://.godot/imported/Bubble Pop.mp3-e46978e8c49b70d57f5601124684d38d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
