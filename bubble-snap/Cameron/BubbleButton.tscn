@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://cadr76bw5auio"]
+
+[ext_resource type="Script" path="res://Cameron/bubble_button.gd" id="1_tch2p"]
+
+[sub_resource type="Gradient" id="Gradient_l6ge3"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dd6ai"]
+gradient = SubResource("Gradient_l6ge3")
+
+[sub_resource type="Gradient" id="Gradient_j1vxu"]
+colors = PackedColorArray(0, 0.733333, 0.584314, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kcp6i"]
+gradient = SubResource("Gradient_j1vxu")
+
+[node name="BubbleButton" type="TextureButton"]
+offset_left = 439.0
+offset_top = 209.0
+offset_right = 503.0
+offset_bottom = 273.0
+toggle_mode = true
+texture_normal = SubResource("GradientTexture2D_dd6ai")
+texture_pressed = SubResource("GradientTexture2D_kcp6i")
+script = ExtResource("1_tch2p")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
