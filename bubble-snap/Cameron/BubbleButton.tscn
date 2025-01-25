@@ -26,6 +26,8 @@ stream = ExtResource("6_fiwgp")
 
 [node name="PopParticle" parent="." instance=ExtResource("7_t10u3")]
 position = Vector2(35, 31)
+emitting = false
+one_shot = true
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
 [connection signal="toggled" from="." to="." method="_on_toggled"]

@@ -2,9 +2,10 @@ extends Control
 
 const boonName = "Chain Pop"
 
-var activateChance = 10
+var activateChance = 30
 
 var activateType = "Pop"
+var rarity = "Rare"
 
 func _ready() -> void:
 	BoonManager.activeBoons.append(self)

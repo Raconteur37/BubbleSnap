@@ -1,0 +1,135 @@
+[gd_scene load_steps=11 format=3 uid="uid://dt0a8guvloc5"]
+
+[ext_resource type="Texture2D" uid="uid://bh51715bi0pvy" path="res://Elijah/UI/Upgrade/Upgrade_Background.png" id="1_3kq4k"]
+[ext_resource type="Texture2D" uid="uid://m5wt36m45nku" path="res://Elijah/UI/MainScene/Border.png" id="2_q884h"]
+[ext_resource type="Texture2D" uid="uid://dpa0o8rkg484u" path="res://Elijah/UI/Upgrade/Upgrade_Common.png" id="3_4ms2t"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rxedp"]
+font_size = 60
+
+[sub_resource type="Gradient" id="Gradient_d2to8"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ji6jd"]
+gradient = SubResource("Gradient_d2to8")
+
+[sub_resource type="Gradient" id="Gradient_mk5pr"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_er1mv"]
+gradient = SubResource("Gradient_mk5pr")
+
+[sub_resource type="Gradient" id="Gradient_0aann"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_let4h"]
+gradient = SubResource("Gradient_0aann")
+
+[node name="BoonSelection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_3kq4k")
+
+[node name="Background Border" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_q884h")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 157.0
+offset_top = 23.0
+offset_right = 1797.0
+offset_bottom = 1959.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="ItemOne" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_4ms2t")
+
+[node name="ItemOneLabel" type="Label" parent="VBoxContainer/HBoxContainer/ItemOne"]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 55.0
+offset_right = 455.0
+offset_bottom = 224.0
+text = "Item One"
+label_settings = SubResource("LabelSettings_rxedp")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ItemOneIcon" type="TextureRect" parent="VBoxContainer/HBoxContainer/ItemOne"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 266.0
+offset_right = 175.0
+offset_bottom = 306.0
+texture = SubResource("GradientTexture2D_ji6jd")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/HBoxContainer/ItemOne"]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 552.0
+offset_right = 473.0
+offset_bottom = 913.0
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+text = "[color=red]This is a test[/color] message for debugging and seeing how long a message can be as you can see we can write a long ass description whenever we want and it doesnt really effect anything w in the chat."
+
+[node name="ItemTwo" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_4ms2t")
+
+[node name="ItemTwoLabel" type="Label" parent="VBoxContainer/HBoxContainer/ItemTwo"]
+offset_left = 84.0
+offset_top = 55.0
+offset_right = 455.0
+offset_bottom = 224.0
+text = "Item Two"
+label_settings = SubResource("LabelSettings_rxedp")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ItemTwoIcon" type="TextureRect" parent="VBoxContainer/HBoxContainer/ItemTwo"]
+layout_mode = 0
+offset_left = 141.0
+offset_top = 267.0
+offset_right = 181.0
+offset_bottom = 307.0
+texture = SubResource("GradientTexture2D_er1mv")
+
+[node name="ItemThree" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_4ms2t")
+
+[node name="ItemThreeLabel" type="Label" parent="VBoxContainer/HBoxContainer/ItemThree"]
+offset_left = 84.0
+offset_top = 55.0
+offset_right = 455.0
+offset_bottom = 224.0
+text = "Item Three"
+label_settings = SubResource("LabelSettings_rxedp")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ItemThreeIcon" type="TextureRect" parent="VBoxContainer/HBoxContainer/ItemThree"]
+layout_mode = 0
+offset_left = 141.0
+offset_top = 264.0
+offset_right = 181.0
+offset_bottom = 304.0
+texture = SubResource("GradientTexture2D_let4h")
