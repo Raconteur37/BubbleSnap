@@ -7,8 +7,11 @@ var inWave = false
 var mainTimer
 var timerLabel
 
+var totalTime
+
 func calculateTime():
-	return 60
+	totalTime = 60
+	return totalTime
 
 func startGame():
 	mainTimer = get_tree().current_scene.find_child("mainTimer")
@@ -20,3 +23,4 @@ func startGame():
 func _process(delta: float) -> void:
 	if inWave:
 		timerLabel.text = str("%.2f" % mainTimer.time_left)
+		
