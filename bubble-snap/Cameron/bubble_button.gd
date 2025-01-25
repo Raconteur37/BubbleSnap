@@ -11,4 +11,3 @@ func _on_toggled(toggled_on: bool) -> void:
 	BubbleManager.addPop()
 	BubbleManager.currPoppedCol = col
 	BubbleManager.currPoppedRow = row
-	print(BubbleManager.currentPops)

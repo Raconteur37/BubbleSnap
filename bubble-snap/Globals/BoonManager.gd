@@ -1,6 +1,8 @@
 extends Node
 
-#var activeBoons : Array = []
+var activeBoons : Array = []
 
-#for x in activeBoons:
-#	x.emit(activate)
+func popEvent():
+	for boon in activeBoons:
+		if boon.activateType == "Pop":
+			boon.activate()

@@ -2,16 +2,18 @@ extends Control
 
 var hoverLabel
 
-signal activate
+var activateChance = 5
 
-enum ActivateType {Pop}
+var activateType = "Pop"
 
 func _ready() -> void:
-	activate.connect(popRandomBubble())
 	hoverLabel = $MarginContainer2/HoverLabel
+	BoonManager.activeBoons.append(self)
 
-func popRandomBubble():
-	print("wooho")
+func activate():
+	if randi_range(0,100) <= activateChance:
+		for bubble in BubbleManager.bubbleArray:
+			pass
 
 func _on_mouse_entered() -> void:
 	hoverLabel.show()

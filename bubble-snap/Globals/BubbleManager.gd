@@ -12,6 +12,7 @@ var currPoppedCol : int = -1
 
 func addPop():
 	currentPops += 1
+	BoonManager.popEvent()
 	
 func subtractPop():
 	currentPops -= 1

@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://bkdw7mij6lo0x"]
+[gd_scene load_steps=2 format=3 uid="uid://bkdw7mij6lo0x"]
+
+[ext_resource type="PackedScene" uid="uid://csqjkh101cola" path="res://Cameron/DoublePopBoon.tscn" id="1_ivram"]
 
 [node name="Main" type="Node2D"]
 
@@ -7,3 +9,5 @@ offset_left = 256.0
 offset_top = 143.0
 offset_right = 296.0
 offset_bottom = 183.0
+
+[node name="PanelContainer" parent="." instance=ExtResource("1_ivram")]
