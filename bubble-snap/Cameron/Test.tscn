@@ -1,3 +1,9 @@
 [gd_scene format=3 uid="uid://bkdw7mij6lo0x"]
 
 [node name="Test" type="Node2D"]
+
+[node name="MainGrid" type="GridContainer" parent="."]
+offset_left = 256.0
+offset_top = 143.0
+offset_right = 296.0
+offset_bottom = 183.0
