@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=3 uid="uid://do0ncyernfbnr"]
+
+[ext_resource type="Script" path="res://Gwyn/burst_template.gd" id="1_5qnku"]
+[ext_resource type="Texture2D" uid="uid://b3585t5cnmeqp" path="res://Gwyn/burstBackground.png" id="2_s328a"]
+[ext_resource type="Script" path="res://Gwyn/lburstLabel.gd" id="3_shf46"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6tafd"]
+
+[sub_resource type="Gradient" id="Gradient_cpedu"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_t5yqg"]
+gradient = SubResource("Gradient_cpedu")
+
+[node name="PanelContainer" type="PanelContainer"]
+custom_minimum_size = Vector2(94, 96)
+offset_right = 94.0
+offset_bottom = 96.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_6tafd")
+script = ExtResource("1_5qnku")
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="Panel"]
+modulate = Color(1, 1, 1, 0.301961)
+custom_minimum_size = Vector2(94, 96)
+layout_mode = 1
+offset_right = 94.0
+offset_bottom = 96.0
+
+[node name="TextureRect" type="TextureRect" parent="Panel/MarginContainer3"]
+layout_mode = 2
+texture = ExtResource("2_s328a")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+offset_right = 94.0
+offset_bottom = 96.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(94, 23)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(94, 23)
+layout_mode = 2
+text = "Change Me"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 1
+script = ExtResource("3_shf46")
+
+[node name="MarginContainer2" type="MarginContainer" parent="Panel/VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+texture = SubResource("GradientTexture2D_t5yqg")
+
+[connection signal="mouse_entered" from="Panel/VBoxContainer" to="Panel/VBoxContainer" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/VBoxContainer" to="Panel/VBoxContainer" method="_on_mouse_exited"]
