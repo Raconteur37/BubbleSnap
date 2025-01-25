@@ -118,6 +118,7 @@ offset_bottom = 1959.0
 layout_mode = 2
 
 [node name="ItemOne" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+visible = false
 layout_mode = 2
 texture_normal = ExtResource("3_4ms2t")
 
@@ -152,6 +153,7 @@ bbcode_enabled = true
 text = "[color=red]This is a test[/color] message for debugging and seeing how long a message can be as you can see we can write a long ass description whenever we want and it doesnt really effect anything w in the chat."
 
 [node name="ItemTwo" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+visible = false
 layout_mode = 2
 texture_normal = ExtResource("3_4ms2t")
 
@@ -186,6 +188,7 @@ bbcode_enabled = true
 text = "[color=red]This is a test[/color] message for debugging and seeing how long a message can be as you can see we can write a long ass description whenever we want and it doesnt really effect anything w in the chat."
 
 [node name="ItemThree" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+visible = false
 layout_mode = 2
 texture_normal = ExtResource("3_4ms2t")
 

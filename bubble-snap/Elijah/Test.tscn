@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://brfvfyfvosup7"]
+[gd_scene load_steps=9 format=3 uid="uid://brfvfyfvosup7"]
 
 [ext_resource type="Texture2D" uid="uid://b6urxmv7aa31o" path="res://Elijah/UI/MainScene/Background.png" id="1_fuw6c"]
 [ext_resource type="Texture2D" uid="uid://cveykpkfvns5b" path="res://Elijah/UI/MainScene/BubbleBase.png" id="3_r2yen"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://csqjkh101cola" path="res://Cameron/ChainPopBoon.tscn" id="5_i2cj6"]
 [ext_resource type="Texture2D" uid="uid://m5wt36m45nku" path="res://Elijah/UI/MainScene/Border.png" id="5_w6s4c"]
 [ext_resource type="Texture2D" uid="uid://b5d86vmrcqvmf" path="res://Elijah/UI/MainScene/Bursts.png" id="7_7vonx"]
-[ext_resource type="Script" path="res://Elijah/main_timer.gd" id="7_mjntq"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_451k0"]
 load_path = "res://.godot/imported/Boons.png-643ab0402091bc3da979d1624ce33b45.ctex"
@@ -149,17 +148,14 @@ vertical_alignment = 1
 
 [node name="timerLabel" type="Label" parent="CanvasLayer/Banner"]
 layout_mode = 0
-offset_left = 504.0
-offset_top = 25.0
-offset_right = 948.0
-offset_bottom = 173.0
+offset_left = 588.482
+offset_top = 25.1309
+offset_right = 1032.48
+offset_bottom = 173.131
 theme_override_font_sizes/font_size = 126
 text = "99:99"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="mainTimer" type="Timer" parent="CanvasLayer/Banner"]
-script = ExtResource("7_mjntq")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
 anchors_preset = -1
