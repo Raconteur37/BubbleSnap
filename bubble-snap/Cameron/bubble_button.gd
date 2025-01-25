@@ -1,6 +1,7 @@
 extends TextureButton
 
 var audioPlayer
+var particle
 
 var popped : bool = false
 
@@ -9,14 +10,19 @@ var col : int
 
 func _ready() -> void:
 	audioPlayer = $AudioStreamPlayer2D
+	particle = $PopParticle
+	BubbleManager.addToUnPopped(self)
 
-func _on_toggled(toggled_on: bool) -> void:
+func pop():
 	popped = true
+	particle.emitting = true
 	disabled = true
-	BubbleManager.addPop()
+	BubbleManager.addPop(self)
 	BubbleManager.currPoppedCol = col
 	BubbleManager.currPoppedRow = row
 	var pitch : float = audioPlayer.pitch_scale + (BubbleManager.currentPops / BubbleManager.totalPopsNeeded * 1.5)
-	print(pitch)
 	audioPlayer.pitch_scale = pitch
 	audioPlayer.play()
+
+func _on_toggled(toggled_on: bool) -> void:
+	pop()

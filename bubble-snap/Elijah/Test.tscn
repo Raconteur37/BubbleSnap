@@ -107,6 +107,7 @@ offset_right = 87.0001
 offset_bottom = 234.0
 
 [node name="Label" type="Label" parent="CanvasLayer/Boon"]
+layout_mode = 0
 offset_left = 23.0001
 offset_top = 18.0
 offset_right = 443.0
@@ -131,6 +132,7 @@ scale = Vector2(0.955, 0.955)
 texture = ExtResource("4_ymfhu")
 
 [node name="Round Count" type="Label" parent="CanvasLayer/Banner"]
+layout_mode = 0
 offset_left = 24.0
 offset_top = 29.0
 offset_right = 472.0
@@ -141,6 +143,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Timer" type="Label" parent="CanvasLayer/Banner"]
+layout_mode = 0
 offset_left = 504.0
 offset_top = 25.0
 offset_right = 948.0

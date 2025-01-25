@@ -1,8 +1,8 @@
 extends Control
 
-const boonName = "Double Pop"
+const boonName = "Chain Pop"
 
-var activateChance = 5
+var activateChance = 10
 
 var activateType = "Pop"
 
@@ -10,6 +10,9 @@ func _ready() -> void:
 	BoonManager.activeBoons.append(self)
 
 func activate():
-	if randi_range(0,100) <= activateChance:
-		for bubble in BubbleManager.bubbleArray:
-			pass
+	var val = randi_range(0,100)
+	if val <= activateChance:
+		var randBubble = BubbleManager.unPoppedBubbleArray.pick_random()
+		if randBubble != null:
+			randBubble.pop()
+			BubbleManager.addPop(randBubble)
