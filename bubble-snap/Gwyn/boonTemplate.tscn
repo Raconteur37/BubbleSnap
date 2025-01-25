@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://ddda7xu72xlj2"]
 
-[ext_resource type="Script" path="res://Gwyn/test_boon.gd" id="1_ug638"]
+[ext_resource type="Script" path="res://Gwyn/flavorTextBoon.gd" id="1_krfxh"]
 [ext_resource type="Script" path="res://Gwyn/boonLabel.gd" id="2_2i31v"]
-[ext_resource type="Texture2D" uid="uid://dbahib6skaogd" path="res://Gwyn/boonBackground.PNG" id="2_6hhlc"]
+[ext_resource type="Texture2D" uid="uid://deqkd80kj4mc5" path="res://Gwyn/bluePane.png" id="3_ejvtp"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6tafd"]
 
@@ -13,25 +13,16 @@ gradient = SubResource("Gradient_cpedu")
 
 [node name="PanelContainer" type="PanelContainer"]
 custom_minimum_size = Vector2(94, 96)
-offset_right = 94.0
-offset_bottom = 96.0
+offset_left = 403.0
+offset_top = 231.0
+offset_right = 497.0
+offset_bottom = 327.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_6tafd")
-script = ExtResource("1_ug638")
 
 [node name="Panel" type="Panel" parent="."]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-
-[node name="MarginContainer3" type="MarginContainer" parent="Panel"]
-modulate = Color(1, 1, 1, 0.301961)
-custom_minimum_size = Vector2(94, 96)
-layout_mode = 1
-offset_right = 94.0
-offset_bottom = 96.0
-
-[node name="TextureRect" type="TextureRect" parent="Panel/MarginContainer3"]
-layout_mode = 2
-texture = ExtResource("2_6hhlc")
+script = ExtResource("1_krfxh")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 1
@@ -41,6 +32,7 @@ offset_bottom = 96.0
 [node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer"]
 custom_minimum_size = Vector2(94, 23)
 layout_mode = 2
+theme_override_constants/margin_top = 5
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer/MarginContainer"]
 custom_minimum_size = Vector2(94, 23)
@@ -56,12 +48,36 @@ script = ExtResource("2_2i31v")
 [node name="MarginContainer2" type="MarginContainer" parent="Panel/VBoxContainer"]
 clip_contents = true
 layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_right = 5
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = -5
 
 [node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/MarginContainer2"]
 layout_mode = 2
 texture = SubResource("GradientTexture2D_t5yqg")
 
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+z_index = 10
+offset_left = -104.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 17.0
+
+[node name="TextureRect" type="TextureRect" parent="Panel/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("3_ejvtp")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Panel/MarginContainer"]
+layout_mode = 2
+text = "FLavor Text
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Panel" to="Panel" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panel" to="Panel" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Panel/VBoxContainer" to="Panel/VBoxContainer" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Panel/VBoxContainer" to="Panel/VBoxContainer" method="_on_mouse_exited"]
