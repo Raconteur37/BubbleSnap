@@ -2,10 +2,21 @@ extends Node
 
 var bubbleArray = []
 
+var inWave : bool = false
 
-func buildButtonsArray(amount):
-	for x in range(amount):
-		bubbleArray.append([])
-		for z in range(amount):
-			bubbleArray[x].append(0)
-			print()
+var totalPopsNeeded : int = 1
+var currentPops : int = 0
+
+var currPoppedRow : int = -1
+var currPoppedCol : int = -1
+
+func addPop():
+	currentPops += 1
+	
+func subtractPop():
+	currentPops -= 1
+
+func _process(delta: float) -> void:
+	if currentPops >= totalPopsNeeded and inWave:
+		print("win")
+		inWave = false

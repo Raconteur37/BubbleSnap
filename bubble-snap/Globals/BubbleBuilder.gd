@@ -1,10 +1,12 @@
 extends Node
 
-var bubbles = 81
+var bubbles = 9
 
 var mainGrid
 
 func buildBubbles():
+	BubbleManager.inWave = true
+	BubbleManager.totalPopsNeeded = bubbles
 	var row = -1
 	var col = -1
 	var bubbleNum = sqrt(bubbles) # make sure this is a perfect square

@@ -7,5 +7,8 @@ var col : int
 
 func _on_toggled(toggled_on: bool) -> void:
 	popped = true
-	if popped:
-		disabled = true
+	disabled = true
+	BubbleManager.addPop()
+	BubbleManager.currPoppedCol = col
+	BubbleManager.currPoppedRow = row
+	print(BubbleManager.currentPops)

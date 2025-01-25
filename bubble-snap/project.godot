@@ -15,6 +15,12 @@ run/main_scene="res://Elijah/Test.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+BoonManager="*res://Globals/BoonManager.gd"
+BubbleBuilder="*res://Globals/BubbleBuilder.gd"
+BubbleManager="*res://Globals/BubbleManager.gd"
+
 [display]
 
 window/size/viewport_width=1920
