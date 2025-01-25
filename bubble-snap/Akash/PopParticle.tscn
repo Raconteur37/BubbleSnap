@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cebwvy7vtgsbt"]
+
+[node name="PopParticle" type="CPUParticles2D"]
+position = Vector2(612, 287)
+amount = 40
+explosiveness = 1.0
+emission_shape = 1
+emission_sphere_radius = 40.0
+gravity = Vector2(0, 0)

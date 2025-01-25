@@ -1,3 +1,22 @@
-[gd_scene format=3 uid="uid://duecoo0xqmiui"]
+[gd_scene load_steps=2 format=3 uid="uid://duecoo0xqmiui"]
+
+[ext_resource type="PackedScene" uid="uid://csqjkh101cola" path="res://Cameron/DoublePopBoon.tscn" id="1_loerr"]
 
 [node name="Test" type="Node2D"]
+
+[node name="GridContainer" type="GridContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 3
+
+[node name="DoublePopBoon" parent="GridContainer" instance=ExtResource("1_loerr")]
+layout_mode = 2
+
+[node name="DoublePopBoon2" parent="GridContainer" instance=ExtResource("1_loerr")]
+layout_mode = 2
+
+[node name="DoublePopBoon3" parent="GridContainer" instance=ExtResource("1_loerr")]
+layout_mode = 2
+
+[node name="VBoxContainer" parent="GridContainer" instance=ExtResource("1_loerr")]
+layout_mode = 2
