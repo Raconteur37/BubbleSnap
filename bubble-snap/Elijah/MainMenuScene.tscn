@@ -1,0 +1,128 @@
+[gd_scene load_steps=11 format=3 uid="uid://v8nlbaky4ipv"]
+
+[ext_resource type="Texture2D" uid="uid://c41oq5kehcju6" path="res://Elijah/UI/Menus/001.png" id="1_6mnd8"]
+[ext_resource type="Texture2D" uid="uid://ptpcx0xxd205" path="res://Elijah/UI/Menus/001-002.png" id="2_wfi4r"]
+[ext_resource type="Texture2D" uid="uid://dgej0ej0aig5v" path="res://Elijah/UI/001.png" id="3_wdffi"]
+[ext_resource type="Texture2D" uid="uid://cg56r52odpkdk" path="res://Elijah/UI/002.png" id="4_1nqym"]
+[ext_resource type="Texture2D" uid="uid://b55i16up2lebr" path="res://Elijah/UI/000.png" id="5_r81qk"]
+[ext_resource type="Script" path="res://Elijah/start.gd" id="6_sgo8p"]
+[ext_resource type="Texture2D" uid="uid://225ltb13xv5o" path="res://Elijah/UI/004.png" id="7_kyq83"]
+[ext_resource type="Texture2D" uid="uid://dipobtod0xolk" path="res://Elijah/UI/005.png" id="8_u1maq"]
+[ext_resource type="Script" path="res://Elijah/TitleBob.gd" id="9_3bb2u"]
+[ext_resource type="Texture2D" uid="uid://calmivyq2068g" path="res://Elijah/UI/003.png" id="9_s7sa5"]
+
+[node name="MainGameScene" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="BackGround" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.001
+offset_bottom = 0.0461426
+texture = ExtResource("1_6mnd8")
+expand_mode = 5
+
+[node name="Panel" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchor_left = 0.234
+anchor_top = 0.746
+anchor_right = 0.752
+anchor_bottom = 0.942
+offset_left = 481.72
+offset_top = 232.32
+offset_right = -472.84
+offset_bottom = 60.64
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Base" type="TextureRect" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -12.179
+anchor_top = -5.797
+anchor_right = 12.628
+anchor_bottom = -0.691
+offset_left = -24.84
+offset_top = -26.12
+offset_right = 60.88
+offset_bottom = 57.64
+texture = ExtResource("2_wfi4r")
+
+[node name="StartButton" type="TextureButton" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -11.818
+anchor_top = -5.453
+anchor_bottom = -1.294
+offset_left = -30.28
+offset_top = -33.88
+offset_right = 40.0
+offset_bottom = 42.76
+texture_normal = ExtResource("3_wdffi")
+texture_pressed = ExtResource("4_1nqym")
+texture_hover = ExtResource("5_r81qk")
+script = ExtResource("6_sgo8p")
+next_scene_path = "res://Elijah/MainGameScene.tscn"
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/StartButton"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 21.0
+offset_right = 504.0
+offset_bottom = 205.0
+theme_override_font_sizes/font_size = 156
+text = "START"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quit" type="TextureButton" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.492
+anchor_top = -5.526
+anchor_right = 12.039
+anchor_bottom = -1.469
+offset_left = -27.68
+offset_top = -25.96
+offset_right = 53.44
+offset_bottom = 54.76
+rotation = -0.00392648
+texture_normal = ExtResource("7_kyq83")
+texture_pressed = ExtResource("8_u1maq")
+texture_hover = ExtResource("9_s7sa5")
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/Quit"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 19.0
+offset_right = 502.0
+offset_bottom = 200.0
+theme_override_font_sizes/font_size = 156
+text = "QUIT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.02
+anchor_right = 0.982
+anchor_bottom = 0.731
+offset_left = 0.599998
+offset_right = 0.559937
+offset_bottom = -0.47998
+pivot_offset = Vector2(923.5, 394.5)
+theme_override_font_sizes/font_size = 511
+text = "PUCHI"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("9_3bb2u")
+bob_speed = 0.185
+bob_amplitude = 11.015
+tilt_speed = 0.16
+tilt_amplitude = 3.62
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[connection signal="pressed" from="CanvasLayer/Panel/StartButton" to="CanvasLayer/Panel/StartButton" method="_on_pressed"]

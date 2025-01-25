@@ -6,9 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dmgedf6v7ru72" path="res://Elijah/UI/MainScene/Banner.png" id="4_ymfhu"]
 [ext_resource type="Texture2D" uid="uid://m5wt36m45nku" path="res://Elijah/UI/MainScene/Border.png" id="5_w6s4c"]
 [ext_resource type="Texture2D" uid="uid://b5d86vmrcqvmf" path="res://Elijah/UI/MainScene/Bursts.png" id="7_7vonx"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_451k0"]
-load_path = "res://.godot/imported/Boons.png-643ab0402091bc3da979d1624ce33b45.ctex"
+[ext_resource type="Texture2D" uid="uid://ih8ewauc5waf" path="res://Elijah/UI/MainScene/Boon.png" id="10_bie7r"]
 
 [node name="MainGameScene" type="Node2D"]
 
@@ -91,13 +89,13 @@ anchor_left = 0.763
 anchor_top = 0.051
 anchor_right = 0.964
 anchor_bottom = 0.82
-offset_left = -38.96
-offset_top = -40.08
-offset_right = 56.1199
-offset_bottom = 47.4
+offset_left = -59.96
+offset_top = -61.08
+offset_right = 78.12
+offset_bottom = 77.4
 grow_horizontal = 0
 grow_vertical = 2
-texture = SubResource("CompressedTexture2D_451k0")
+texture = ExtResource("10_bie7r")
 
 [node name="BoonGrid" type="GridContainer" parent="CanvasLayer/Boon"]
 layout_mode = 0
@@ -107,10 +105,10 @@ offset_right = 87.0001
 offset_bottom = 234.0
 
 [node name="Label" type="Label" parent="CanvasLayer/Boon"]
-offset_left = 23.0001
-offset_top = 18.0
-offset_right = 443.0
-offset_bottom = 176.0
+offset_left = 43.0
+offset_top = 44.0
+offset_right = 463.0
+offset_bottom = 202.0
 theme_override_font_sizes/font_size = 126
 text = "BOON"
 horizontal_alignment = 1
