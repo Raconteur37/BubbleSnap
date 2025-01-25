@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://b1sifxqq7klxa"]
+
+[ext_resource type="Script" path="res://Akash/boon_particle.gd" id="1_5hxr1"]
+
+[sub_resource type="Curve" id="Curve_rniu0"]
+_data = [Vector2(1e-05, 1), 0.0, 0.0, 0, 0, Vector2(0.00320513, 0.983376), 0.0, 0.0, 0, 0, Vector2(0.75641, 0.0108695), 0.0, 0.0, 0, 0, Vector2(0.759615, 0), -1.65032, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_vjc4f"]
+offsets = PackedFloat32Array(0, 0.00704225, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.968627, 0, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="Gradient" id="Gradient_nl3ym"]
+colors = PackedColorArray(0, 0, 1, 1, 0, 0.541176, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_b824c"]
+gradient = SubResource("Gradient_nl3ym")
+fill_to = Vector2(1, 1)
+
+[node name="BoonParticle" type="CPUParticles2D"]
+position = Vector2(456, 260)
+emitting = false
+amount = 30
+one_shot = true
+speed_scale = 3.0
+emission_shape = 1
+emission_sphere_radius = 3.0
+particle_flag_align_y = true
+direction = Vector2(0, 0)
+spread = 0.0
+gravity = Vector2(-300, 0)
+scale_amount_curve = SubResource("Curve_rniu0")
+color = Color(0.0117647, 0.67451, 1, 1)
+color_initial_ramp = SubResource("Gradient_vjc4f")
+script = ExtResource("1_5hxr1")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+offset_left = -41.0
+offset_top = -5.0
+offset_right = 23.0
+offset_bottom = 59.0
+scale = Vector2(0.757911, 0.157531)
+texture = SubResource("GradientTexture2D_b824c")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
