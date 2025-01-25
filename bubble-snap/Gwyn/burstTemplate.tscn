@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://do0ncyernfbnr"]
+[gd_scene load_steps=9 format=3 uid="uid://do0ncyernfbnr"]
 
 [ext_resource type="Script" path="res://Gwyn/burst_template.gd" id="1_5qnku"]
 [ext_resource type="Script" path="res://Gwyn/flavorTextBurst.gd" id="2_otasl"]
 [ext_resource type="Script" path="res://Gwyn/burstLabel.gd" id="3_shf46"]
 [ext_resource type="Texture2D" uid="uid://dctcfgur7g0o5" path="res://Gwyn/redPane.png" id="4_1exo0"]
+[ext_resource type="Script" path="res://Gwyn/margin_container.gd" id="4_j30ye"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6tafd"]
 
@@ -68,23 +69,28 @@ texture = SubResource("GradientTexture2D_t5yqg")
 layout_mode = 0
 offset_left = 80.0
 offset_top = -23.0
-offset_right = 197.0
-offset_bottom = 19.0
-
-[node name="Label" type="Label" parent="Panel/MarginContainer"]
-z_index = 5
-layout_mode = 2
-theme_override_font_sizes/font_size = 21
-text = "FLavor Text
-"
-horizontal_alignment = 1
-vertical_alignment = 1
+offset_right = 223.0
+offset_bottom = 23.0
+script = ExtResource("4_j30ye")
 
 [node name="TextureRect" type="TextureRect" parent="Panel/MarginContainer"]
 z_index = 4
 layout_mode = 2
 texture = ExtResource("4_1exo0")
 expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/MarginContainer"]
+z_index = 5
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Flavor TeXT"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="mouse_entered" from="Panel" to="Panel" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Panel" to="Panel" method="_on_mouse_exited"]
