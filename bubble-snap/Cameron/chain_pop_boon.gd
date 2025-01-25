@@ -2,7 +2,7 @@ extends Control
 
 const boonName = "Chain Pop"
 const description = "Whenever a bubble is popped, there is a [color=red]10[/color]% it pops another random bubble"
-const icon = "balls"
+const icon = "res://Boon Textures/ChainBoon.png"
 
 var activateChance = 10
 

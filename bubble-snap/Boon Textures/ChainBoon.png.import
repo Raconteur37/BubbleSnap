@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b8fcfag60gcc0"
-path="res://.godot/imported/ChainBoon.png-d09003ad77890249118d847fc47638af.ctex"
+path="res://.godot/imported/ChainBoon.png-e25c777a046dc58b65960c74b71e4825.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Gwyn/ChainBoon.png"
-dest_files=["res://.godot/imported/ChainBoon.png-d09003ad77890249118d847fc47638af.ctex"]
+source_file="res://Boon Textures/ChainBoon.png"
+dest_files=["res://.godot/imported/ChainBoon.png-e25c777a046dc58b65960c74b71e4825.ctex"]
 
 [params]
 

@@ -50,6 +50,7 @@ func _ready() -> void:
 
 func chooseItems():
 	var randNum = randi_range(0,100)
+	print(randNum)
 	if randNum <= 75:
 		rarity = "Common"
 	elif randNum <= 95:
@@ -60,27 +61,27 @@ func chooseItems():
 	match rarity:
 		
 		"Common":
-			itemOneFrame.texture = load("res://Elijah/UI/Upgrade/Upgrade_Common.png")
-			itemTwoFrame.texture = load("res://Elijah/UI/Upgrade/Upgrade_Common.png")
-			itemThreeFrame.texture = load("res://Elijah/UI/Upgrade/Upgrade_Common.png")
+			itemOneFrame.texture_normal = load("res://Elijah/UI/Upgrade/Upgrade_Common.png")
+			itemTwoFrame.texture_normal = load("res://Elijah/UI/Upgrade/Upgrade_Common.png")
+			itemThreeFrame.texture_normal = load("res://Elijah/UI/Upgrade/Upgrade_Common.png")
 			for x in range(3):
 				var chosenBoon = commonBoons.pick_random()
 				commonBoons.erase(chosenBoons)
 				chosenBoons.append(chosenBoon)
 				
 		"Rare":
-			itemOneFrame.texture = load("res://Elijah/UI/Upgrade/Upgrade_Uncommon.png")
-			itemTwoFrame.texture = load("res://Elijah/UI/Upgrade/Upgrade_Uncommon.png")
-			itemThreeFrame.texture = load("res://Elijah/UI/Upgrade/Upgrade_Uncommon.png")
+			itemOneFrame.texture_normal = load("res://Elijah/UI/Upgrade/Upgrade_Uncommon.png")
+			itemTwoFrame.texture_normal = load("res://Elijah/UI/Upgrade/Upgrade_Uncommon.png")
+			itemThreeFrame.texture_normal = load("res://Elijah/UI/Upgrade/Upgrade_Uncommon.png")
 			for x in range(3):
 				var chosenBoon = rareBoons.pick_random()
 				rareBoons.erase(chosenBoons)
 				chosenBoons.append(chosenBoon)
 				
 		"Legendary":
-			itemOneFrame.texture = load("res://Elijah/UI/Upgrade/Upgrade_Rare.png")
-			itemTwoFrame.texture = load("res://Elijah/UI/Upgrade/Upgrade_Rare.png")
-			itemThreeFrame.texture = load("res://Elijah/UI/Upgrade/Upgrade_Rare.png")
+			itemOneFrame.texture_normal = load("res://Elijah/UI/Upgrade/Upgrade_Rare.png")
+			itemTwoFrame.texture_normal = load("res://Elijah/UI/Upgrade/Upgrade_Rare.png")
+			itemThreeFrame.texture_normal = load("res://Elijah/UI/Upgrade/Upgrade_Rare.png")
 			for x in range(3):
 				var chosenBoon = legendaryBoons.pick_random()
 				legendaryBoons.erase(chosenBoons)
@@ -91,19 +92,19 @@ func chooseItems():
 		if z == 0:
 			var boon = getBoon(chosenBoons[z]).instantiate()
 			itemOneLabel.text = boon.boonName
-			itemOneIcon = boon.icon
+			itemOneIcon.texture = load(boon.icon)
 			itemOneDescription.text = boon.description
 			itemOneFrame.show()
 		if z == 1:
 			var boon = getBoon(chosenBoons[z]).instantiate()
 			itemTwoLabel.text = boon.boonName
-			itemTwoIcon = boon.icon
+			itemTwoIcon.texture = load(boon.icon)
 			itemTwoDescription.text = boon.description
 			itemTwoFrame.show()
 		if z == 2:
 			var boon = getBoon(chosenBoons[z]).instantiate()
 			itemThreeLabel.text = boon.boonName
-			itemThreeIcon = boon.icon
+			itemThreeIcon.texture = load(boon.icon)
 			itemThreeDescription.text = boon.description
 			itemThreeFrame.show()
 
@@ -116,3 +117,34 @@ func getBoon(boonName):
 
 func _on_timer_timeout() -> void:
 	chooseItems()
+
+
+func _on_item_one_mouse_entered() -> void:
+	itemOneFrame.position.x -= 15
+	itemOneFrame.scale.x = 1.1
+	itemOneFrame.scale.y = 1.1
+
+func _on_item_one_mouse_exited() -> void:
+	itemOneFrame.position.x += 15
+	itemOneFrame.scale.x = 1
+	itemOneFrame.scale.y = 1
+
+func _on_item_two_mouse_entered() -> void:
+	itemTwoFrame.position.x -= 15
+	itemTwoFrame.scale.x = 1.1
+	itemTwoFrame.scale.y = 1.1
+
+func _on_item_two_mouse_exited() -> void:
+	itemTwoFrame.position.x += 15
+	itemTwoFrame.scale.x = 1
+	itemTwoFrame.scale.y = 1
+
+func _on_item_three_mouse_entered() -> void:
+	itemThreeFrame.position.x -= 15
+	itemThreeFrame.scale.x = 1.1
+	itemThreeFrame.scale.y = 1.1
+
+func _on_item_three_mouse_exited() -> void:
+	itemThreeFrame.position.x += 15
+	itemThreeFrame.scale.x = 1
+	itemThreeFrame.scale.y = 1

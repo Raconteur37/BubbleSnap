@@ -117,16 +117,15 @@ offset_bottom = 1959.0
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 
-[node name="ItemOne" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
-visible = false
+[node name="ItemOne" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("3_4ms2t")
+texture_normal = ExtResource("3_4ms2t")
 
 [node name="ItemOneLabel" type="Label" parent="VBoxContainer/HBoxContainer/ItemOne"]
 layout_mode = 0
-offset_left = 84.0
+offset_left = 85.0
 offset_top = 55.0
-offset_right = 455.0
+offset_right = 456.0
 offset_bottom = 224.0
 text = "Item One"
 label_settings = SubResource("LabelSettings_rxedp")
@@ -136,28 +135,96 @@ autowrap_mode = 2
 
 [node name="ItemOneIcon" type="TextureRect" parent="VBoxContainer/HBoxContainer/ItemOne"]
 layout_mode = 0
-offset_left = 135.0
-offset_top = 266.0
-offset_right = 175.0
-offset_bottom = 306.0
+offset_left = 132.0
+offset_top = 258.0
+offset_right = 196.0
+offset_bottom = 322.0
 texture = SubResource("GradientTexture2D_ji6jd")
 
 [node name="ItemOneDescription" type="RichTextLabel" parent="VBoxContainer/HBoxContainer/ItemOne"]
 layout_mode = 0
-offset_left = 68.0
-offset_top = 552.0
-offset_right = 473.0
-offset_bottom = 913.0
+offset_left = 74.0
+offset_top = 570.0
+offset_right = 479.0
+offset_bottom = 931.0
 theme_override_font_sizes/normal_font_size = 35
 bbcode_enabled = true
 text = "[color=red]This is a test[/color] message for debugging and seeing how long a message can be as you can see we can write a long ass description whenever we want and it doesnt really effect anything w in the chat."
 
-[node name="ItemTwo" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+[node name="ItemTwo" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_4ms2t")
+
+[node name="ItemTwoLabel" type="Label" parent="VBoxContainer/HBoxContainer/ItemTwo"]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 55.0
+offset_right = 456.0
+offset_bottom = 224.0
+text = "Item One"
+label_settings = SubResource("LabelSettings_rxedp")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ItemTwoIcon" type="TextureRect" parent="VBoxContainer/HBoxContainer/ItemTwo"]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 258.0
+offset_right = 196.0
+offset_bottom = 322.0
+texture = SubResource("GradientTexture2D_ji6jd")
+
+[node name="ItemTwoDescription" type="RichTextLabel" parent="VBoxContainer/HBoxContainer/ItemTwo"]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 570.0
+offset_right = 479.0
+offset_bottom = 931.0
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+text = "[color=red]This is a test[/color] message for debugging and seeing how long a message can be as you can see we can write a long ass description whenever we want and it doesnt really effect anything w in the chat."
+
+[node name="ItemThree" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_4ms2t")
+
+[node name="ItemThreeLabel" type="Label" parent="VBoxContainer/HBoxContainer/ItemThree"]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 55.0
+offset_right = 456.0
+offset_bottom = 224.0
+text = "Item One"
+label_settings = SubResource("LabelSettings_rxedp")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ItemThreeIcon" type="TextureRect" parent="VBoxContainer/HBoxContainer/ItemThree"]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 258.0
+offset_right = 196.0
+offset_bottom = 322.0
+texture = SubResource("GradientTexture2D_ji6jd")
+
+[node name="ItemThreeDescription" type="RichTextLabel" parent="VBoxContainer/HBoxContainer/ItemThree"]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 570.0
+offset_right = 479.0
+offset_bottom = 931.0
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+text = "[color=red]This is a test[/color] message for debugging and seeing how long a message can be as you can see we can write a long ass description whenever we want and it doesnt really effect anything w in the chat."
+
+[node name="ItemTwo3" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
 visible = false
 layout_mode = 2
 texture = ExtResource("3_4ms2t")
 
-[node name="ItemTwoLabel" type="Label" parent="VBoxContainer/HBoxContainer/ItemTwo"]
+[node name="ItemTwoLabel" type="Label" parent="VBoxContainer/HBoxContainer/ItemTwo3"]
 offset_left = 84.0
 offset_top = 55.0
 offset_right = 455.0
@@ -168,7 +235,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="ItemTwoIcon" type="TextureRect" parent="VBoxContainer/HBoxContainer/ItemTwo"]
+[node name="ItemTwoIcon" type="TextureRect" parent="VBoxContainer/HBoxContainer/ItemTwo3"]
 layout_mode = 0
 offset_left = 141.0
 offset_top = 267.0
@@ -176,21 +243,21 @@ offset_right = 181.0
 offset_bottom = 307.0
 texture = SubResource("GradientTexture2D_er1mv")
 
-[node name="ItemTwoDescription" type="RichTextLabel" parent="VBoxContainer/HBoxContainer/ItemTwo"]
+[node name="ItemTwoDescription" type="RichTextLabel" parent="VBoxContainer/HBoxContainer/ItemTwo3"]
 offset_left = 68.0
-offset_top = 552.0
+offset_top = 570.0
 offset_right = 473.0
-offset_bottom = 913.0
+offset_bottom = 931.0
 theme_override_font_sizes/normal_font_size = 35
 bbcode_enabled = true
 text = "[color=red]This is a test[/color] message for debugging and seeing how long a message can be as you can see we can write a long ass description whenever we want and it doesnt really effect anything w in the chat."
 
-[node name="ItemThree" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+[node name="ItemThree3" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
 visible = false
 layout_mode = 2
 texture = ExtResource("3_4ms2t")
 
-[node name="ItemThreeLabel" type="Label" parent="VBoxContainer/HBoxContainer/ItemThree"]
+[node name="ItemThreeLabel" type="Label" parent="VBoxContainer/HBoxContainer/ItemThree3"]
 offset_left = 84.0
 offset_top = 55.0
 offset_right = 455.0
@@ -201,7 +268,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="ItemThreeIcon" type="TextureRect" parent="VBoxContainer/HBoxContainer/ItemThree"]
+[node name="ItemThreeIcon" type="TextureRect" parent="VBoxContainer/HBoxContainer/ItemThree3"]
 layout_mode = 0
 offset_left = 141.0
 offset_top = 264.0
@@ -209,11 +276,11 @@ offset_right = 181.0
 offset_bottom = 304.0
 texture = SubResource("GradientTexture2D_let4h")
 
-[node name="ItemThreeDescription" type="RichTextLabel" parent="VBoxContainer/HBoxContainer/ItemThree"]
+[node name="ItemThreeDescription" type="RichTextLabel" parent="VBoxContainer/HBoxContainer/ItemThree3"]
 offset_left = 68.0
-offset_top = 552.0
+offset_top = 570.0
 offset_right = 473.0
-offset_bottom = 913.0
+offset_bottom = 931.0
 theme_override_font_sizes/normal_font_size = 35
 bbcode_enabled = true
 text = "[color=red]This is a test[/color] message for debugging and seeing how long a message can be as you can see we can write a long ass description whenever we want and it doesnt really effect anything w in the chat."
@@ -230,4 +297,10 @@ wait_time = 4.0
 one_shot = true
 autostart = true
 
+[connection signal="mouse_entered" from="VBoxContainer/HBoxContainer/ItemOne" to="." method="_on_item_one_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/HBoxContainer/ItemOne" to="." method="_on_item_one_mouse_exited"]
+[connection signal="mouse_entered" from="VBoxContainer/HBoxContainer/ItemTwo" to="." method="_on_item_two_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/HBoxContainer/ItemTwo" to="." method="_on_item_two_mouse_exited"]
+[connection signal="mouse_entered" from="VBoxContainer/HBoxContainer/ItemThree" to="." method="_on_item_three_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/HBoxContainer/ItemThree" to="." method="_on_item_three_mouse_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
