@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cadr76bw5auio"]
+[gd_scene load_steps=8 format=3 uid="uid://cadr76bw5auio"]
 
 [ext_resource type="Texture2D" uid="uid://ck3p4mi41jwoo" path="res://Elijah/Bubbles/Bubble_01.png" id="1_r0qw7"]
 [ext_resource type="Script" path="res://Cameron/bubble_button.gd" id="1_tch2p"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://inbadhqhynej" path="res://Elijah/Bubbles/Bubble_Highlight.png" id="3_f042k"]
 [ext_resource type="Texture2D" uid="uid://bnoo3p60cyty1" path="res://Elijah/Bubbles/Bubble_Popped_Dark.png" id="3_k4t06"]
 [ext_resource type="AudioStream" uid="uid://c8knw1dhp4qyd" path="res://Cameron/Voicy_Select sound.mp3" id="6_fiwgp"]
+[ext_resource type="PackedScene" uid="uid://dhpccipgrsl5a" path="res://Akash/PopParticle.tscn" id="7_t10u3"]
 
 [node name="BubbleButton" type="TextureButton"]
 offset_left = 439.0
@@ -22,6 +23,9 @@ script = ExtResource("1_tch2p")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_fiwgp")
+
+[node name="PopParticle" parent="." instance=ExtResource("7_t10u3")]
+position = Vector2(35, 31)
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
 [connection signal="toggled" from="." to="." method="_on_toggled"]

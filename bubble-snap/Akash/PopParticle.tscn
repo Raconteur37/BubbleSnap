@@ -6,6 +6,7 @@ point_count = 2
 
 [node name="PopParticle" type="CPUParticles2D"]
 position = Vector2(632, 317)
+scale = Vector2(5, 5)
 amount = 50
 speed_scale = 1.2
 explosiveness = 1.0
@@ -17,11 +18,7 @@ spread = 180.0
 gravity = Vector2(0, 0)
 initial_velocity_min = 7.3
 initial_velocity_max = 44.5
+scale_amount_min = 6.0
+scale_amount_max = 6.0
 scale_amount_curve = SubResource("Curve_1tme4")
-color = Color(0.0117647, 0.67451, 1, 1)
-
-[node name="Timer" type="Timer" parent="."]
-one_shot = true
-autostart = true
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+color = Color(0.760784, 0.898039, 1, 1)

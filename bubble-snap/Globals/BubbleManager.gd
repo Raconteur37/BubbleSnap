@@ -3,7 +3,6 @@ extends Node
 var unPoppedBubbleArray = []
 var poppedBubbleArray = []
 
-
 var inWave : bool = false
 
 var totalPopsNeeded : float = 81
