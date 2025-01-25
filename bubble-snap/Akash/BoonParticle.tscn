@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1sifxqq7klxa"]
+[gd_scene load_steps=7 format=3 uid="uid://b1sifxqq7klxa"]
 
 [ext_resource type="Script" path="res://Akash/boon_particle.gd" id="1_5hxr1"]
 
@@ -10,6 +10,22 @@ point_count = 4
 offsets = PackedFloat32Array(0, 0.00704225, 1)
 colors = PackedColorArray(0, 0, 0, 1, 0.968627, 0, 1, 1, 1, 1, 1, 1)
 
+[sub_resource type="Environment" id="Environment_a2uo7"]
+background_mode = 3
+glow_enabled = true
+glow_levels/1 = 8.45
+glow_levels/2 = 8.72
+glow_levels/3 = 8.38
+glow_levels/4 = 8.1
+glow_levels/5 = 7.66
+glow_levels/6 = 8.0
+glow_levels/7 = 8.31
+glow_intensity = 4.75
+glow_strength = 1.36
+glow_blend_mode = 0
+glow_hdr_scale = 0.81
+glow_hdr_luminance_cap = 45.19
+
 [sub_resource type="Gradient" id="Gradient_nl3ym"]
 colors = PackedColorArray(0, 0, 1, 1, 0, 0.541176, 1, 0)
 
@@ -19,9 +35,8 @@ fill_to = Vector2(1, 1)
 
 [node name="BoonParticle" type="CPUParticles2D"]
 position = Vector2(456, 260)
-emitting = false
+scale = Vector2(1, 0.980033)
 amount = 30
-one_shot = true
 speed_scale = 3.0
 emission_shape = 1
 emission_sphere_radius = 3.0
@@ -33,6 +48,9 @@ scale_amount_curve = SubResource("Curve_rniu0")
 color = Color(0.0117647, 0.67451, 1, 1)
 color_initial_ramp = SubResource("Gradient_vjc4f")
 script = ExtResource("1_5hxr1")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_a2uo7")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 visible = false
