@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dw8olc80t7kjx" path="res://Elijah/Bubbles/Bubble_Pressed_v2.png" id="2_hhl53"]
 [ext_resource type="Texture2D" uid="uid://inbadhqhynej" path="res://Elijah/Bubbles/Bubble_Highlight.png" id="3_f042k"]
 [ext_resource type="Texture2D" uid="uid://bnoo3p60cyty1" path="res://Elijah/Bubbles/Bubble_Popped_Dark.png" id="3_k4t06"]
-[ext_resource type="AudioStream" uid="uid://dt55d558jpaq1" path="res://Cameron/Bubble Pop.mp3" id="6_xgbpw"]
+[ext_resource type="AudioStream" uid="uid://c8knw1dhp4qyd" path="res://Cameron/Voicy_Select sound.mp3" id="6_fiwgp"]
 
 [node name="BubbleButton" type="TextureButton"]
 offset_left = 439.0
@@ -21,7 +21,7 @@ texture_disabled = ExtResource("3_k4t06")
 script = ExtResource("1_tch2p")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_xgbpw")
+stream = ExtResource("6_fiwgp")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
 [connection signal="toggled" from="." to="." method="_on_toggled"]

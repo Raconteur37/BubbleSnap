@@ -4,8 +4,8 @@ var bubbleArray = []
 
 var inWave : bool = false
 
-var totalPopsNeeded : int = 1
-var currentPops : int = 0
+var totalPopsNeeded : float = 81
+var currentPops : float = 0
 
 var currPoppedRow : int = -1
 var currPoppedCol : int = -1

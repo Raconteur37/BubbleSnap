@@ -16,6 +16,7 @@ func _on_toggled(toggled_on: bool) -> void:
 	BubbleManager.addPop()
 	BubbleManager.currPoppedCol = col
 	BubbleManager.currPoppedRow = row
-	var pitch = BubbleManager.currentPops / BubbleManager.totalPopsNeeded + 1
+	var pitch : float = audioPlayer.pitch_scale + (BubbleManager.currentPops / BubbleManager.totalPopsNeeded * 1.5)
+	print(pitch)
 	audioPlayer.pitch_scale = pitch
 	audioPlayer.play()
