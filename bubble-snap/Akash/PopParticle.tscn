@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dhpccipgrsl5a"]
+[gd_scene load_steps=4 format=3 uid="uid://dhpccipgrsl5a"]
 
 [ext_resource type="Script" path="res://Akash/pop_particle.gd" id="1_ugmfo"]
 
@@ -6,11 +6,23 @@
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.760784, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
+[sub_resource type="Environment" id="Environment_2shfb"]
+background_mode = 3
+glow_enabled = true
+glow_levels/1 = 4.51
+glow_levels/2 = 4.31
+glow_levels/3 = 4.53
+glow_levels/4 = 6.15
+glow_levels/5 = 4.24
+glow_levels/6 = 4.24
+glow_levels/7 = 4.49
+glow_intensity = 3.95
+glow_strength = 1.23
+glow_blend_mode = 0
+
 [node name="PopParticle" type="CPUParticles2D"]
 position = Vector2(632, 317)
-emitting = false
 amount = 50
-one_shot = true
 speed_scale = 1.2
 explosiveness = 1.0
 randomness = 1.0
@@ -22,10 +34,14 @@ gravity = Vector2(0, 0)
 initial_velocity_min = 7.3
 initial_velocity_max = 44.5
 scale_amount_curve = SubResource("Curve_1tme4")
+color = Color(0.0117647, 0.67451, 1, 1)
 script = ExtResource("1_ugmfo")
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 autostart = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_2shfb")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
