@@ -1,7 +1,7 @@
 extends Control
 
 var commonBoons = ["Bonus Pop", "Extra Time", "Extra Hand", "Bubble Time"]
-var rareBoons = ["Chain Pop","Chain Pop","Chain Pop"]
+var rareBoons = ["Chain Pop","Bomb Burst","Chain Pop"]
 var legendaryBoons = ["Double Bubble","Fibonacci","Double Bubble"]
 
 var commonBursts = ["Time Drain","Picky Burst"]
@@ -171,6 +171,8 @@ func getBurst(burstName):
 			return load("res://Bursts/SymetryBurst.tscn")
 		"Time Drain":
 			return load("res://Bursts/Time Drain Burst.tscn")
+		"Bomb Burst":
+			return load("res://Bursts/Bomb Burst.tscn")
 
 
 func _on_timer_timeout() -> void:
