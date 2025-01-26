@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://brfvfyfvosup7"]
 
-[ext_resource type="Texture2D" uid="uid://b6urxmv7aa31o" path="res://Elijah/UI/MainScene/Background.png" id="1_fuw6c"]
-[ext_resource type="Texture2D" uid="uid://cveykpkfvns5b" path="res://Elijah/UI/MainScene/BubbleBase.png" id="3_r2yen"]
-[ext_resource type="Texture2D" uid="uid://b7vta2c4devx0" path="res://Elijah/UI/MainScene/ItemBar.png" id="3_xftlw"]
-[ext_resource type="Texture2D" uid="uid://dmgedf6v7ru72" path="res://Elijah/UI/MainScene/Banner.png" id="4_ymfhu"]
-[ext_resource type="Texture2D" uid="uid://m5wt36m45nku" path="res://Elijah/UI/MainScene/Border.png" id="5_w6s4c"]
-[ext_resource type="PackedScene" path="res://Akash/TimerParticles.tscn" id="6_oukib"]
-[ext_resource type="Texture2D" uid="uid://b5d86vmrcqvmf" path="res://Elijah/UI/MainScene/Bursts.png" id="7_7vonx"]
-[ext_resource type="Texture2D" uid="uid://ih8ewauc5waf" path="res://Elijah/UI/MainScene/Boon.png" id="10_bie7r"]
+[ext_resource type="Texture2D" uid="uid://b6urxmv7aa31o" path="res://Elijah/UI/MainScene/Background.png" id="1_4430o"]
+[ext_resource type="Texture2D" uid="uid://m5wt36m45nku" path="res://Elijah/UI/MainScene/Border.png" id="2_71toa"]
+[ext_resource type="Texture2D" uid="uid://cveykpkfvns5b" path="res://Elijah/UI/MainScene/BubbleBase.png" id="3_dvb0i"]
+[ext_resource type="Texture2D" uid="uid://b5d86vmrcqvmf" path="res://Elijah/UI/MainScene/Bursts.png" id="4_jibtb"]
+[ext_resource type="Texture2D" uid="uid://ih8ewauc5waf" path="res://Elijah/UI/MainScene/Boon.png" id="5_44q5p"]
+[ext_resource type="Texture2D" uid="uid://dmgedf6v7ru72" path="res://Elijah/UI/MainScene/Banner.png" id="6_2phfu"]
+[ext_resource type="PackedScene" uid="uid://bk3mqsou2o0yx" path="res://Akash/TimerParticles.tscn" id="7_itw4m"]
+[ext_resource type="Texture2D" uid="uid://b7vta2c4devx0" path="res://Elijah/UI/MainScene/ItemBar.png" id="8_4wvbp"]
 
 [node name="MainGameScene" type="Node2D"]
 
@@ -28,14 +28,14 @@ layout_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.001
 offset_bottom = -1.08008
-texture = ExtResource("1_fuw6c")
+texture = ExtResource("1_4430o")
 expand_mode = 5
 
 [node name="Border" type="TextureRect" parent="CanvasLayer/Control"]
 layout_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource("5_w6s4c")
+texture = ExtResource("2_71toa")
 expand_mode = 5
 
 [node name="BubbleBase" type="TextureRect" parent="CanvasLayer"]
@@ -50,7 +50,7 @@ offset_right = -0.160156
 offset_bottom = 0.039978
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_r2yen")
+texture = ExtResource("3_dvb0i")
 stretch_mode = 4
 
 [node name="MainGrid" type="GridContainer" parent="CanvasLayer/BubbleBase"]
@@ -71,7 +71,7 @@ offset_top = -54.08
 offset_right = 80.44
 offset_bottom = 85.16
 grow_vertical = 2
-texture = ExtResource("7_7vonx")
+texture = ExtResource("4_jibtb")
 
 [node name="Label" type="Label" parent="CanvasLayer/Burst"]
 layout_mode = 0
@@ -96,7 +96,7 @@ offset_right = 78.12
 offset_bottom = 77.4
 grow_horizontal = 0
 grow_vertical = 2
-texture = ExtResource("10_bie7r")
+texture = ExtResource("5_44q5p")
 
 [node name="BoonGrid" type="GridContainer" parent="CanvasLayer/Boon"]
 layout_mode = 0
@@ -128,7 +128,7 @@ offset_right = 97.6399
 offset_bottom = 61.16
 grow_horizontal = 2
 scale = Vector2(0.955, 0.955)
-texture = ExtResource("4_ymfhu")
+texture = ExtResource("6_2phfu")
 
 [node name="Round Count" type="Label" parent="CanvasLayer/Banner"]
 layout_mode = 0
@@ -152,7 +152,7 @@ text = "99:99"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TimerParticles" parent="CanvasLayer/Banner" instance=ExtResource("6_oukib")]
+[node name="TimerParticles" parent="CanvasLayer/Banner" instance=ExtResource("7_itw4m")]
 position = Vector2(675.393, 96.3351)
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
@@ -167,7 +167,7 @@ offset_right = -0.240112
 offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("3_xftlw")
+texture = ExtResource("8_4wvbp")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0

@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b7vta2c4devx0" path="res://Elijah/UI/MainScene/ItemBar.png" id="3_xftlw"]
 [ext_resource type="Texture2D" uid="uid://dmgedf6v7ru72" path="res://Elijah/UI/MainScene/Banner.png" id="4_ymfhu"]
 [ext_resource type="Texture2D" uid="uid://m5wt36m45nku" path="res://Elijah/UI/MainScene/Border.png" id="5_w6s4c"]
-[ext_resource type="PackedScene" path="res://Akash/TimerParticles.tscn" id="6_oukib"]
+[ext_resource type="PackedScene" uid="uid://bk3mqsou2o0yx" path="res://Akash/TimerParticles.tscn" id="6_oukib"]
 [ext_resource type="Texture2D" uid="uid://b5d86vmrcqvmf" path="res://Elijah/UI/MainScene/Bursts.png" id="7_7vonx"]
 [ext_resource type="Texture2D" uid="uid://bdnhgljkxfc7p" path="res://Elijah/UI/Menus/Black.png" id="9_d1vpa"]
 [ext_resource type="Texture2D" uid="uid://ih8ewauc5waf" path="res://Elijah/UI/MainScene/Boon.png" id="10_bie7r"]
