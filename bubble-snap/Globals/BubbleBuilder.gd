@@ -5,8 +5,8 @@ var bubbles = 81
 var mainGrid
 
 func buildBubbles():
-	BubbleManager.inWave = true
-	BubbleManager.totalPopsNeeded = bubbles
+	GameManager.inWave = true
+	GameManager.totalPopsNeeded = bubbles
 	var row = -1
 	var col = -1
 	var bubbleNum = sqrt(bubbles) # make sure this is a perfect square

@@ -118,7 +118,6 @@ func getBoon(boonName):
 func _on_timer_timeout() -> void:
 	chooseItems()
 
-
 func _on_item_one_mouse_entered() -> void:
 	itemOneFrame.position.x -= 15
 	itemOneFrame.scale.x = 1.1
@@ -148,3 +147,20 @@ func _on_item_three_mouse_exited() -> void:
 	itemThreeFrame.position.x += 15
 	itemThreeFrame.scale.x = 1
 	itemThreeFrame.scale.y = 1
+
+
+func _on_item_one_pressed() -> void:
+	get_tree().current_scene.find_child("BoonGrid").add_child(getBoon(chosenBoons[0]).instantiate())
+	animationPlayer.play("FadeOut")
+
+func _on_item_two_pressed() -> void:
+	get_tree().current_scene.find_child("BoonGrid").add_child(getBoon(chosenBoons[1]).instantiate())
+	animationPlayer.play("FadeOut")
+
+func _on_item_three_pressed() -> void:
+	get_tree().current_scene.find_child("BoonGrid").add_child(getBoon(chosenBoons[2]).instantiate())
+	animationPlayer.play("FadeOut")
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "FadeOut":
+		queue_free()

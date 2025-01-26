@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dt0a8guvloc5"]
+[gd_scene load_steps=12 format=3 uid="uid://dt0a8guvloc5"]
 
 [ext_resource type="Texture2D" uid="uid://bh51715bi0pvy" path="res://Elijah/UI/Upgrade/Upgrade_Background.png" id="1_3kq4k"]
 [ext_resource type="Script" path="res://Cameron/boon_selection.gd" id="1_rwjtg"]
@@ -12,16 +12,6 @@ font_size = 60
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ji6jd"]
 gradient = SubResource("Gradient_d2to8")
-
-[sub_resource type="Gradient" id="Gradient_mk5pr"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_er1mv"]
-gradient = SubResource("Gradient_mk5pr")
-
-[sub_resource type="Gradient" id="Gradient_0aann"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_let4h"]
-gradient = SubResource("Gradient_0aann")
 
 [sub_resource type="Animation" id="Animation_4qrka"]
 resource_name = "Appear"
@@ -77,14 +67,44 @@ tracks/1/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_oeunf"]
+resource_name = "FadeOut"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3sjvi"]
 _data = {
 "Appear": SubResource("Animation_4qrka"),
+"FadeOut": SubResource("Animation_oeunf"),
 "RESET": SubResource("Animation_guody")
 }
 
 [node name="BoonSelection" type="Control"]
+z_index = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -222,72 +242,6 @@ theme_override_font_sizes/normal_font_size = 35
 bbcode_enabled = true
 text = "[color=red]This is a test[/color] message for debugging and seeing how long a message can be as you can see we can write a long ass description whenever we want and it doesnt really effect anything w in the chat."
 
-[node name="ItemTwo3" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
-visible = false
-layout_mode = 2
-texture = ExtResource("3_4ms2t")
-
-[node name="ItemTwoLabel" type="Label" parent="VBoxContainer/HBoxContainer/ItemTwo3"]
-offset_left = 84.0
-offset_top = 55.0
-offset_right = 455.0
-offset_bottom = 224.0
-text = "Item Two"
-label_settings = SubResource("LabelSettings_rxedp")
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-
-[node name="ItemTwoIcon" type="TextureRect" parent="VBoxContainer/HBoxContainer/ItemTwo3"]
-layout_mode = 0
-offset_left = 141.0
-offset_top = 267.0
-offset_right = 181.0
-offset_bottom = 307.0
-texture = SubResource("GradientTexture2D_er1mv")
-
-[node name="ItemTwoDescription" type="RichTextLabel" parent="VBoxContainer/HBoxContainer/ItemTwo3"]
-offset_left = 68.0
-offset_top = 570.0
-offset_right = 473.0
-offset_bottom = 931.0
-theme_override_font_sizes/normal_font_size = 35
-bbcode_enabled = true
-text = "[color=red]This is a test[/color] message for debugging and seeing how long a message can be as you can see we can write a long ass description whenever we want and it doesnt really effect anything w in the chat."
-
-[node name="ItemThree3" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
-visible = false
-layout_mode = 2
-texture = ExtResource("3_4ms2t")
-
-[node name="ItemThreeLabel" type="Label" parent="VBoxContainer/HBoxContainer/ItemThree3"]
-offset_left = 84.0
-offset_top = 55.0
-offset_right = 455.0
-offset_bottom = 224.0
-text = "Item Three"
-label_settings = SubResource("LabelSettings_rxedp")
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-
-[node name="ItemThreeIcon" type="TextureRect" parent="VBoxContainer/HBoxContainer/ItemThree3"]
-layout_mode = 0
-offset_left = 141.0
-offset_top = 264.0
-offset_right = 181.0
-offset_bottom = 304.0
-texture = SubResource("GradientTexture2D_let4h")
-
-[node name="ItemThreeDescription" type="RichTextLabel" parent="VBoxContainer/HBoxContainer/ItemThree3"]
-offset_left = 68.0
-offset_top = 570.0
-offset_right = 473.0
-offset_bottom = 931.0
-theme_override_font_sizes/normal_font_size = 35
-bbcode_enabled = true
-text = "[color=red]This is a test[/color] message for debugging and seeing how long a message can be as you can see we can write a long ass description whenever we want and it doesnt really effect anything w in the chat."
-
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -302,8 +256,12 @@ autostart = true
 
 [connection signal="mouse_entered" from="VBoxContainer/HBoxContainer/ItemOne" to="." method="_on_item_one_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer/HBoxContainer/ItemOne" to="." method="_on_item_one_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ItemOne" to="." method="_on_item_one_pressed"]
 [connection signal="mouse_entered" from="VBoxContainer/HBoxContainer/ItemTwo" to="." method="_on_item_two_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer/HBoxContainer/ItemTwo" to="." method="_on_item_two_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ItemTwo" to="." method="_on_item_two_pressed"]
 [connection signal="mouse_entered" from="VBoxContainer/HBoxContainer/ItemThree" to="." method="_on_item_three_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer/HBoxContainer/ItemThree" to="." method="_on_item_three_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ItemThree" to="." method="_on_item_three_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

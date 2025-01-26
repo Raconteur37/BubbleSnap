@@ -1,16 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://bxdoir4bawst5"]
+[gd_scene load_steps=7 format=3 uid="uid://bxdoir4bawst5"]
 
 [ext_resource type="Script" path="res://Gwyn/flavorTextBoon.gd" id="1_k8la3"]
 [ext_resource type="Script" path="res://Cameron/chain_pop_boon.gd" id="1_l2fst"]
 [ext_resource type="Script" path="res://Gwyn/boonLabel.gd" id="2_2wc6t"]
 [ext_resource type="Texture2D" uid="uid://deqkd80kj4mc5" path="res://Gwyn/bluePane.png" id="3_yhnn1"]
+[ext_resource type="Texture2D" uid="uid://b8fcfag60gcc0" path="res://Boon Textures/ChainBoon.png" id="4_wsset"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6tafd"]
-
-[sub_resource type="Gradient" id="Gradient_cpedu"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_t5yqg"]
-gradient = SubResource("Gradient_cpedu")
 
 [node name="PanelContainer" type="PanelContainer"]
 custom_minimum_size = Vector2(94, 96)
@@ -39,7 +35,7 @@ theme_override_constants/margin_top = 5
 [node name="BoonTitleLabel" type="Label" parent="Panel/VBoxContainer/MarginContainer"]
 custom_minimum_size = Vector2(94, 23)
 layout_mode = 2
-text = "Change Me"
+text = "Chain Pop"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
@@ -56,7 +52,7 @@ theme_override_constants/margin_bottom = -5
 
 [node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/MarginContainer2"]
 layout_mode = 2
-texture = SubResource("GradientTexture2D_t5yqg")
+texture = ExtResource("4_wsset")
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel"]
 z_index = 10
@@ -84,7 +80,7 @@ theme_override_constants/margin_right = 5
 
 [node name="BoonHoverLabel" type="Label" parent="Panel/MarginContainer/MarginContainer"]
 layout_mode = 2
-text = "FLavor text"
+text = "Whenever a bubble is popped, there is a 10% it pops another random bubble"
 horizontal_alignment = 1
 vertical_alignment = 1
 
