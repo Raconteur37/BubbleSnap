@@ -1,6 +1,7 @@
 extends PanelContainer
 
 var activateType = ["Player Pop", "Pop"]
+var animationPlayer
 
 var thresh = 5
 
@@ -12,11 +13,13 @@ var rowButtons = []
 
 func _ready() -> void:
 	BoonManager.addBurst(self)
+	animationPlayer = $AnimationPlayer
 
 func activate():
 	if BubbleManager.currPoppedRow == previousRow:
 		inRowCounter += 1
 		if inRowCounter >= thresh:
+			animationPlayer.play("Shake")
 			for button in rowButtons:
 				button.resetState()
 				GameManager.currentPops -= 1

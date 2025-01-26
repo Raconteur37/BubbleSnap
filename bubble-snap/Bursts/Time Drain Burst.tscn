@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Gwyn/flavorTextBoon.gd" id="2_06cv4"]
 [ext_resource type="Script" path="res://Gwyn/boonLabel.gd" id="3_wlkrf"]
 [ext_resource type="Texture2D" uid="uid://ckwn8icqd8l5j" path="res://Gwyn/angryBubble.png" id="4_cl0rq"]
-[ext_resource type="Texture2D" uid="uid://deqkd80kj4mc5" path="res://Gwyn/bluePane.png" id="5_xinti"]
+[ext_resource type="Texture2D" uid="uid://dctcfgur7g0o5" path="res://Gwyn/redPane.png" id="5_8vnwy"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6tafd"]
 
@@ -62,15 +62,15 @@ anchor_left = -1.106
 anchor_top = -0.26
 anchor_right = 0.138
 anchor_bottom = 0.177
-offset_left = -0.0359955
+offset_left = 190.964
 offset_top = -0.0399971
-offset_right = 0.0279989
+offset_right = 305.028
 offset_bottom = 0.00799942
 grow_horizontal = 0
 
 [node name="TextureRect" type="TextureRect" parent="Panel/MarginContainer"]
 layout_mode = 2
-texture = ExtResource("5_xinti")
+texture = ExtResource("5_8vnwy")
 expand_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel/MarginContainer"]
