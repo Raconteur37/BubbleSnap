@@ -1,10 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://ba5lqhis1i4ko"]
+[gd_scene load_steps=10 format=3 uid="uid://5hqheg62hto5"]
 
-[ext_resource type="Script" path="res://Bursts/symetry_burst.gd" id="1_x36i5"]
-[ext_resource type="Script" path="res://Gwyn/flavorTextBoon.gd" id="2_fheo8"]
-[ext_resource type="Script" path="res://Gwyn/boonLabel.gd" id="3_ycfrv"]
-[ext_resource type="Texture2D" uid="uid://cxmvgfg41javp" path="res://Burst Textures/symmetryBurst.png" id="4_t7lc4"]
-[ext_resource type="Texture2D" uid="uid://dctcfgur7g0o5" path="res://Gwyn/redPane.png" id="5_qg0ng"]
+[ext_resource type="Script" path="res://Bursts/bomb_burst.gd" id="1_mgkd8"]
+[ext_resource type="Script" path="res://Gwyn/flavorTextBoon.gd" id="2_12pjx"]
+[ext_resource type="Script" path="res://Gwyn/boonLabel.gd" id="3_ojnp3"]
+[ext_resource type="Texture2D" uid="uid://cxmvgfg41javp" path="res://Burst Textures/symmetryBurst.png" id="4_d45po"]
+[ext_resource type="Texture2D" uid="uid://dctcfgur7g0o5" path="res://Gwyn/redPane.png" id="5_2i0bq"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6tafd"]
 
@@ -100,12 +100,12 @@ offset_top = 231.0
 offset_right = 497.0
 offset_bottom = 327.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_6tafd")
-script = ExtResource("1_x36i5")
+script = ExtResource("1_mgkd8")
 
 [node name="Panel" type="Panel" parent="."]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-script = ExtResource("2_fheo8")
+script = ExtResource("2_12pjx")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 1
@@ -120,13 +120,13 @@ theme_override_constants/margin_top = 5
 [node name="BoonTitleLabel" type="Label" parent="Panel/VBoxContainer/MarginContainer"]
 custom_minimum_size = Vector2(94, 23)
 layout_mode = 2
-text = "Symetry Burst"
+text = "Bomb Burst"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 clip_text = true
 text_overrun_behavior = 1
-script = ExtResource("3_ycfrv")
+script = ExtResource("3_ojnp3")
 
 [node name="MarginContainer2" type="MarginContainer" parent="Panel/VBoxContainer"]
 clip_contents = true
@@ -136,7 +136,7 @@ theme_override_constants/margin_right = 12
 
 [node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/MarginContainer2"]
 layout_mode = 2
-texture = ExtResource("4_t7lc4")
+texture = ExtResource("4_d45po")
 expand_mode = 5
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel"]
@@ -147,15 +147,15 @@ anchor_left = -1.106
 anchor_top = -0.26
 anchor_right = 0.138
 anchor_bottom = 0.177
-offset_left = 179.964
-offset_top = -9.04
-offset_right = 508.028
-offset_bottom = -8.992
+offset_left = 153.964
+offset_top = -8.04
+offset_right = 527.028
+offset_bottom = -7.992
 grow_horizontal = 0
 
 [node name="TextureRect" type="TextureRect" parent="Panel/MarginContainer"]
 layout_mode = 2
-texture = ExtResource("5_qg0ng")
+texture = ExtResource("5_2i0bq")
 expand_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel/MarginContainer"]
@@ -165,7 +165,7 @@ theme_override_constants/margin_right = 5
 
 [node name="BoonHoverLabel" type="Label" parent="Panel/MarginContainer/MarginContainer"]
 layout_mode = 2
-text = "If 3 bubbles are popped in the same row, unpop all those bubbles"
+text = "Every few random seconds, a large amount of popped will be unpopped"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -174,9 +174,14 @@ libraries = {
 "": SubResource("AnimationLibrary_3dvs5")
 }
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 7.0
+autostart = true
+
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Panel" to="Panel" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Panel" to="Panel" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Panel/VBoxContainer" to="Panel/VBoxContainer" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Panel/VBoxContainer" to="Panel/VBoxContainer" method="_on_mouse_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

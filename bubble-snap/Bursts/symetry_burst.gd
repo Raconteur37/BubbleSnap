@@ -3,7 +3,7 @@ extends PanelContainer
 var activateType = ["Player Pop", "Pop"]
 var animationPlayer
 
-var thresh = 5
+var thresh = 3
 
 var inRowCounter = 0
 

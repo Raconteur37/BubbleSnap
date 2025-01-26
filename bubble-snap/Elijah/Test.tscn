@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://brfvfyfvosup7"]
+[gd_scene load_steps=15 format=3 uid="uid://brfvfyfvosup7"]
 
 [ext_resource type="Texture2D" uid="uid://b6urxmv7aa31o" path="res://Elijah/UI/MainScene/Background.png" id="1_fuw6c"]
 [ext_resource type="Texture2D" uid="uid://cveykpkfvns5b" path="res://Elijah/UI/MainScene/BubbleBase.png" id="3_r2yen"]
 [ext_resource type="Texture2D" uid="uid://b7vta2c4devx0" path="res://Elijah/UI/MainScene/ItemBar.png" id="3_xftlw"]
 [ext_resource type="Texture2D" uid="uid://dmgedf6v7ru72" path="res://Elijah/UI/MainScene/Banner.png" id="4_ymfhu"]
+[ext_resource type="PackedScene" uid="uid://5hqheg62hto5" path="res://Bursts/Bomb Burst.tscn" id="5_u00rw"]
 [ext_resource type="Texture2D" uid="uid://m5wt36m45nku" path="res://Elijah/UI/MainScene/Border.png" id="5_w6s4c"]
 [ext_resource type="Texture2D" uid="uid://b5d86vmrcqvmf" path="res://Elijah/UI/MainScene/Bursts.png" id="7_7vonx"]
 [ext_resource type="Script" path="res://Elijah/next_wave_button.gd" id="7_43wk2"]
@@ -91,6 +92,9 @@ offset_top = 214.0
 offset_right = 156.0
 offset_bottom = 310.0
 columns = 3
+
+[node name="PanelContainer" parent="CanvasLayer/Burst/BurstGrid" instance=ExtResource("5_u00rw")]
+layout_mode = 2
 
 [node name="mainTimer" type="Timer" parent="CanvasLayer/Burst"]
 
