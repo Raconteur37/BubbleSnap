@@ -1,10 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dkypl6e5svchg"]
+[gd_scene load_steps=10 format=3 uid="uid://bhp30n7uu71h5"]
 
-[ext_resource type="Script" path="res://Boons/bubble_time.gd" id="1_wdjwl"]
-[ext_resource type="Script" path="res://Gwyn/flavorTextBoon.gd" id="2_x4b8b"]
-[ext_resource type="Script" path="res://Gwyn/boonLabel.gd" id="3_08wct"]
-[ext_resource type="Texture2D" uid="uid://ddtpoi33ao4sf" path="res://Boon Textures/Bubble_Hand.png" id="4_itfdy"]
-[ext_resource type="Texture2D" uid="uid://deqkd80kj4mc5" path="res://Gwyn/bluePane.png" id="5_i4yix"]
+[ext_resource type="Script" path="res://Boons/popping_time.gd" id="1_i6agl"]
+[ext_resource type="Script" path="res://Gwyn/flavorTextBoon.gd" id="2_ny85r"]
+[ext_resource type="Script" path="res://Gwyn/boonLabel.gd" id="3_jvird"]
+[ext_resource type="Texture2D" uid="uid://d0tk5d7c4ccm" path="res://Boon Textures/bonusPop.png" id="4_ewkor"]
+[ext_resource type="Texture2D" uid="uid://deqkd80kj4mc5" path="res://Gwyn/bluePane.png" id="5_8n27i"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6tafd"]
 
@@ -100,12 +100,12 @@ offset_top = 231.0
 offset_right = 497.0
 offset_bottom = 327.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_6tafd")
-script = ExtResource("1_wdjwl")
+script = ExtResource("1_i6agl")
 
 [node name="Panel" type="Panel" parent="."]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-script = ExtResource("2_x4b8b")
+script = ExtResource("2_ny85r")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 1
@@ -120,13 +120,13 @@ theme_override_constants/margin_top = 5
 [node name="BoonTitleLabel" type="Label" parent="Panel/VBoxContainer/MarginContainer"]
 custom_minimum_size = Vector2(94, 23)
 layout_mode = 2
-text = "Extra Hand"
+text = "Popping Time"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 clip_text = true
 text_overrun_behavior = 1
-script = ExtResource("3_08wct")
+script = ExtResource("3_jvird")
 
 [node name="MarginContainer2" type="MarginContainer" parent="Panel/VBoxContainer"]
 clip_contents = true
@@ -136,7 +136,7 @@ theme_override_constants/margin_right = 12
 
 [node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/MarginContainer2"]
 layout_mode = 2
-texture = ExtResource("4_itfdy")
+texture = ExtResource("4_ewkor")
 expand_mode = 5
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel"]
@@ -155,7 +155,7 @@ grow_horizontal = 0
 
 [node name="TextureRect" type="TextureRect" parent="Panel/MarginContainer"]
 layout_mode = 2
-texture = ExtResource("5_i4yix")
+texture = ExtResource("5_8n27i")
 expand_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel/MarginContainer"]
@@ -165,8 +165,7 @@ theme_override_constants/margin_right = 5
 
 [node name="BoonHoverLabel" type="Label" parent="Panel/MarginContainer/MarginContainer"]
 layout_mode = 2
-text = "Every hand pop has a 5% chance to hand pop an extra bubble
-"
+text = "When the amount of pops you have exceeds the time left, pop the time left amount"
 horizontal_alignment = 1
 vertical_alignment = 1
 

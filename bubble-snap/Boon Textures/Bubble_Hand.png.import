@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ddtpoi33ao4sf"
-path="res://.godot/imported/Bubble_Hand.png-b8328790c65602fff54465b09c347109.ctex"
+path="res://.godot/imported/Bubble_Hand.png-717bbb2b91ff4cb51c14ef9534ddffab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Gwyn/Bubble_Hand.png"
-dest_files=["res://.godot/imported/Bubble_Hand.png-b8328790c65602fff54465b09c347109.ctex"]
+source_file="res://Boon Textures/Bubble_Hand.png"
+dest_files=["res://.godot/imported/Bubble_Hand.png-717bbb2b91ff4cb51c14ef9534ddffab.ctex"]
 
 [params]
 
