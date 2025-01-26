@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://b33dx1e7hnfxa"]
+[gd_scene load_steps=4 format=3 uid="uid://bk3mqsou2o0yx"]
 
 [ext_resource type="Script" path="res://Akash/timer_particles.gd" id="1_gn3dv"]
 
@@ -14,16 +14,16 @@ position = Vector2(47, 135)
 scale = Vector2(1.37448, 1.74824)
 amount = 100
 lifetime = 0.8
-speed_scale = 0.8
+speed_scale = 1.96
 randomness = 1.0
-emission_shape = 1
-emission_sphere_radius = 128.0
+emission_shape = 3
+emission_rect_extents = Vector2(300, 100)
 spread = 0.0
 gravity = Vector2(0, -500)
 radial_accel_min = -50.0
 radial_accel_max = -40.0
-scale_amount_min = 9.0
-scale_amount_max = 9.0
+scale_amount_min = 13.0
+scale_amount_max = 13.0
 scale_amount_curve = SubResource("Curve_ywqus")
 color_ramp = SubResource("Gradient_xowwl")
 script = ExtResource("1_gn3dv")

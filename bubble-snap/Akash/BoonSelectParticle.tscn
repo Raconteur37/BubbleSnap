@@ -1,3 +1,26 @@
-[gd_scene format=3 uid="uid://bfedvpxlndvhs"]
+[gd_scene load_steps=3 format=3 uid="uid://cn6jgps87sh0x"]
+
+[ext_resource type="Script" path="res://Akash/boon_select_particle.gd" id="1_exm5y"]
+
+[sub_resource type="Gradient" id="Gradient_xhiv3"]
+colors = PackedColorArray(0.0470588, 0.301961, 1, 1, 1, 1, 1, 1)
 
 [node name="BoonSelectParticle" type="CPUParticles2D"]
+position = Vector2(169, 122)
+amount = 20
+lifetime = 4.0
+speed_scale = 3.0
+explosiveness = 1.0
+emission_shape = 1
+emission_sphere_radius = 128.0
+direction = Vector2(0, -1)
+initial_velocity_min = 300.0
+initial_velocity_max = 500.0
+scale_amount_min = 50.0
+scale_amount_max = 90.0
+color_initial_ramp = SubResource("Gradient_xhiv3")
+script = ExtResource("1_exm5y")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
