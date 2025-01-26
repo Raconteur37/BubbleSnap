@@ -13,3 +13,4 @@ func _on_timer_timeout() -> void:
 		if BubbleManager.poppedBubbleArray.size() > 0:
 			BubbleManager.poppedBubbleArray.pick_random().resetState()
 			animationPlayer.play("Shake")
+			GameManager.currentPops -= 1

@@ -34,12 +34,11 @@ func popEvent(type):
 			activeBursts.erase(burst)
 
 	for boon in activeBoons:
+		print(boon)
 		if is_instance_valid(boon):
 			if boon.activateType.has("Pop") and type == "Pop":
 				boon.activate()
-				break
 			if boon.activateType.has("Player Pop") and type == "Player Pop":
 				boon.activate()
-				break
 		else:
 			activeBoons.erase(boon)
