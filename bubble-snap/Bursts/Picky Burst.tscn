@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Bursts/picky_burst.gd" id="1_xwug1"]
 [ext_resource type="Script" path="res://Gwyn/flavorTextBoon.gd" id="2_bk6kk"]
 [ext_resource type="Script" path="res://Gwyn/boonLabel.gd" id="3_b0ffx"]
-[ext_resource type="Texture2D" uid="uid://ckwn8icqd8l5j" path="res://Gwyn/angryBubble.png" id="4_bprc5"]
+[ext_resource type="Texture2D" uid="uid://ckblwaw0ws41l" path="res://Burst Textures/pickyBurst.png" id="4_m7jui"]
 [ext_resource type="Texture2D" uid="uid://dctcfgur7g0o5" path="res://Gwyn/redPane.png" id="5_fen6d"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6tafd"]
@@ -51,7 +51,7 @@ theme_override_constants/margin_right = 12
 
 [node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/MarginContainer2"]
 layout_mode = 2
-texture = ExtResource("4_bprc5")
+texture = ExtResource("4_m7jui")
 expand_mode = 5
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel"]

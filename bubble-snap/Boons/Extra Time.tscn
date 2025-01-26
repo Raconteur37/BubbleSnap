@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Boons/extra_time.gd" id="1_8n7nu"]
 [ext_resource type="Script" path="res://Gwyn/flavorTextBoon.gd" id="2_2ex3a"]
 [ext_resource type="Script" path="res://Gwyn/boonLabel.gd" id="3_cikw3"]
-[ext_resource type="Texture2D" uid="uid://d0tk5d7c4ccm" path="res://Boon Textures/bonusPop.png" id="4_73ab0"]
+[ext_resource type="Texture2D" uid="uid://cfsm164odjrjp" path="res://Boon Textures/timeBoon.png" id="4_12s4j"]
 [ext_resource type="Texture2D" uid="uid://deqkd80kj4mc5" path="res://Gwyn/bluePane.png" id="5_uawcj"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6tafd"]
@@ -35,7 +35,7 @@ theme_override_constants/margin_top = 5
 [node name="BoonTitleLabel" type="Label" parent="Panel/VBoxContainer/MarginContainer"]
 custom_minimum_size = Vector2(94, 23)
 layout_mode = 2
-text = "Bonus Pop"
+text = "Extra Time"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
@@ -51,7 +51,7 @@ theme_override_constants/margin_right = 12
 
 [node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/MarginContainer2"]
 layout_mode = 2
-texture = ExtResource("4_73ab0")
+texture = ExtResource("4_12s4j")
 expand_mode = 5
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel"]
@@ -80,7 +80,7 @@ theme_override_constants/margin_right = 5
 
 [node name="BoonHoverLabel" type="Label" parent="Panel/MarginContainer/MarginContainer"]
 layout_mode = 2
-text = "Every 5th pop, pops a random bubble"
+text = "Gives you 10 extra seconds"
 horizontal_alignment = 1
 vertical_alignment = 1
 

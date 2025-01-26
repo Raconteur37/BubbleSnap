@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckblwaw0ws41l"
-path="res://.godot/imported/pickyBurst.png-ae30b65db8cf907c49a4ff9bfb8f44f5.ctex"
+uid="uid://jgfgqsnajxbh"
+path="res://.godot/imported/timeBurstNotHalf.png-ab3d2aceec078ee754116c6bb7385748.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Gwyn/pickyBurst.png"
-dest_files=["res://.godot/imported/pickyBurst.png-ae30b65db8cf907c49a4ff9bfb8f44f5.ctex"]
+source_file="res://Burst Textures/timeBurstNotHalf.png"
+dest_files=["res://.godot/imported/timeBurstNotHalf.png-ab3d2aceec078ee754116c6bb7385748.ctex"]
 
 [params]
 

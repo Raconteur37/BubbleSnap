@@ -1,6 +1,6 @@
 extends Control
 
-var commonBoons = ["Bonus Pop", "Bonus Pop", "Bonus Pop"]
+var commonBoons = ["Bonus Pop", "Extra Pop", "Extra Time", "Extra Hand"]
 var rareBoons = ["Chain Pop","Chain Pop","Chain Pop"]
 var legendaryBoons = ["Double Bubble","Double Bubble","Double Bubble"]
 
@@ -31,6 +31,10 @@ var itemOneDescription
 var itemTwoDescription
 var itemThreeDescription
 
+var itemOneParticle
+var itemTwoParticle
+var itemThreeParticle
+
 func _ready() -> void:
 	animationPlayer = $AnimationPlayer
 	audioPlayer = $AudioStreamPlayer2D
@@ -51,6 +55,11 @@ func _ready() -> void:
 	itemOneDescription = $VBoxContainer/HBoxContainer/ItemOne/ItemOneDescription
 	itemTwoDescription = $VBoxContainer/HBoxContainer/ItemTwo/ItemTwoDescription
 	itemThreeDescription = $VBoxContainer/HBoxContainer/ItemThree/ItemThreeDescription
+	
+	itemOneParticle = $VBoxContainer/HBoxContainer/BoonParticle
+	itemTwoParticle = $VBoxContainer/HBoxContainer/BoonParticle2
+	itemThreeParticle = $VBoxContainer/HBoxContainer/BoonParticle3
+	
 
 func chooseItems():
 	var randNum = randi_range(0,100)
@@ -61,7 +70,7 @@ func chooseItems():
 		rarity = "Rare"
 	else:
 		rarity = "Legendary"
-	
+	   
 	match rarity:
 		
 		"Common":
@@ -93,18 +102,27 @@ func chooseItems():
 	
 	for z in range(3):
 		if z == 0:
+			itemOneParticle.emitting = true
+			await get_tree().create_timer(0.5).timeout
+			itemOneParticle.emitting = false
 			var boon = getBoon(chosenBoons[z]).instantiate()
 			itemOneLabel.text = boon.boonName
 			itemOneIcon.texture = load(boon.icon)
 			itemOneDescription.text = boon.description
 			itemOneFrame.show()
 		if z == 1:
+			itemTwoParticle.emitting = true
+			await get_tree().create_timer(0.5).timeout
+			itemTwoParticle.emitting = false
 			var boon = getBoon(chosenBoons[z]).instantiate()
 			itemTwoLabel.text = boon.boonName
 			itemTwoIcon.texture = load(boon.icon)
 			itemTwoDescription.text = boon.description
 			itemTwoFrame.show()
 		if z == 2:
+			itemThreeParticle.emitting = true
+			await get_tree().create_timer(0.5).timeout 
+			itemThreeParticle.emitting = false
 			var boon = getBoon(chosenBoons[z]).instantiate()
 			itemThreeLabel.text = boon.boonName
 			itemThreeIcon.texture = load(boon.icon)
@@ -121,6 +139,10 @@ func getBoon(boonName):
 			return load("res://Boons/BonusPopBoon.tscn")
 		"Double Bubble":
 			return load("res://Boons/DoubleBubblePopBoon.tscn")
+		"Extra Time":
+			return load("res://Boons/Extra Time.tscn")
+		"Extra Hand":
+			return load("res://Boons/Extra Hand.tscn")
 
 func decideBurst():
 	if rarity == "Common":
