@@ -1,0 +1,177 @@
+[gd_scene load_steps=9 format=3 uid="uid://by52tj66aoubh"]
+
+[ext_resource type="Texture2D" uid="uid://b6urxmv7aa31o" path="res://Elijah/UI/MainScene/Background.png" id="1_fuw6c"]
+[ext_resource type="Texture2D" uid="uid://cveykpkfvns5b" path="res://Elijah/UI/MainScene/BubbleBase.png" id="3_r2yen"]
+[ext_resource type="Texture2D" uid="uid://b7vta2c4devx0" path="res://Elijah/UI/MainScene/ItemBar.png" id="3_xftlw"]
+[ext_resource type="Texture2D" uid="uid://dmgedf6v7ru72" path="res://Elijah/UI/MainScene/Banner.png" id="4_ymfhu"]
+[ext_resource type="Texture2D" uid="uid://m5wt36m45nku" path="res://Elijah/UI/MainScene/Border.png" id="5_w6s4c"]
+[ext_resource type="PackedScene" uid="uid://bk3mqsou2o0yx" path="res://Akash/TimerParticles.tscn" id="6_oukib"]
+[ext_resource type="Texture2D" uid="uid://b5d86vmrcqvmf" path="res://Elijah/UI/MainScene/Bursts.png" id="7_7vonx"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_451k0"]
+load_path = "res://.godot/imported/Boons.png-643ab0402091bc3da979d1624ce33b45.ctex"
+
+[node name="MainGameScene" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BackGround" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.001
+offset_bottom = -1.08008
+texture = ExtResource("1_fuw6c")
+expand_mode = 5
+
+[node name="Border" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("5_w6s4c")
+expand_mode = 5
+
+[node name="BubbleBase" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.311
+anchor_top = 0.19
+anchor_right = 0.723
+anchor_bottom = 0.887
+offset_left = 0.879944
+offset_top = -0.200012
+offset_right = -0.160156
+offset_bottom = 0.039978
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_r2yen")
+stretch_mode = 4
+
+[node name="MainGrid" type="GridContainer" parent="CanvasLayer/BubbleBase"]
+layout_mode = 0
+offset_left = 47.0001
+offset_top = 38.0
+offset_right = 87.0001
+offset_bottom = 78.0
+
+[node name="Burst" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.038
+anchor_top = 0.051
+anchor_right = 0.243
+anchor_bottom = 0.823
+offset_left = -55.96
+offset_top = -54.08
+offset_right = 80.44
+offset_bottom = 85.16
+grow_vertical = 2
+texture = ExtResource("7_7vonx")
+
+[node name="Label" type="Label" parent="CanvasLayer/Burst"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 33.0
+offset_right = 456.0
+offset_bottom = 191.0
+theme_override_font_sizes/font_size = 126
+text = "BURST"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Boon" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.763
+anchor_top = 0.051
+anchor_right = 0.964
+anchor_bottom = 0.82
+offset_left = -38.96
+offset_top = -40.08
+offset_right = 56.1199
+offset_bottom = 47.4
+grow_horizontal = 0
+grow_vertical = 2
+texture = SubResource("CompressedTexture2D_451k0")
+
+[node name="BoonGrid" type="GridContainer" parent="CanvasLayer/Boon"]
+layout_mode = 0
+offset_left = 47.0001
+offset_top = 194.0
+offset_right = 87.0001
+offset_bottom = 234.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Boon"]
+layout_mode = 0
+offset_left = 23.0001
+offset_top = 18.0
+offset_right = 443.0
+offset_bottom = 176.0
+theme_override_font_sizes/font_size = 126
+text = "BOON"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Banner" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.27
+anchor_top = 0.035
+anchor_right = 0.733
+anchor_bottom = 0.173
+offset_left = -24.4
+offset_top = -23.8
+offset_right = 97.6399
+offset_bottom = 61.16
+grow_horizontal = 2
+scale = Vector2(0.955, 0.955)
+texture = ExtResource("4_ymfhu")
+
+[node name="Round Count" type="Label" parent="CanvasLayer/Banner"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 29.0
+offset_right = 472.0
+offset_bottom = 178.0
+theme_override_font_sizes/font_size = 106
+text = "ROUND 69"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="timerLabel" type="Label" parent="CanvasLayer/Banner"]
+layout_mode = 0
+offset_left = 588.482
+offset_top = 25.1309
+offset_right = 1032.48
+offset_bottom = 173.131
+theme_override_font_sizes/font_size = 126
+text = "99:99"
+
+[node name="mainTimer" type="Timer" parent="CanvasLayer/Banner"]
+
+[node name="TimerParticles" parent="CanvasLayer/Banner" instance=ExtResource("6_oukib")]
+position = Vector2(726.702, -21.9895)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.01
+anchor_top = 0.835
+anchor_right = 0.997
+anchor_bottom = 1.0
+offset_left = -0.200001
+offset_top = 0.199951
+offset_right = -0.240112
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("3_xftlw")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
