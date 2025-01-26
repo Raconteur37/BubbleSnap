@@ -49,6 +49,6 @@ func _process(delta: float) -> void:
 	if mainTimer != null:
 		if mainTimer.time_left <= .01 and inWave:
 			gameLost = true
-			get_tree().change_scene_to_file("res://Elijah/Scenes/GameOverScene.tscn")
+			get_tree().current_scene.find_child("CanvasLayer").add_child(load("res://Elijah/Scenes/GameOverScene.tscn").instantiate())
 	if currentPops >= totalPopsNeeded and inWave and not gameLost:
 		endWave()
