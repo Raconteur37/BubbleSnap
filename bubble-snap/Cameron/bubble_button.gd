@@ -13,11 +13,12 @@ func _ready() -> void:
 	particle = $PopParticle
 	BubbleManager.addToUnPopped(self)
 
-func pop():
+func pop(type):
+	print(type)
 	popped = true
 	particle.emitting = true
 	disabled = true
-	BubbleManager.addPop(self)
+	BubbleManager.addPop(self,type)
 	BubbleManager.currPoppedCol = col
 	BubbleManager.currPoppedRow = row
 	var pitch : float = audioPlayer.pitch_scale + (GameManager.currentPops / GameManager.totalPopsNeeded * 1.5)
@@ -31,4 +32,4 @@ func resetState():
 
 func _on_toggled(toggled_on: bool) -> void:
 	if button_pressed:
-		pop()
+		pop("Player Pop")

@@ -1,6 +1,6 @@
 extends Control
 
-var commonBoons = ["Chain Pop", "Chain Pop", "Chain Pop"]
+var commonBoons = ["Bonus Pop", "Bonus Pop", "Bonus Pop"]
 var rareBoons = ["Chain Pop"]
 var legendaryBoons = []
 
@@ -106,13 +106,15 @@ func chooseItems():
 			itemThreeIcon.texture = load(boon.icon)
 			itemThreeDescription.text = boon.description
 			itemThreeFrame.show()
-		get_tree().create_timer((.5)).timeout
+		await get_tree().create_timer((.5)).timeout
 
 func getBoon(boonName):
 	match boonName:
 		
 		"Chain Pop":
 			return load("res://Boons/ChainPopBoon.tscn")
+		"Bonus Pop":
+			return load("res://Boons/BonusPopBoon.tscn")
 
 
 func _on_timer_timeout() -> void:
