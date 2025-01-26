@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://djoqs1r2eq1xy"]
+[gd_scene load_steps=19 format=3 uid="uid://djoqs1r2eq1xy"]
 
 [ext_resource type="Texture2D" uid="uid://c41oq5kehcju6" path="res://Elijah/UI/Menus/001.png" id="1_wymku"]
 [ext_resource type="Texture2D" uid="uid://ptpcx0xxd205" path="res://Elijah/UI/Menus/001-002.png" id="2_p8miw"]
@@ -49,7 +49,44 @@ _data = {
 "RESET": SubResource("Animation_43l21")
 }
 
+[sub_resource type="Animation" id="Animation_p3rht"]
+resource_name = "FadeIn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_6mcu6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x3qad"]
+_data = {
+"FadeIn": SubResource("Animation_p3rht"),
+"RESET": SubResource("Animation_6mcu6")
+}
+
 [node name="GameOver" type="Control"]
+modulate = Color(1, 1, 1, 0)
 z_index = 2
 layout_mode = 3
 anchors_preset = 0
@@ -57,7 +94,7 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 
 [node name="BackGround" type="TextureRect" parent="."]
-modulate = Color(1, 1, 1, 0.537255)
+modulate = Color(1, 1, 1, 0.768627)
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -185,6 +222,12 @@ texture = ExtResource("12_wkrai")
 libraries = {
 "": SubResource("AnimationLibrary_l5rxe")
 }
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_x3qad")
+}
+autoplay = "FadeIn"
 
 [connection signal="pressed" from="Panel/Base/StartButton" to="FadeOut" method="_on_start_button_pressed"]
 [connection signal="pressed" from="Panel/Base/Quit" to="FadeOut" method="_on_quit_pressed"]
