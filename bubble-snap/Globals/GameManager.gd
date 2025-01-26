@@ -40,6 +40,8 @@ func nextWave():
 	mainTimer.wait_time = totalTime
 	mainTimer.start()
 	wave += 1
+	if wave % 3 == 0:
+		totalPopsNeeded += 10;
 	BubbleManager.resetBubbles()
 	currentPops = 0
 	inWave = true
@@ -95,4 +97,5 @@ func _process(delta: float) -> void:
 				inWave = false
 				get_tree().current_scene.find_child("CanvasLayer").add_child(load("res://Elijah/Scenes/GameOverScene.tscn").instantiate())
 		if currentPops >= totalPopsNeeded and inWave and not gameLost:
+			popLabel.text = "Pops Needed: " + str(currentPops) + "/" + str(totalPopsNeeded)
 			endWave()
