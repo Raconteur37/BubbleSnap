@@ -5,7 +5,7 @@ var animationPlayer
 
 var thresh = 5
 
-var inRowCounter = 1
+var inRowCounter = 0
 
 var previousRow = -1
 
@@ -22,9 +22,10 @@ func activate():
 			animationPlayer.play("Shake")
 			for button in rowButtons:
 				button.resetState()
+				BubbleManager.lastPopped.resetState()
 				GameManager.currentPops -= 1
 			rowButtons.clear()
-			inRowCounter = 1
+			inRowCounter = 0
 	else:
 		previousRow = BubbleManager.currPoppedRow
 		rowButtons.clear()
