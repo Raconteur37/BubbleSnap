@@ -23,9 +23,11 @@ func buildBubbles():
 			bubbleButton.col = row
 			grid.add_child(bubbleButton)
 
+'''
 func _input(event):
 	if event is InputEventKey and event.pressed:
 		match event.keycode:
 			KEY_W:
 				buildBubbles()
 				GameManager.startGame()
+'''
