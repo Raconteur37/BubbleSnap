@@ -2,9 +2,16 @@ extends Node
 
 var activeBoons : Array = []
 
+var activeBursts : Array = []
+
 func addBoon(boon):
 	var boonGrid = get_tree().current_scene.find_child("BoonGrid")
 	boonGrid.add_child(boon)
+	
+func addBurst(burst):
+	activeBursts.push_back(burst)
+	var burstGrid = get_tree().current_scene.find_child("BurstGrid")
+	burstGrid.add_child(burst)
 
 func popEvent(type):
 	for boon in activeBoons:
@@ -15,3 +22,13 @@ func popEvent(type):
 				boon.activate()
 		else:
 			activeBoons.erase(boon)
+	for burst in activeBursts:
+		if is_instance_valid(burst):
+			if burst.activateType.has("Pop") and type == "Pop":
+				burst.activate()
+				break
+			if burst.activateType.has("Player Pop") and type == "Player Pop":
+				burst.activate()
+				break
+		else:
+			activeBursts.erase(burst)
