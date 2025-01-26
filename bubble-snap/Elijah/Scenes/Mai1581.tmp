@@ -184,7 +184,7 @@ offset_top = 47.0
 offset_right = 0.559937
 offset_bottom = 46.52
 pivot_offset = Vector2(923.5, 394.5)
-theme_override_font_sizes/font_size = 551
+theme_override_font_sizes/font_size = 301
 text = "burst"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -195,8 +195,8 @@ tilt_speed = 0.16
 tilt_amplitude = 3.62
 
 [node name="FadeOut" type="TextureRect" parent="CanvasLayer" node_paths=PackedStringArray("transition_anim")]
-offset_left = 2500.0
-offset_right = 4420.0
+offset_left = 2411.0
+offset_right = 4331.0
 offset_bottom = 1080.0
 texture = ExtResource("11_vqstx")
 script = ExtResource("6_lfsox")

@@ -24,7 +24,7 @@ font_size = 51
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Control" type="Control" parent="CanvasLayer"]
+[node name="Background" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -34,7 +34,7 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="BackGround" type="TextureRect" parent="CanvasLayer/Control"]
+[node name="BackGround" type="TextureRect" parent="CanvasLayer/Background"]
 layout_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.001
@@ -42,7 +42,7 @@ offset_bottom = -1.08008
 texture = ExtResource("1_fuw6c")
 expand_mode = 5
 
-[node name="Border" type="TextureRect" parent="CanvasLayer/Control"]
+[node name="Border" type="TextureRect" parent="CanvasLayer/Background"]
 layout_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -165,12 +165,12 @@ vertical_alignment = 1
 
 [node name="timerLabel" type="Label" parent="CanvasLayer/Banner"]
 layout_mode = 0
-offset_left = 588.482
+offset_left = 518.325
 offset_top = 25.1309
-offset_right = 1032.48
+offset_right = 952.325
 offset_bottom = 173.131
 theme_override_font_sizes/font_size = 126
-text = "99:99"
+text = "00:00"
 
 [node name="nextWaveButton" type="TextureButton" parent="CanvasLayer/Banner"]
 layout_mode = 0
@@ -189,7 +189,7 @@ offset_left = 48.0
 offset_top = 47.0
 offset_right = 450.0
 offset_bottom = 153.0
-text = "Next Wave"
+text = "START WAVE"
 label_settings = SubResource("LabelSettings_2hrjb")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
