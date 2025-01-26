@@ -2,7 +2,7 @@ extends PanelContainer
 
 const boonName = "Bonus Pop"
 const description = "Every [color=red]5[/color]th bubble pop, pops another random bubble"
-const icon = "res://Boon Textures/ChainBoon.png"
+const icon = "res://Boon Textures/bonusPop.png"
 
 var pops = 0
 

@@ -5,6 +5,7 @@ var poppedBubbleArray = []
 
 var currPoppedRow : int = -1
 var currPoppedCol : int = -1
+var lastPopped
 
 func resetBubbles():
 	GameManager.currentPops = 0
@@ -16,7 +17,6 @@ func resetBubbles():
 func addPop(button,type):
 	unPoppedBubbleArray.erase(button)
 	poppedBubbleArray.append(button)
-	GameManager.currentPops += 1
 	BoonManager.popEvent(type)
 	
 func subtractPop():

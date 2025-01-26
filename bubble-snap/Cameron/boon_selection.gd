@@ -1,8 +1,12 @@
 extends Control
 
 var commonBoons = ["Bonus Pop", "Bonus Pop", "Bonus Pop"]
-var rareBoons = ["Chain Pop"]
-var legendaryBoons = []
+var rareBoons = ["Chain Pop","Chain Pop","Chain Pop"]
+var legendaryBoons = ["Double Bubble","Double Bubble","Double Bubble"]
+
+var commonBursts = ["Time Drain"]
+var rareBursts = ["Symetry Burst"] 
+var legendaryBursts = ["Double Time"]
 
 var chosenBoons = []
 
@@ -115,6 +119,8 @@ func getBoon(boonName):
 			return load("res://Boons/ChainPopBoon.tscn")
 		"Bonus Pop":
 			return load("res://Boons/BonusPopBoon.tscn")
+		"Double Bubble":
+			return load("res://Boons/DoubleBubblePopBoon.tscn")
 
 
 func _on_timer_timeout() -> void:

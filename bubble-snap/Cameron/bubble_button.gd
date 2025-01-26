@@ -14,22 +14,25 @@ func _ready() -> void:
 	BubbleManager.addToUnPopped(self)
 
 func pop(type):
-	print(type)
+	GameManager.currentPops += 1
 	popped = true
 	particle.emitting = true
 	disabled = true
-	BubbleManager.addPop(self,type)
 	BubbleManager.currPoppedCol = col
 	BubbleManager.currPoppedRow = row
+	BubbleManager.lastPopped = self
+	BubbleManager.addPop(self,type)
 	var pitch : float = audioPlayer.pitch_scale + (GameManager.currentPops / GameManager.totalPopsNeeded * 1.5)
 	audioPlayer.pitch_scale = pitch
 	audioPlayer.play()
 
 func resetState():
+	audioPlayer.pitch_scale = 1
 	button_pressed = false
 	popped = false
 	disabled = false
 
 func _on_toggled(toggled_on: bool) -> void:
 	if button_pressed:
-		pop("Player Pop")
+		if GameManager.inWave:
+			pop("Player Pop")
