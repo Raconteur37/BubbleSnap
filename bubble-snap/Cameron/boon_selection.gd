@@ -6,7 +6,7 @@ var legendaryBoons = ["Double Bubble","Double Bubble","Double Bubble"]
 
 var commonBursts = ["Time Drain"]
 var rareBursts = ["Symetry Burst"] 
-var legendaryBursts = ["Double Time"]
+var legendaryBursts = ["Half Time"]
 
 var chosenBoons = []
 
@@ -122,6 +122,25 @@ func getBoon(boonName):
 		"Double Bubble":
 			return load("res://Boons/DoubleBubblePopBoon.tscn")
 
+func decideBurst():
+	if rarity == "Common":
+		get_tree().current_scene.find_child("BurstGrid").add_child(getBurst(commonBursts.pick_random()).instantiate())
+	if rarity == "Rare":
+		get_tree().current_scene.find_child("BurstGrid").add_child(getBurst(rareBursts.pick_random()).instantiate())
+	if rarity == "Legendary":
+		get_tree().current_scene.find_child("BurstGrid").add_child(getBurst(legendaryBursts.pick_random()).instantiate())
+
+
+func getBurst(burstName):
+	match burstName:
+		
+		"Half Time":
+			return load("res://Bursts/Half Time Burst.tscn")
+		"Symetry Burst":
+			return load("res://Bursts/SymetryBurst.tscn")
+		"Time Drain":
+			return load("res://Bursts/Time Drain Burst.tscn")
+
 
 func _on_timer_timeout() -> void:
 	chooseItems()
@@ -178,4 +197,5 @@ func _on_item_three_pressed() -> void:
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "FadeOut":
+		decideBurst()
 		queue_free()

@@ -45,5 +45,7 @@ func _process(delta: float) -> void:
 		waveLabel.text = "Wave: " + str(wave)
 		timerLabel.text = str("%.2f" % mainTimer.time_left)
 		popLabel.text = "Pops Needed: " + str(currentPops) + "/" + str(totalPopsNeeded)
+	#if mainTimer.timeLeft <= .01 and inWave:
+		
 	if currentPops >= totalPopsNeeded and inWave:
 		endWave()
