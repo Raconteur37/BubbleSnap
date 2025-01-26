@@ -47,6 +47,8 @@ func nextWave():
 	inWave = true
 	
 func endWave():
+	if wave % 11 == 0:
+		get_tree().change_scene_to_file("res://Elijah/Scenes/WinScene.tscn")
 	nextWaveButton.find_child("Label").text = "NEXT WAVE"
 	inWave = false
 	mainTimer.stop()
