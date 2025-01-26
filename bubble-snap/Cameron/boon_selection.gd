@@ -1,7 +1,7 @@
 extends Control
 
 var commonBoons = ["Chain Pop", "Chain Pop", "Chain Pop"]
-var rareBoons = []
+var rareBoons = ["Chain Pop"]
 var legendaryBoons = []
 
 var chosenBoons = []
@@ -88,7 +88,6 @@ func chooseItems():
 				chosenBoons.append(chosenBoon)
 	
 	for z in range(3):
-		print(chosenBoons)
 		if z == 0:
 			var boon = getBoon(chosenBoons[z]).instantiate()
 			itemOneLabel.text = boon.boonName
@@ -107,6 +106,7 @@ func chooseItems():
 			itemThreeIcon.texture = load(boon.icon)
 			itemThreeDescription.text = boon.description
 			itemThreeFrame.show()
+		get_tree().create_timer((.5)).timeout
 
 func getBoon(boonName):
 	match boonName:
@@ -148,17 +148,24 @@ func _on_item_three_mouse_exited() -> void:
 	itemThreeFrame.scale.x = 1
 	itemThreeFrame.scale.y = 1
 
+func disableButtons():
+	itemOneFrame.disabled = true
+	itemTwoFrame.disabled = true
+	itemThreeFrame.disabled = true
 
 func _on_item_one_pressed() -> void:
 	get_tree().current_scene.find_child("BoonGrid").add_child(getBoon(chosenBoons[0]).instantiate())
+	disableButtons()
 	animationPlayer.play("FadeOut")
 
 func _on_item_two_pressed() -> void:
 	get_tree().current_scene.find_child("BoonGrid").add_child(getBoon(chosenBoons[1]).instantiate())
+	disableButtons()
 	animationPlayer.play("FadeOut")
 
 func _on_item_three_pressed() -> void:
 	get_tree().current_scene.find_child("BoonGrid").add_child(getBoon(chosenBoons[2]).instantiate())
+	disableButtons()
 	animationPlayer.play("FadeOut")
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
