@@ -1,8 +1,8 @@
 extends Control
 
-var commonBoons = ["Bonus Pop", "Extra Time", "Extra Hand"]
+var commonBoons = ["Bonus Pop", "Extra Time", "Extra Hand", "Bubble Time"]
 var rareBoons = ["Chain Pop","Chain Pop","Chain Pop"]
-var legendaryBoons = ["Double Bubble","Double Bubble","Double Bubble"]
+var legendaryBoons = ["Double Bubble","Fibonacci","Double Bubble"]
 
 var commonBursts = ["Time Drain","Picky Burst"]
 var rareBursts = ["Symetry Burst"] 
@@ -146,6 +146,10 @@ func getBoon(boonName):
 			return load("res://Boons/Extra Time.tscn")
 		"Extra Hand":
 			return load("res://Boons/Extra Hand.tscn")
+		"Bubble Time":
+			return load("res://Boons/Bubble Time.tscn")
+		"Fibonacci":
+			return load("res://Boons/Fib Boon.tscn")
 
 func decideBurst():
 	if rarity == "Common":

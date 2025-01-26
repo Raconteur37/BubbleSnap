@@ -17,6 +17,8 @@ func activate():
 	currentPop += 1
 	if currentPop >= activateTime:
 		$AnimationPlayer.play("Shake")
+		var time = GameManager.mainTimer.time_left + .5
 		GameManager.mainTimer.stop()
-		GameManager.mainTimer.wait_time = GameManager.mainTimer.wait_time + .5
+		GameManager.mainTimer.wait_time = time
 		GameManager.mainTimer.start()
+		currentPop = 0

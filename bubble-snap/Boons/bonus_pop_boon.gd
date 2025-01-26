@@ -16,6 +16,7 @@ func _ready() -> void:
 
 func activate():
 	pops += 1
+	print("Pops! " + str(pops))
 	if pops >= activatePops:
 		pops = 0
 		var randBubble = BubbleManager.unPoppedBubbleArray.pick_random()
