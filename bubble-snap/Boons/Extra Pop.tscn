@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://ceomvi4r3qnus"]
 
-[ext_resource type="Script" path="res://Boons/bonus_pop_boon.gd" id="1_btrqo"]
+[ext_resource type="Script" path="res://Boons/extra_pop.gd" id="1_afguo"]
 [ext_resource type="Script" path="res://Gwyn/flavorTextBoon.gd" id="2_imdq8"]
 [ext_resource type="Script" path="res://Gwyn/boonLabel.gd" id="3_y816w"]
 [ext_resource type="Texture2D" uid="uid://d0tk5d7c4ccm" path="res://Boon Textures/bonusPop.png" id="4_infxk"]
@@ -15,7 +15,7 @@ offset_top = 231.0
 offset_right = 497.0
 offset_bottom = 327.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_6tafd")
-script = ExtResource("1_btrqo")
+script = ExtResource("1_afguo")
 
 [node name="Panel" type="Panel" parent="."]
 self_modulate = Color(1, 1, 1, 0)
@@ -35,7 +35,7 @@ theme_override_constants/margin_top = 5
 [node name="BoonTitleLabel" type="Label" parent="Panel/VBoxContainer/MarginContainer"]
 custom_minimum_size = Vector2(94, 23)
 layout_mode = 2
-text = "Bonus Pop"
+text = "Extra Hand"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
@@ -80,7 +80,8 @@ theme_override_constants/margin_right = 5
 
 [node name="BoonHoverLabel" type="Label" parent="Panel/MarginContainer/MarginContainer"]
 layout_mode = 2
-text = "Every 5th pop, pops a random bubble"
+text = "Every hand pop has a 5% chance to hand pop an extra bubble
+"
 horizontal_alignment = 1
 vertical_alignment = 1
 
