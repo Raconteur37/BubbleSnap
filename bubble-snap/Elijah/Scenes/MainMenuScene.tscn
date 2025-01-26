@@ -1,17 +1,17 @@
 [gd_scene load_steps=16 format=3 uid="uid://v8nlbaky4ipv"]
 
-[ext_resource type="Texture2D" uid="uid://c41oq5kehcju6" path="res://Elijah/UI/Menus/001.png" id="1_6mnd8"]
-[ext_resource type="Texture2D" uid="uid://ptpcx0xxd205" path="res://Elijah/UI/Menus/001-002.png" id="2_wfi4r"]
-[ext_resource type="Texture2D" uid="uid://dgej0ej0aig5v" path="res://Elijah/UI/001.png" id="3_wdffi"]
-[ext_resource type="Texture2D" uid="uid://cg56r52odpkdk" path="res://Elijah/UI/002.png" id="4_1nqym"]
-[ext_resource type="Texture2D" uid="uid://b55i16up2lebr" path="res://Elijah/UI/000.png" id="5_r81qk"]
-[ext_resource type="Script" path="res://Elijah/start.gd" id="6_sgo8p"]
-[ext_resource type="Texture2D" uid="uid://225ltb13xv5o" path="res://Elijah/UI/004.png" id="7_kyq83"]
-[ext_resource type="Texture2D" uid="uid://dipobtod0xolk" path="res://Elijah/UI/005.png" id="8_u1maq"]
-[ext_resource type="Script" path="res://Elijah/TitleBob.gd" id="9_3bb2u"]
-[ext_resource type="Texture2D" uid="uid://calmivyq2068g" path="res://Elijah/UI/003.png" id="9_s7sa5"]
-[ext_resource type="Texture2D" uid="uid://bdnhgljkxfc7p" path="res://Elijah/UI/Menus/Black.png" id="11_hlrsv"]
-[ext_resource type="Texture2D" uid="uid://bctemkbydwxve" path="res://Elijah/UI/Menus/Black._ball.png" id="12_68irv"]
+[ext_resource type="Texture2D" uid="uid://c41oq5kehcju6" path="res://Elijah/UI/Menus/001.png" id="1_fvpck"]
+[ext_resource type="Texture2D" uid="uid://ptpcx0xxd205" path="res://Elijah/UI/Menus/001-002.png" id="2_8tlj6"]
+[ext_resource type="Texture2D" uid="uid://dgej0ej0aig5v" path="res://Elijah/UI/001.png" id="3_aj54a"]
+[ext_resource type="Texture2D" uid="uid://cg56r52odpkdk" path="res://Elijah/UI/002.png" id="4_r1c5y"]
+[ext_resource type="Texture2D" uid="uid://b55i16up2lebr" path="res://Elijah/UI/000.png" id="5_no6fi"]
+[ext_resource type="Script" path="res://Elijah/Scripts/transition_next_scene.gd" id="6_lfsox"]
+[ext_resource type="Texture2D" uid="uid://225ltb13xv5o" path="res://Elijah/UI/004.png" id="7_h7pav"]
+[ext_resource type="Texture2D" uid="uid://dipobtod0xolk" path="res://Elijah/UI/005.png" id="8_qsy1n"]
+[ext_resource type="Texture2D" uid="uid://calmivyq2068g" path="res://Elijah/UI/003.png" id="9_v3xcb"]
+[ext_resource type="Script" path="res://Elijah/TitleBob.gd" id="10_ox8f7"]
+[ext_resource type="Texture2D" uid="uid://bdnhgljkxfc7p" path="res://Elijah/UI/Menus/Black.png" id="11_vqstx"]
+[ext_resource type="Texture2D" uid="uid://bctemkbydwxve" path="res://Elijah/UI/Menus/Black._ball.png" id="12_4yuaa"]
 
 [sub_resource type="Animation" id="Animation_j0fxt"]
 resource_name = "FadeToBlack"
@@ -58,7 +58,7 @@ anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.001
 offset_bottom = 0.0461426
-texture = ExtResource("1_6mnd8")
+texture = ExtResource("1_fvpck")
 expand_mode = 5
 
 [node name="Panel" type="Control" parent="CanvasLayer"]
@@ -82,7 +82,7 @@ offset_left = -554.0
 offset_top = -272.0
 offset_right = 524.0
 offset_bottom = 16.0
-texture = ExtResource("2_wfi4r")
+texture = ExtResource("2_8tlj6")
 
 [node name="StartButton" type="TextureButton" parent="CanvasLayer/Panel/Base"]
 layout_mode = 1
@@ -95,10 +95,9 @@ offset_left = -0.39
 offset_top = -0.0960007
 offset_right = 0.219971
 offset_bottom = 0.11998
-texture_normal = ExtResource("3_wdffi")
-texture_pressed = ExtResource("4_1nqym")
-texture_hover = ExtResource("5_r81qk")
-script = ExtResource("6_sgo8p")
+texture_normal = ExtResource("3_aj54a")
+texture_pressed = ExtResource("4_r1c5y")
+texture_hover = ExtResource("5_no6fi")
 
 [node name="Label" type="Label" parent="CanvasLayer/Panel/Base/StartButton"]
 layout_mode = 0
@@ -123,9 +122,9 @@ offset_top = 2.16
 offset_right = -0.0500488
 offset_bottom = 0.071991
 rotation = -0.00392648
-texture_normal = ExtResource("7_kyq83")
-texture_pressed = ExtResource("8_u1maq")
-texture_hover = ExtResource("9_s7sa5")
+texture_normal = ExtResource("7_h7pav")
+texture_pressed = ExtResource("8_qsy1n")
+texture_hover = ExtResource("9_v3xcb")
 
 [node name="Label" type="Label" parent="CanvasLayer/Panel/Base/Quit"]
 layout_mode = 0
@@ -152,27 +151,29 @@ theme_override_font_sizes/font_size = 301
 text = "burst"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("9_3bb2u")
+script = ExtResource("10_ox8f7")
 bob_speed = 0.185
 bob_amplitude = 11.015
 tilt_speed = 0.16
 tilt_amplitude = 3.62
 
-[node name="Fade" type="TextureRect" parent="CanvasLayer"]
-offset_left = 2411.0
-offset_right = 4331.0
+[node name="FadeOut" type="TextureRect" parent="CanvasLayer" node_paths=PackedStringArray("transition_anim")]
+offset_left = 2500.0
+offset_right = 4420.0
 offset_bottom = 1080.0
-texture = ExtResource("11_hlrsv")
-script = ExtResource("6_sgo8p")
+texture = ExtResource("11_vqstx")
+script = ExtResource("6_lfsox")
+next_scene_path = "res://Elijah/Scenes/WelcomeScene.tscn"
+transition_anim = NodePath("AnimationPlayer")
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Fade"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/FadeOut"]
 layout_mode = 0
 offset_left = -474.0
 offset_right = 592.0
 offset_bottom = 1074.0
-texture = ExtResource("12_68irv")
+texture = ExtResource("12_4yuaa")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Fade"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/FadeOut"]
 libraries = {
 "": SubResource("AnimationLibrary_l5rxe")
 }
@@ -180,4 +181,5 @@ libraries = {
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 
-[connection signal="pressed" from="CanvasLayer/Panel/Base/StartButton" to="CanvasLayer/Panel/Base/StartButton" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Panel/Base/StartButton" to="CanvasLayer/FadeOut" method="_on_start_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Panel/Base/Quit" to="CanvasLayer/FadeOut" method="_on_quit_pressed"]
