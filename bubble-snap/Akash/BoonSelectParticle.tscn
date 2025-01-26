@@ -1,3 +1,3 @@
-[gd_scene format=3 uid="uid://cn6jgps87sh0x"]
+[gd_scene format=3 uid="uid://bfedvpxlndvhs"]
 
 [node name="BoonSelectParticle" type="CPUParticles2D"]

@@ -17,5 +17,5 @@ func activate():
 	if val <= activateChance:
 		var randBubble = BubbleManager.unPoppedBubbleArray.pick_random()
 		if randBubble != null:
-			randBubble.pop()
-			BubbleManager.addPop(randBubble)
+			randBubble.pop("Pop")
+			BubbleManager.addPop(randBubble,"Pop")

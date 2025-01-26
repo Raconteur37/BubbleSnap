@@ -38,7 +38,7 @@ func nextWave():
 	inWave = true
 	
 func _process(delta: float) -> void:
-	totalPopsNeeded = 10
+	totalPopsNeeded = 30
 	if currentPops <= totalPopsNeeded and inWave:
 		nextWaveButton.hide()
 		waveLabel.text = "Wave: " + str(wave)

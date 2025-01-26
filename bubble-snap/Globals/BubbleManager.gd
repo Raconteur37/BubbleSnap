@@ -13,11 +13,11 @@ func resetBubbles():
 		unPoppedBubbleArray.push_back(bubble)
 	poppedBubbleArray.clear()
 
-func addPop(button):
+func addPop(button,type):
 	unPoppedBubbleArray.erase(button)
 	poppedBubbleArray.append(button)
 	GameManager.currentPops += 1
-	BoonManager.popEvent()
+	BoonManager.popEvent(type)
 	
 func subtractPop():
 	GameManager.currentPops -= 1
