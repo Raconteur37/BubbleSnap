@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://74bwbwt8i8px"
-path="res://.godot/imported/Black_ball.png-bae16db95e7d5df4253905da5dd485de.ctex"
+uid="uid://gi62xevnvyfb"
+path="res://.godot/imported/highlight.png-6bfe178c67c5519e365c78d88e59da53.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Elijah/UI/Menus/Black_ball.png"
-dest_files=["res://.godot/imported/Black_ball.png-bae16db95e7d5df4253905da5dd485de.ctex"]
+source_file="res://Elijah/UI/MainScene/NextRound/highlight.png"
+dest_files=["res://.godot/imported/highlight.png-6bfe178c67c5519e365c78d88e59da53.ctex"]
 
 [params]
 

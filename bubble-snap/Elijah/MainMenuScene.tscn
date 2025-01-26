@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://v8nlbaky4ipv"]
+[gd_scene load_steps=16 format=3 uid="uid://v8nlbaky4ipv"]
 
 [ext_resource type="Texture2D" uid="uid://c41oq5kehcju6" path="res://Elijah/UI/Menus/001.png" id="1_6mnd8"]
 [ext_resource type="Texture2D" uid="uid://ptpcx0xxd205" path="res://Elijah/UI/Menus/001-002.png" id="2_wfi4r"]
@@ -10,6 +10,44 @@
 [ext_resource type="Texture2D" uid="uid://dipobtod0xolk" path="res://Elijah/UI/005.png" id="8_u1maq"]
 [ext_resource type="Script" path="res://Elijah/TitleBob.gd" id="9_3bb2u"]
 [ext_resource type="Texture2D" uid="uid://calmivyq2068g" path="res://Elijah/UI/003.png" id="9_s7sa5"]
+[ext_resource type="Texture2D" uid="uid://bdnhgljkxfc7p" path="res://Elijah/UI/Menus/Black.png" id="11_hlrsv"]
+[ext_resource type="Texture2D" uid="uid://bctemkbydwxve" path="res://Elijah/UI/Menus/Black._ball.png" id="12_68irv"]
+
+[sub_resource type="Animation" id="Animation_j0fxt"]
+resource_name = "FadeToBlack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2411, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_43l21"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2411, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l5rxe"]
+_data = {
+"FadeToBlack": SubResource("Animation_j0fxt"),
+"RESET": SubResource("Animation_43l21")
+}
 
 [node name="MainGameScene" type="Node2D"]
 
@@ -121,6 +159,25 @@ bob_speed = 0.185
 bob_amplitude = 11.015
 tilt_speed = 0.16
 tilt_amplitude = 3.62
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_left = 2411.0
+offset_right = 4331.0
+offset_bottom = 1080.0
+texture = ExtResource("11_hlrsv")
+script = ExtResource("6_sgo8p")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/TextureRect"]
+layout_mode = 0
+offset_left = -474.0
+offset_right = 592.0
+offset_bottom = 1074.0
+texture = ExtResource("12_68irv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/TextureRect"]
+libraries = {
+"": SubResource("AnimationLibrary_l5rxe")
+}
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0

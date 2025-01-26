@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdnhgljkxfc7p"
-path="res://.godot/imported/Black.png-807ee00dcf23aac5e10e92449cdafb17.ctex"
+uid="uid://bctemkbydwxve"
+path="res://.godot/imported/Black._ball.png-7fd5bb7c03e98a9828995ea70bb9b91a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Elijah/UI/Menus/Black.png"
-dest_files=["res://.godot/imported/Black.png-807ee00dcf23aac5e10e92449cdafb17.ctex"]
+source_file="res://Elijah/UI/Menus/Black._ball.png"
+dest_files=["res://.godot/imported/Black._ball.png-7fd5bb7c03e98a9828995ea70bb9b91a.ctex"]
 
 [params]
 
