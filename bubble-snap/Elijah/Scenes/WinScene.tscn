@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://d2d2wumpepcxr"]
+[gd_scene load_steps=12 format=3 uid="uid://d2d2wumpepcxr"]
 
 [ext_resource type="Texture2D" uid="uid://c41oq5kehcju6" path="res://Elijah/UI/Menus/001.png" id="1_eaj8t"]
 [ext_resource type="Texture2D" uid="uid://225ltb13xv5o" path="res://Elijah/UI/004.png" id="6_d233l"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://bdnhgljkxfc7p" path="res://Elijah/UI/Menus/Black.png" id="10_j86gw"]
 [ext_resource type="Script" path="res://Elijah/Scripts/transition_next_scene.gd" id="11_qfdko"]
 [ext_resource type="Texture2D" uid="uid://bctemkbydwxve" path="res://Elijah/UI/Menus/Black._ball.png" id="12_jmes6"]
-[ext_resource type="Script" path="res://Elijah/Scenes/simple_fade_in.gd" id="13_of6ol"]
 
 [sub_resource type="Animation" id="Animation_j0fxt"]
 resource_name = "FadeToBlack"
@@ -44,42 +43,6 @@ tracks/0/keys = {
 _data = {
 "FadeToBlack": SubResource("Animation_j0fxt"),
 "RESET": SubResource("Animation_43l21")
-}
-
-[sub_resource type="Animation" id="Animation_iiuer"]
-resource_name = "FadeIn"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_0e46n"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_2u1gb"]
-_data = {
-"FadeIn": SubResource("Animation_iiuer"),
-"RESET": SubResource("Animation_0e46n")
 }
 
 [node name="WinScene" type="Node2D"]
@@ -160,19 +123,6 @@ texture = ExtResource("12_jmes6")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/FadeOut"]
 libraries = {
 "": SubResource("AnimationLibrary_l5rxe")
-}
-
-[node name="FadeIn" type="TextureRect" parent="CanvasLayer" node_paths=PackedStringArray("fade")]
-visible = false
-offset_right = 1920.0
-offset_bottom = 1080.0
-texture = ExtResource("10_j86gw")
-script = ExtResource("13_of6ol")
-fade = NodePath("AnimationPlayer")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/FadeIn"]
-libraries = {
-"": SubResource("AnimationLibrary_2u1gb")
 }
 
 [node name="Camera2D" type="Camera2D" parent="."]

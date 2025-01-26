@@ -40,6 +40,9 @@ func nextWave():
 	mainTimer.wait_time = totalTime
 	mainTimer.start()
 	wave += 1
+	if wave == 11:
+		started = false
+		get_tree().change_scene_to_file("res://Elijah/Scenes/WinScene.tscn")
 	if wave % 3 == 0:
 		totalPopsNeeded += 10;
 	BubbleManager.resetBubbles()
@@ -47,8 +50,6 @@ func nextWave():
 	inWave = true
 	
 func endWave():
-	if wave % 11 == 0:
-		get_tree().change_scene_to_file("res://Elijah/Scenes/WinScene.tscn")
 	nextWaveButton.find_child("Label").text = "NEXT WAVE"
 	inWave = false
 	mainTimer.stop()
