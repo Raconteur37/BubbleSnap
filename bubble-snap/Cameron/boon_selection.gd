@@ -247,6 +247,6 @@ func _on_item_three_pressed() -> void:
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "FadeOut":
-		GameManager.inShop = true
+		GameManager.inShop = false
 		decideBurst()
 		queue_free()
