@@ -45,15 +45,16 @@ func resetGame():
 	print("got here")
 	atStart = true
 	inWave = false
-	currentPops = 0
-	mainTimer.stop()
-	mainTimer.wait_time = 100
 	wave = 0
+	#mainTimer.stop()
+	mainTimer.wait_time = totalTime
+	currentPops = 0
 	waveLabel.text = "Wave: " + str(wave)
 	timerLabel.text = str("%.2f" % mainTimer.time_left)
 	popLabel.text = "Pops Needed: " + str(currentPops) + "/" + str(totalPopsNeeded)
 	BubbleManager.resetBubbles()
 	BoonManager.resetBoons()
+	
 
 func _process(delta: float) -> void:
 	if currentPops <= totalPopsNeeded and inWave and not gameLost:
