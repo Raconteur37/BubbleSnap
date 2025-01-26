@@ -26,10 +26,8 @@ func popEvent(type):
 		if is_instance_valid(burst):
 			if burst.activateType.has("Pop") and type == "Pop":
 				burst.activate()
-				break
 			if burst.activateType.has("Player Pop") and type == "Player Pop":
 				burst.activate()
-				break
 		else:
 			activeBursts.erase(burst)
 

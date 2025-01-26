@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://dkypl6e5svchg"]
 
-[ext_resource type="Script" path="res://Boons/bubble_time.gd" id="1_wdjwl"]
+[ext_resource type="Script" path="res://Boons/extra_hand.gd" id="1_o30ry"]
 [ext_resource type="Script" path="res://Gwyn/flavorTextBoon.gd" id="2_x4b8b"]
 [ext_resource type="Script" path="res://Gwyn/boonLabel.gd" id="3_08wct"]
 [ext_resource type="Texture2D" uid="uid://ddtpoi33ao4sf" path="res://Boon Textures/Bubble_Hand.png" id="4_itfdy"]
@@ -100,7 +100,7 @@ offset_top = 231.0
 offset_right = 497.0
 offset_bottom = 327.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_6tafd")
-script = ExtResource("1_wdjwl")
+script = ExtResource("1_o30ry")
 
 [node name="Panel" type="Panel" parent="."]
 self_modulate = Color(1, 1, 1, 0)
