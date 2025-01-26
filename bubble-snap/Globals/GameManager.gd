@@ -14,7 +14,7 @@ var waveLabel
 var nextWaveButton
 var popLabel
 
-var totalTime = 20
+var totalTime = 5
 
 func startGame():
 	mainTimer = get_tree().current_scene.find_child("mainTimer")
@@ -47,8 +47,10 @@ func _process(delta: float) -> void:
 		timerLabel.text = str("%.2f" % mainTimer.time_left)
 		popLabel.text = "Pops Needed: " + str(currentPops) + "/" + str(totalPopsNeeded)
 	if mainTimer != null:
-		if mainTimer.time_left <= .01 and inWave:
+		if mainTimer.time_left <= .02 and inWave and not gameLost:
 			gameLost = true
+			mainTimer.stop()
+			inWave = false
 			get_tree().current_scene.find_child("CanvasLayer").add_child(load("res://Elijah/Scenes/GameOverScene.tscn").instantiate())
 	if currentPops >= totalPopsNeeded and inWave and not gameLost:
 		endWave()
