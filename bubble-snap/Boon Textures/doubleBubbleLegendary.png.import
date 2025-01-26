@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://yqfg1xrbl8d6"
-path="res://.godot/imported/doubleBubble.png-657d35d5844a8afddff63cf0f63729b9.ctex"
+uid="uid://cqrerrant3jkj"
+path="res://.godot/imported/doubleBubbleLegendary.png-467546d668800e1c279d6e1d8a6d4e09.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Gwyn/doubleBubble.png"
-dest_files=["res://.godot/imported/doubleBubble.png-657d35d5844a8afddff63cf0f63729b9.ctex"]
+source_file="res://Boon Textures/doubleBubbleLegendary.png"
+dest_files=["res://.godot/imported/doubleBubbleLegendary.png-467546d668800e1c279d6e1d8a6d4e09.ctex"]
 
 [params]
 
