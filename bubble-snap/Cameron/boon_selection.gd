@@ -92,6 +92,7 @@ func chooseItems():
 				chosenBoons.append(chosenBoon)
 				
 		"Rare":
+			audioPlayer.pitch_scale = 1.5
 			itemOneFrame.texture_normal = load("res://Elijah/UI/Upgrade/Upgrade_Uncommon.png")
 			itemTwoFrame.texture_normal = load("res://Elijah/UI/Upgrade/Upgrade_Uncommon.png")
 			itemThreeFrame.texture_normal = load("res://Elijah/UI/Upgrade/Upgrade_Uncommon.png")
@@ -106,6 +107,7 @@ func chooseItems():
 				chosenBoons.append(chosenBoon)
 				
 		"Legendary":
+			audioPlayer.pitch_scale = 2
 			itemOneFrame.texture_normal = load("res://Elijah/UI/Upgrade/Upgrade_Rare.png")
 			itemTwoFrame.texture_normal = load("res://Elijah/UI/Upgrade/Upgrade_Rare.png")
 			itemThreeFrame.texture_normal = load("res://Elijah/UI/Upgrade/Upgrade_Rare.png")
@@ -120,6 +122,7 @@ func chooseItems():
 	
 	for z in range(3):
 		print(chosenBoons)
+		audioPlayer.play()
 		if z == 0:
 			itemOneParticle.emitting = true
 			await get_tree().create_timer(0.5).timeout

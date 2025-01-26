@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://dt0a8guvloc5"]
+[gd_scene load_steps=14 format=3 uid="uid://dt0a8guvloc5"]
 
 [ext_resource type="Texture2D" uid="uid://bh51715bi0pvy" path="res://Elijah/UI/Upgrade/Upgrade_Background.png" id="1_3kq4k"]
 [ext_resource type="Script" path="res://Cameron/boon_selection.gd" id="1_rwjtg"]
 [ext_resource type="Texture2D" uid="uid://m5wt36m45nku" path="res://Elijah/UI/MainScene/Border.png" id="2_q884h"]
 [ext_resource type="Texture2D" uid="uid://dpa0o8rkg484u" path="res://Elijah/UI/Upgrade/Upgrade_Common.png" id="3_4ms2t"]
 [ext_resource type="PackedScene" uid="uid://b1sifxqq7klxa" path="res://Akash/BoonParticle.tscn" id="5_nxhx7"]
+[ext_resource type="AudioStream" uid="uid://b2uiivrhe7gqt" path="res://Cameron/Item appear.mp3" id="6_bbqp7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_rxedp"]
 font_size = 60
@@ -227,6 +228,7 @@ position = Vector2(1405, 477)
 emitting = false
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_bbqp7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
