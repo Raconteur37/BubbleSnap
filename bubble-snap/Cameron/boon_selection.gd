@@ -5,7 +5,7 @@ var rareBoons = ["Chain Pop","Popping Time","Chain Pop"]
 var legendaryBoons = ["Double Bubble","Fibonacci","Double Bubble"]
 
 var commonBursts = ["Time Drain","Picky Burst"]
-var rareBursts = ["Symetry Burst", "Bomb Burst"] 
+var rareBursts = ["Symetry Burst"] 
 var legendaryBursts = ["Half Time"]
 
 var chosenBoons = []
