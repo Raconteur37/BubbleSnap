@@ -138,18 +138,17 @@ text = "QUIT"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Title" type="Label" parent="CanvasLayer"]
+[node name="Label" type="Label" parent="CanvasLayer"]
 anchors_preset = -1
 anchor_left = 0.02
 anchor_right = 0.982
 anchor_bottom = 0.731
 offset_left = 0.599998
-offset_top = 47.0
 offset_right = 0.559937
-offset_bottom = 46.52
+offset_bottom = -0.47998
 pivot_offset = Vector2(923.5, 394.5)
-theme_override_font_sizes/font_size = 301
-text = "burst"
+theme_override_font_sizes/font_size = 511
+text = "PUCHI"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("9_3bb2u")
