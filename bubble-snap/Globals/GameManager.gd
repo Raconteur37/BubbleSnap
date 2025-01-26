@@ -8,6 +8,7 @@ var currentPops : float = 0
 var atStart = true
 var inWave = false
 var gameLost = false
+var inShop = false
 
 var mainTimer
 var timerLabel

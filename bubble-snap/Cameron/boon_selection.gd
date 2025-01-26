@@ -5,7 +5,7 @@ var rareBoons = ["Chain Pop","Bomb Burst","Chain Pop"]
 var legendaryBoons = ["Double Bubble","Fibonacci","Double Bubble"]
 
 var commonBursts = ["Time Drain","Picky Burst"]
-var rareBursts = ["Symetry Burst"] 
+var rareBursts = ["Symetry Burst", "Bomb Burst"] 
 var legendaryBursts = ["Half Time"]
 
 var chosenBoons = []
@@ -36,6 +36,8 @@ var itemThreeDescription
 @export var itemThreeParticle: CPUParticles2D
 
 func _ready() -> void:
+	GameManager.inShop = true
+	
 	animationPlayer = $AnimationPlayer
 	audioPlayer = $AudioStreamPlayer2D
 	animationPlayer.play("Appear")
@@ -245,5 +247,6 @@ func _on_item_three_pressed() -> void:
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "FadeOut":
+		GameManager.inShop = true
 		decideBurst()
 		queue_free()
