@@ -49,11 +49,15 @@ _data = {
 "RESET": SubResource("Animation_43l21")
 }
 
-[node name="MainMenuScene" type="Node2D"]
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="BackGround" type="TextureRect" parent="CanvasLayer"]
+[node name="BackGround" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.435294)
+layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.001
@@ -61,21 +65,21 @@ offset_bottom = 0.0461426
 texture = ExtResource("1_wymku")
 expand_mode = 5
 
-[node name="Panel" type="Control" parent="CanvasLayer"]
-layout_mode = 3
+[node name="Panel" type="Control" parent="."]
+layout_mode = 1
 anchor_left = 0.227
 anchor_top = 0.766
 anchor_right = 0.749
 anchor_bottom = 0.967
 offset_left = 535.16
 offset_top = 250.72
-offset_right = -467.08
-offset_bottom = 33.6399
+offset_right = 514.28
+offset_bottom = 242.68
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 4
 
-[node name="Base" type="TextureRect" parent="CanvasLayer/Panel"]
+[node name="Base" type="TextureRect" parent="Panel"]
 layout_mode = 1
 anchors_preset = -1
 offset_left = -554.0
@@ -84,7 +88,7 @@ offset_right = 524.0
 offset_bottom = 16.0
 texture = ExtResource("2_p8miw")
 
-[node name="StartButton" type="TextureButton" parent="CanvasLayer/Panel/Base"]
+[node name="StartButton" type="TextureButton" parent="Panel/Base"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.005
@@ -99,7 +103,7 @@ texture_normal = ExtResource("3_3ewji")
 texture_pressed = ExtResource("4_2oe6x")
 texture_hover = ExtResource("5_mx4rk")
 
-[node name="Label" type="Label" parent="CanvasLayer/Panel/Base/StartButton"]
+[node name="Label" type="Label" parent="Panel/Base/StartButton"]
 layout_mode = 0
 offset_left = 24.0
 offset_top = 21.0
@@ -110,7 +114,7 @@ text = "try again"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Quit" type="TextureButton" parent="CanvasLayer/Panel/Base"]
+[node name="Quit" type="TextureButton" parent="Panel/Base"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.472
@@ -126,7 +130,7 @@ texture_normal = ExtResource("6_dj5vl")
 texture_pressed = ExtResource("7_63ce5")
 texture_hover = ExtResource("8_cuk67")
 
-[node name="Label" type="Label" parent="CanvasLayer/Panel/Base/Quit"]
+[node name="Label" type="Label" parent="Panel/Base/Quit"]
 layout_mode = 0
 offset_left = 18.0
 offset_top = 19.0
@@ -137,7 +141,8 @@ text = "quit"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Title" type="Label" parent="CanvasLayer"]
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.02
 anchor_right = 0.982
@@ -157,29 +162,26 @@ bob_amplitude = 11.015
 tilt_speed = 0.16
 tilt_amplitude = 3.62
 
-[node name="FadeOut" type="TextureRect" parent="CanvasLayer" node_paths=PackedStringArray("transition_anim")]
-offset_left = 2411.0
-offset_right = 4331.0
+[node name="FadeOut" type="TextureRect" parent="." node_paths=PackedStringArray("transition_anim")]
+offset_left = 2500.0
+offset_right = 4420.0
 offset_bottom = 1080.0
 texture = ExtResource("10_pshg5")
 script = ExtResource("11_c51ct")
 next_scene_path = "res://Elijah/Test.tscn"
 transition_anim = NodePath("AnimationPlayer")
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/FadeOut"]
+[node name="TextureRect" type="TextureRect" parent="FadeOut"]
 layout_mode = 0
 offset_left = -474.0
 offset_right = 592.0
 offset_bottom = 1074.0
 texture = ExtResource("12_wkrai")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/FadeOut"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FadeOut"]
 libraries = {
 "": SubResource("AnimationLibrary_l5rxe")
 }
 
-[node name="Camera2D" type="Camera2D" parent="."]
-anchor_mode = 0
-
-[connection signal="pressed" from="CanvasLayer/Panel/Base/StartButton" to="CanvasLayer/FadeOut" method="_on_start_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/Panel/Base/Quit" to="CanvasLayer/FadeOut" method="_on_quit_pressed"]
+[connection signal="pressed" from="Panel/Base/StartButton" to="FadeOut" method="_on_start_button_pressed"]
+[connection signal="pressed" from="Panel/Base/Quit" to="FadeOut" method="_on_quit_pressed"]

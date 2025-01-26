@@ -1,16 +1,15 @@
-[gd_scene load_steps=15 format=3 uid="uid://714ivxwnp752"]
+[gd_scene load_steps=14 format=3 uid="uid://714ivxwnp752"]
 
-[ext_resource type="Texture2D" uid="uid://b6urxmv7aa31o" path="res://Elijah/UI/MainScene/Background.png" id="1_fuw6c"]
 [ext_resource type="Texture2D" uid="uid://cveykpkfvns5b" path="res://Elijah/UI/MainScene/BubbleBase.png" id="3_r2yen"]
 [ext_resource type="Texture2D" uid="uid://b7vta2c4devx0" path="res://Elijah/UI/MainScene/ItemBar.png" id="3_xftlw"]
 [ext_resource type="Texture2D" uid="uid://dmgedf6v7ru72" path="res://Elijah/UI/MainScene/Banner.png" id="4_ymfhu"]
-[ext_resource type="Texture2D" uid="uid://m5wt36m45nku" path="res://Elijah/UI/MainScene/Border.png" id="5_w6s4c"]
 [ext_resource type="PackedScene" uid="uid://bk3mqsou2o0yx" path="res://Akash/TimerParticles.tscn" id="6_oukib"]
 [ext_resource type="Texture2D" uid="uid://b5d86vmrcqvmf" path="res://Elijah/UI/MainScene/Bursts.png" id="7_7vonx"]
 [ext_resource type="Texture2D" uid="uid://bdnhgljkxfc7p" path="res://Elijah/UI/Menus/Black.png" id="9_d1vpa"]
 [ext_resource type="Texture2D" uid="uid://ih8ewauc5waf" path="res://Elijah/UI/MainScene/Boon.png" id="10_bie7r"]
 [ext_resource type="Script" path="res://Elijah/TestEnvironment/fadeIn.gd" id="10_i32bf"]
 [ext_resource type="Texture2D" uid="uid://bctemkbydwxve" path="res://Elijah/UI/Menus/Black._ball.png" id="11_ixtqa"]
+[ext_resource type="PackedScene" uid="uid://djoqs1r2eq1xy" path="res://Elijah/Scenes/GameOverScene.tscn" id="12_57l4s"]
 
 [sub_resource type="Animation" id="Animation_ytfr8"]
 resource_name = "FadeIn"
@@ -51,31 +50,6 @@ _data = {
 [node name="MainGameScene" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Control" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="BackGround" type="TextureRect" parent="CanvasLayer/Control"]
-layout_mode = 2
-anchor_right = 1.0
-anchor_bottom = 1.001
-offset_bottom = -1.08008
-texture = ExtResource("1_fuw6c")
-expand_mode = 5
-
-[node name="Border" type="TextureRect" parent="CanvasLayer/Control"]
-layout_mode = 2
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource("5_w6s4c")
-expand_mode = 5
 
 [node name="BubbleBase" type="TextureRect" parent="CanvasLayer"]
 anchors_preset = -1
@@ -229,6 +203,10 @@ libraries = {
 "": SubResource("AnimationLibrary_68lox")
 }
 autoplay = "FadeIn"
+
+[node name="GameOver" parent="CanvasLayer" instance=ExtResource("12_57l4s")]
+offset_top = 1144.0
+offset_bottom = 2224.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
