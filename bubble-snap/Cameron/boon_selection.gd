@@ -1,6 +1,6 @@
 extends Control
 
-var commonBoons = ["Bonus Pop", "Extra Time", "Extra Hand", "Bubble Time"]
+var commonBoons = ["Bonus Pop", "Extra Time", "Bubble Time"]
 var rareBoons = ["Chain Pop","Popping Time","Chain Pop"]
 var legendaryBoons = ["Double Bubble","Fibonacci","Double Bubble"]
 
