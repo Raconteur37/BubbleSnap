@@ -31,9 +31,9 @@ var itemOneDescription
 var itemTwoDescription
 var itemThreeDescription
 
-var itemOneParticle
-var itemTwoParticle
-var itemThreeParticle
+@export var itemOneParticle: CPUParticles2D
+@export var itemTwoParticle: CPUParticles2D
+@export var itemThreeParticle: CPUParticles2D
 
 func _ready() -> void:
 	animationPlayer = $AnimationPlayer
@@ -56,11 +56,10 @@ func _ready() -> void:
 	itemTwoDescription = $VBoxContainer/HBoxContainer/ItemTwo/ItemTwoDescription
 	itemThreeDescription = $VBoxContainer/HBoxContainer/ItemThree/ItemThreeDescription
 	
-	itemOneParticle = $VBoxContainer/HBoxContainer/BoonParticle
-	itemTwoParticle = $VBoxContainer/HBoxContainer/BoonParticle2
-	itemThreeParticle = $VBoxContainer/HBoxContainer/BoonParticle3
+	#itemOneParticle = $VBoxContainer/HBoxContainer/Control/BoonParticle
+	#itemTwoParticle = $VBoxContainer/HBoxContainer/Control/BoonParticle2
+	#itemThreeParticle = $VBoxContainer/HBoxContainer/Control/BoonParticle3
 	
-
 func chooseItems():
 	chosenBoons.clear()
 	var randNum = randi_range(0,100)
@@ -78,6 +77,13 @@ func chooseItems():
 			itemOneFrame.texture_normal = load("res://Elijah/UI/Upgrade/Upgrade_Common.png")
 			itemTwoFrame.texture_normal = load("res://Elijah/UI/Upgrade/Upgrade_Common.png")
 			itemThreeFrame.texture_normal = load("res://Elijah/UI/Upgrade/Upgrade_Common.png")
+			#itemOneParticle.color
+			var color = Color(147.00 / 255, 184.00 / 255, 182.00 / 255)
+			print(color)
+			itemOneParticle.color = color
+			itemTwoParticle.color = color
+			itemThreeParticle.color = color
+			#itemOneParticle.color_initial_ramp = 
 			for x in range(3):
 				var chosenBoon = commonBoons.pick_random()
 				commonBoons.erase(chosenBoon)
@@ -87,6 +93,11 @@ func chooseItems():
 			itemOneFrame.texture_normal = load("res://Elijah/UI/Upgrade/Upgrade_Uncommon.png")
 			itemTwoFrame.texture_normal = load("res://Elijah/UI/Upgrade/Upgrade_Uncommon.png")
 			itemThreeFrame.texture_normal = load("res://Elijah/UI/Upgrade/Upgrade_Uncommon.png")
+			var color = Color(169.00 / 255, 85.00 / 255, 164.00 / 255)
+			print(color)
+			itemOneParticle.color = color
+			itemTwoParticle.color = color
+			itemThreeParticle.color = color
 			for x in range(3):
 				var chosenBoon = rareBoons.pick_random()
 				rareBoons.erase(chosenBoon)
@@ -96,6 +107,10 @@ func chooseItems():
 			itemOneFrame.texture_normal = load("res://Elijah/UI/Upgrade/Upgrade_Rare.png")
 			itemTwoFrame.texture_normal = load("res://Elijah/UI/Upgrade/Upgrade_Rare.png")
 			itemThreeFrame.texture_normal = load("res://Elijah/UI/Upgrade/Upgrade_Rare.png")
+			var color = Color(233.00 / 255, 231.00 / 255, 114.00 / 255)
+			itemOneParticle.color = color
+			itemTwoParticle.color = color
+			itemThreeParticle.color = color
 			for x in range(3):
 				var chosenBoon = legendaryBoons.pick_random()
 				legendaryBoons.erase(chosenBoon)
