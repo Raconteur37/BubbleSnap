@@ -20,5 +20,6 @@ func activate():
 		pops = 0
 		var randBubble = BubbleManager.unPoppedBubbleArray.pick_random()
 		if randBubble != null:
+			$AnimationPlayer.play("Shake")
 			randBubble.pop("Pop")
 			BubbleManager.addPop(randBubble,"Pop")

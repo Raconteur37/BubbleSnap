@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://k18xti0evjx7"]
+[gd_scene load_steps=10 format=3 uid="uid://k18xti0evjx7"]
 
 [ext_resource type="Script" path="res://Boons/double_bubble_pop_boon.gd" id="1_udiwt"]
 [ext_resource type="Script" path="res://Gwyn/flavorTextBoon.gd" id="2_48qee"]
@@ -7,6 +7,91 @@
 [ext_resource type="Texture2D" uid="uid://deqkd80kj4mc5" path="res://Gwyn/bluePane.png" id="5_ikqw8"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6tafd"]
+
+[sub_resource type="Animation" id="Animation_oq4iu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/VBoxContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/VBoxContainer:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel/VBoxContainer:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_0xnvp"]
+resource_name = "Shake"
+length = 0.3667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/VBoxContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.366667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-16, -19), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/VBoxContainer:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.366667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.4, 1.4), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel/VBoxContainer:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.366667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.174533, 0.174533, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3dvs5"]
+_data = {
+"RESET": SubResource("Animation_oq4iu"),
+"Shake": SubResource("Animation_0xnvp")
+}
 
 [node name="PanelContainer" type="PanelContainer"]
 custom_minimum_size = Vector2(94, 96)
@@ -25,7 +110,7 @@ script = ExtResource("2_48qee")
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 1
 offset_right = 94.0
-offset_bottom = 96.0
+offset_bottom = 102.0
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer"]
 custom_minimum_size = Vector2(94, 23)
@@ -83,6 +168,11 @@ layout_mode = 2
 text = "Every time you pop a bubble, pop another random bubble"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_3dvs5")
+}
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -15,7 +15,7 @@ var waveLabel
 var nextWaveButton
 var popLabel
 
-var totalTime = 5
+var totalTime = 60
 
 func startGame():
 	mainTimer = get_tree().current_scene.find_child("mainTimer")

@@ -1,10 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://b16quuskxh3e2"]
+[gd_scene load_steps=10 format=3 uid="uid://bhegh2eio72su"]
 
-[ext_resource type="Script" path="res://Boons/extra_time.gd" id="1_8n7nu"]
-[ext_resource type="Script" path="res://Gwyn/flavorTextBoon.gd" id="2_2ex3a"]
-[ext_resource type="Script" path="res://Gwyn/boonLabel.gd" id="3_cikw3"]
-[ext_resource type="Texture2D" uid="uid://cfsm164odjrjp" path="res://Boon Textures/timeBoon.png" id="4_12s4j"]
-[ext_resource type="Texture2D" uid="uid://deqkd80kj4mc5" path="res://Gwyn/bluePane.png" id="5_uawcj"]
+[ext_resource type="Script" path="res://Boons/fib_boon.gd" id="1_rvcpu"]
+[ext_resource type="Script" path="res://Gwyn/flavorTextBoon.gd" id="2_fij6b"]
+[ext_resource type="Script" path="res://Gwyn/boonLabel.gd" id="3_enpkv"]
+[ext_resource type="Texture2D" uid="uid://cqrerrant3jkj" path="res://Boon Textures/doubleBubbleLegendary.png" id="4_d807f"]
+[ext_resource type="Texture2D" uid="uid://deqkd80kj4mc5" path="res://Gwyn/bluePane.png" id="5_eoi5i"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6tafd"]
 
@@ -100,12 +100,12 @@ offset_top = 231.0
 offset_right = 497.0
 offset_bottom = 327.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_6tafd")
-script = ExtResource("1_8n7nu")
+script = ExtResource("1_rvcpu")
 
 [node name="Panel" type="Panel" parent="."]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-script = ExtResource("2_2ex3a")
+script = ExtResource("2_fij6b")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 1
@@ -120,13 +120,13 @@ theme_override_constants/margin_top = 5
 [node name="BoonTitleLabel" type="Label" parent="Panel/VBoxContainer/MarginContainer"]
 custom_minimum_size = Vector2(94, 23)
 layout_mode = 2
-text = "Extra Time"
+text = "Fibonacci"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 clip_text = true
 text_overrun_behavior = 1
-script = ExtResource("3_cikw3")
+script = ExtResource("3_enpkv")
 
 [node name="MarginContainer2" type="MarginContainer" parent="Panel/VBoxContainer"]
 clip_contents = true
@@ -136,7 +136,7 @@ theme_override_constants/margin_right = 12
 
 [node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/MarginContainer2"]
 layout_mode = 2
-texture = ExtResource("4_12s4j")
+texture = ExtResource("4_d807f")
 expand_mode = 5
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel"]
@@ -155,7 +155,7 @@ grow_horizontal = 0
 
 [node name="TextureRect" type="TextureRect" parent="Panel/MarginContainer"]
 layout_mode = 2
-texture = ExtResource("5_uawcj")
+texture = ExtResource("5_eoi5i")
 expand_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel/MarginContainer"]
@@ -165,7 +165,7 @@ theme_override_constants/margin_right = 5
 
 [node name="BoonHoverLabel" type="Label" parent="Panel/MarginContainer/MarginContainer"]
 layout_mode = 2
-text = "Gives you 10 extra seconds"
+text = "When reaching a fibonacci number, pop the number of bubbles that came before it"
 horizontal_alignment = 1
 vertical_alignment = 1
 

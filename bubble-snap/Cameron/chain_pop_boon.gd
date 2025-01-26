@@ -6,7 +6,7 @@ const icon = "res://Boon Textures/ChainBoon.png"
 
 var activateChance = 10
 
-var activateType = "Pop"
+var activateType = ["Pop"]
 var rarity = "Rare"
 
 func _ready() -> void:
@@ -17,5 +17,6 @@ func activate():
 	if val <= activateChance:
 		var randBubble = BubbleManager.unPoppedBubbleArray.pick_random()
 		if randBubble != null:
+			$AnimationPlayer.play("Shake")
 			randBubble.pop("Pop")
 			BubbleManager.addPop(randBubble,"Pop")

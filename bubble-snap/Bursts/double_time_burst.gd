@@ -21,6 +21,7 @@ func _process(delta: float) -> void:
 			GameManager.mainTimer.stop()
 			GameManager.mainTimer.wait_time = (GameManager.mainTimer.wait_time / 2) / 2
 			GameManager.mainTimer.start()
+			animationPlayer.play("Shake")
 			
 	if GameManager.wave != currentWave:
 		active = false

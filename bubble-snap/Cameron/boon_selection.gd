@@ -1,6 +1,6 @@
 extends Control
 
-var commonBoons = ["Bonus Pop", "Extra Pop", "Extra Time", "Extra Hand"]
+var commonBoons = ["Bonus Pop", "Extra Time", "Extra Hand"]
 var rareBoons = ["Chain Pop","Chain Pop","Chain Pop"]
 var legendaryBoons = ["Double Bubble","Double Bubble","Double Bubble"]
 
@@ -53,6 +53,7 @@ func _ready() -> void:
 	itemThreeDescription = $VBoxContainer/HBoxContainer/ItemThree/ItemThreeDescription
 
 func chooseItems():
+	chosenBoons.clear()
 	var randNum = randi_range(0,100)
 	print(randNum)
 	if randNum <= 75:
@@ -70,7 +71,7 @@ func chooseItems():
 			itemThreeFrame.texture_normal = load("res://Elijah/UI/Upgrade/Upgrade_Common.png")
 			for x in range(3):
 				var chosenBoon = commonBoons.pick_random()
-				commonBoons.erase(chosenBoons)
+				commonBoons.erase(chosenBoon)
 				chosenBoons.append(chosenBoon)
 				
 		"Rare":
@@ -79,7 +80,7 @@ func chooseItems():
 			itemThreeFrame.texture_normal = load("res://Elijah/UI/Upgrade/Upgrade_Uncommon.png")
 			for x in range(3):
 				var chosenBoon = rareBoons.pick_random()
-				rareBoons.erase(chosenBoons)
+				rareBoons.erase(chosenBoon)
 				chosenBoons.append(chosenBoon)
 				
 		"Legendary":
@@ -88,10 +89,11 @@ func chooseItems():
 			itemThreeFrame.texture_normal = load("res://Elijah/UI/Upgrade/Upgrade_Rare.png")
 			for x in range(3):
 				var chosenBoon = legendaryBoons.pick_random()
-				legendaryBoons.erase(chosenBoons)
+				legendaryBoons.erase(chosenBoon)
 				chosenBoons.append(chosenBoon)
 	
 	for z in range(3):
+		print(chosenBoons)
 		if z == 0:
 			var boon = getBoon(chosenBoons[z]).instantiate()
 			itemOneLabel.text = boon.boonName
@@ -111,6 +113,7 @@ func chooseItems():
 			itemThreeDescription.text = boon.description
 			itemThreeFrame.show()
 		await get_tree().create_timer((.5)).timeout
+		
 
 func getBoon(boonName):
 	match boonName:
