@@ -14,14 +14,6 @@ func addBurst(burst):
 	burstGrid.add_child(burst)
 
 func popEvent(type):
-	for boon in activeBoons:
-		if is_instance_valid(boon):
-			if boon.activateType == "Pop" and type == "Pop":
-				boon.activate()
-			if boon.activateType == "Player Pop" and type == "Player Pop":
-				boon.activate()
-		else:
-			activeBoons.erase(boon)
 	for burst in activeBursts:
 		if is_instance_valid(burst):
 			if burst.activateType.has("Pop") and type == "Pop":
@@ -32,3 +24,12 @@ func popEvent(type):
 				break
 		else:
 			activeBursts.erase(burst)
+
+	for boon in activeBoons:
+		if is_instance_valid(boon):
+			if boon.activateType == "Pop" and type == "Pop":
+				boon.activate()
+			if boon.activateType == "Player Pop" and type == "Player Pop":
+				boon.activate()
+		else:
+			activeBoons.erase(boon)

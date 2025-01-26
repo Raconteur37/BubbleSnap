@@ -6,6 +6,7 @@ var totalPopsNeeded : float = 20
 var currentPops : float = 0
 
 var inWave = false
+var gameLost = false
 
 var mainTimer
 var timerLabel
@@ -40,12 +41,14 @@ func nextWave():
 	inWave = true
 	
 func _process(delta: float) -> void:
-	if currentPops <= totalPopsNeeded and inWave:
+	if currentPops <= totalPopsNeeded and inWave and not gameLost:
 		nextWaveButton.hide()
 		waveLabel.text = "Wave: " + str(wave)
 		timerLabel.text = str("%.2f" % mainTimer.time_left)
 		popLabel.text = "Pops Needed: " + str(currentPops) + "/" + str(totalPopsNeeded)
-	if mainTimer.timeLeft <= .01 and inWave:
-		get_tree().change_scene_to_file("res://Elijah/Scenes/GameOverScene.tscn")
-	if currentPops >= totalPopsNeeded and inWave:
+	if mainTimer != null:
+		if mainTimer.time_left <= .01 and inWave:
+			gameLost = true
+			get_tree().change_scene_to_file("res://Elijah/Scenes/GameOverScene.tscn")
+	if currentPops >= totalPopsNeeded and inWave and not gameLost:
 		endWave()

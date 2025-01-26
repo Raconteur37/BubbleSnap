@@ -4,7 +4,7 @@ var commonBoons = ["Bonus Pop", "Bonus Pop", "Bonus Pop"]
 var rareBoons = ["Chain Pop","Chain Pop","Chain Pop"]
 var legendaryBoons = ["Double Bubble","Double Bubble","Double Bubble"]
 
-var commonBursts = ["Time Drain"]
+var commonBursts = ["Time Drain","Picky Burst"]
 var rareBursts = ["Symetry Burst"] 
 var legendaryBursts = ["Half Time"]
 
@@ -136,6 +136,8 @@ func getBurst(burstName):
 		
 		"Half Time":
 			return load("res://Bursts/Half Time Burst.tscn")
+		"Picky Burst":
+			return load("res://Bursts/Picky Burst.tscn")
 		"Symetry Burst":
 			return load("res://Bursts/SymetryBurst.tscn")
 		"Time Drain":
