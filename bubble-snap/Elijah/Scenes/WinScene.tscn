@@ -86,7 +86,7 @@ _data = {
 "RESET": SubResource("Animation_0e46n")
 }
 
-[node name="MainMenuScene" type="Node2D"]
+[node name="WinScene" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -112,16 +112,16 @@ grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 4
 
-[node name="Base" type="TextureRect" parent="CanvasLayer/Panel"]
+[node name="Base2" type="TextureRect" parent="CanvasLayer/Panel"]
 layout_mode = 1
 anchors_preset = -1
-offset_left = -554.0
-offset_top = -272.0
-offset_right = 524.0
-offset_bottom = 16.0
+offset_left = -532.0
+offset_top = -290.0
+offset_right = 546.0
+offset_bottom = -1.99988
 texture = ExtResource("2_uj1tc")
 
-[node name="StartButton" type="TextureButton" parent="CanvasLayer/Panel/Base"]
+[node name="TryAgain" type="TextureButton" parent="CanvasLayer/Panel/Base2"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.005
@@ -136,18 +136,18 @@ texture_normal = ExtResource("3_w20sv")
 texture_pressed = ExtResource("4_gxo4k")
 texture_hover = ExtResource("5_wyu1p")
 
-[node name="Label" type="Label" parent="CanvasLayer/Panel/Base/StartButton"]
+[node name="Label" type="Label" parent="CanvasLayer/Panel/Base2/TryAgain"]
 layout_mode = 0
 offset_left = 24.0
 offset_top = 21.0
 offset_right = 504.0
 offset_bottom = 205.0
-theme_override_font_sizes/font_size = 156
-text = "START"
+theme_override_font_sizes/font_size = 116
+text = "try again"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Quit" type="TextureButton" parent="CanvasLayer/Panel/Base"]
+[node name="Quit" type="TextureButton" parent="CanvasLayer/Panel/Base2"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.472
@@ -163,31 +163,53 @@ texture_normal = ExtResource("6_d233l")
 texture_pressed = ExtResource("7_56dga")
 texture_hover = ExtResource("8_yay0p")
 
-[node name="Label" type="Label" parent="CanvasLayer/Panel/Base/Quit"]
+[node name="Label" type="Label" parent="CanvasLayer/Panel/Base2/Quit"]
 layout_mode = 0
 offset_left = 18.0
 offset_top = 19.0
 offset_right = 502.0
 offset_bottom = 200.0
 theme_override_font_sizes/font_size = 156
-text = "QUIT"
+text = "quit"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Title" type="Label" parent="CanvasLayer"]
+[node name="Title2" type="Label" parent="CanvasLayer"]
 anchors_preset = -1
 anchor_left = 0.02
 anchor_right = 0.982
 anchor_bottom = 0.731
-offset_left = 0.599998
-offset_top = 47.0
-offset_right = 0.559937
-offset_bottom = 46.52
+offset_left = -1.4
+offset_top = 49.0
+offset_right = -1.43994
+offset_bottom = -584.48
 pivot_offset = Vector2(923.5, 394.5)
-theme_override_font_sizes/font_size = 551
-text = "burst"
+theme_override_font_sizes/font_size = 106
+text = "Thank you for playing burst!"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("9_cerew")
+bob_speed = 0.185
+bob_amplitude = 11.015
+tilt_speed = 0.16
+tilt_amplitude = 3.62
+
+[node name="words" type="Label" parent="CanvasLayer/Title2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.02
+anchor_right = 0.982
+anchor_bottom = 0.731
+offset_left = 14.06
+offset_top = 204.0
+offset_right = 14.02
+offset_bottom = 582.964
+pivot_offset = Vector2(923.5, 394.5)
+theme_override_font_sizes/font_size = 106
+text = "This is only a short demo! Please look forward to the full experience! We'll have exciting boss bursts, new boons, and lots of chaos enducing bursts!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
 script = ExtResource("9_cerew")
 bob_speed = 0.185
 bob_amplitude = 11.015
@@ -200,7 +222,7 @@ offset_right = 4331.0
 offset_bottom = 1080.0
 texture = ExtResource("10_j86gw")
 script = ExtResource("11_qfdko")
-next_scene_path = "res://Elijah/Scenes/WelcomeScene.tscn"
+next_scene_path = "res://Elijah/Test.tscn"
 transition_anim = NodePath("AnimationPlayer")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/FadeOut"]
@@ -229,6 +251,3 @@ libraries = {
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
-
-[connection signal="pressed" from="CanvasLayer/Panel/Base/StartButton" to="CanvasLayer/FadeOut" method="_on_start_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/Panel/Base/Quit" to="CanvasLayer/FadeOut" method="_on_quit_pressed"]

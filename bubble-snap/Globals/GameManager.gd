@@ -70,7 +70,7 @@ func resetGame():
 	get_tree().change_scene_to_file("res://Elijah/Test.tscn")
 	BubbleManager.resetBubbles()
 	BoonManager.resetBoons()
-	wave = 0
+	wave = 1
 	atStart = true
 	inWave = false
 	gameLost = false

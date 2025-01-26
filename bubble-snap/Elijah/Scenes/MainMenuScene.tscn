@@ -181,35 +181,13 @@ anchor_right = 0.982
 anchor_bottom = 0.731
 offset_left = 0.599998
 offset_top = 47.0
-offset_right = 0.560059
-offset_bottom = -586.48
+offset_right = 0.559937
+offset_bottom = 46.52
 pivot_offset = Vector2(923.5, 394.5)
-theme_override_font_sizes/font_size = 106
-text = "Thank you for playing burst!"
+theme_override_font_sizes/font_size = 551
+text = "burst"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("10_ox8f7")
-bob_speed = 0.185
-bob_amplitude = 11.015
-tilt_speed = 0.16
-tilt_amplitude = 3.62
-
-[node name="words" type="Label" parent="CanvasLayer/Title"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.02
-anchor_right = 0.982
-anchor_bottom = 0.731
-offset_left = 14.06
-offset_top = 204.0
-offset_right = 14.02
-offset_bottom = 582.964
-pivot_offset = Vector2(923.5, 394.5)
-theme_override_font_sizes/font_size = 106
-text = "This is only a short demo! Please look forward to the full experience! We'll have exciting boss bursts, new boons, and lots of chaos enducing bursts!"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 1
 script = ExtResource("10_ox8f7")
 bob_speed = 0.185
 bob_amplitude = 11.015
@@ -238,7 +216,6 @@ libraries = {
 }
 
 [node name="FadeIn" type="TextureRect" parent="CanvasLayer" node_paths=PackedStringArray("fade")]
-visible = false
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("11_vqstx")
