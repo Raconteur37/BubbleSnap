@@ -8,7 +8,7 @@ var pops = 0
 
 var activatePops = 5
 
-var activateType = "Player Pop"
+var activateType = ["Player Pop"]
 var rarity = "Common"
 
 func _ready() -> void:

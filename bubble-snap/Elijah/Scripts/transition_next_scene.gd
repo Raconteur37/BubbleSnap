@@ -7,11 +7,14 @@ extends Node
 	
 func _on_start_button_pressed() -> void:
 	print(transition_anim)
+	GameManager.resetGame()
 	transition_anim.play("FadeToBlack")
 	
 	await transition_anim.animation_finished
 	
-	get_tree().change_scene_to_file(next_scene_path)
+	#get_tree().change_scene_to_file(next_scene_path)
+	
+	queue_free()
 
 
 func _on_quit_pressed() -> void:

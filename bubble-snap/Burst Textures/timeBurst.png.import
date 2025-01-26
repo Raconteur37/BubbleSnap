@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfsm164odjrjp"
-path="res://.godot/imported/timeBoon.png-a10c24b07166ff97c8ff421746dc33d8.ctex"
+uid="uid://b4gfjkkb4p04x"
+path="res://.godot/imported/timeBurst.png-5c8ea9d46138355a0af2451e1c6b38d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Gwyn/timeBoon.png"
-dest_files=["res://.godot/imported/timeBoon.png-a10c24b07166ff97c8ff421746dc33d8.ctex"]
+source_file="res://Burst Textures/timeBurst.png"
+dest_files=["res://.godot/imported/timeBurst.png-5c8ea9d46138355a0af2451e1c6b38d4.ctex"]
 
 [params]
 

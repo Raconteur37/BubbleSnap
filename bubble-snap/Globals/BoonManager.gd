@@ -4,6 +4,14 @@ var activeBoons : Array = []
 
 var activeBursts : Array = []
 
+func resetBoons():
+	for x in activeBoons:
+		x.queue_free()
+	for z in activeBursts:
+		z.queue_free()
+	activeBoons.clear()
+	activeBursts.clear()
+
 func addBoon(boon):
 	var boonGrid = get_tree().current_scene.find_child("BoonGrid")
 	boonGrid.add_child(boon)
@@ -27,9 +35,11 @@ func popEvent(type):
 
 	for boon in activeBoons:
 		if is_instance_valid(boon):
-			if boon.activateType == "Pop" and type == "Pop":
+			if boon.activateType.has("Pop") and type == "Pop":
 				boon.activate()
-			if boon.activateType == "Player Pop" and type == "Player Pop":
+				break
+			if boon.activateType.has("Player Pop") and type == "Player Pop":
 				boon.activate()
+				break
 		else:
 			activeBoons.erase(boon)

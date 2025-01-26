@@ -1,0 +1,92 @@
+[gd_scene load_steps=7 format=3 uid="uid://b16quuskxh3e2"]
+
+[ext_resource type="Script" path="res://Boons/extra_time.gd" id="1_8n7nu"]
+[ext_resource type="Script" path="res://Gwyn/flavorTextBoon.gd" id="2_2ex3a"]
+[ext_resource type="Script" path="res://Gwyn/boonLabel.gd" id="3_cikw3"]
+[ext_resource type="Texture2D" uid="uid://d0tk5d7c4ccm" path="res://Boon Textures/bonusPop.png" id="4_73ab0"]
+[ext_resource type="Texture2D" uid="uid://deqkd80kj4mc5" path="res://Gwyn/bluePane.png" id="5_uawcj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6tafd"]
+
+[node name="PanelContainer" type="PanelContainer"]
+custom_minimum_size = Vector2(94, 96)
+offset_left = 403.0
+offset_top = 231.0
+offset_right = 497.0
+offset_bottom = 327.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_6tafd")
+script = ExtResource("1_8n7nu")
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+script = ExtResource("2_2ex3a")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+offset_right = 94.0
+offset_bottom = 96.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(94, 23)
+layout_mode = 2
+theme_override_constants/margin_top = 5
+
+[node name="BoonTitleLabel" type="Label" parent="Panel/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(94, 23)
+layout_mode = 2
+text = "Bonus Pop"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 1
+script = ExtResource("3_cikw3")
+
+[node name="MarginContainer2" type="MarginContainer" parent="Panel/VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_right = 12
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+texture = ExtResource("4_73ab0")
+expand_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+z_index = 10
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.106
+anchor_top = -0.26
+anchor_right = 0.138
+anchor_bottom = 0.177
+offset_left = -0.0359955
+offset_top = -0.0399971
+offset_right = 0.0279989
+offset_bottom = 0.00799942
+grow_horizontal = 0
+
+[node name="TextureRect" type="TextureRect" parent="Panel/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("5_uawcj")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+
+[node name="BoonHoverLabel" type="Label" parent="Panel/MarginContainer/MarginContainer"]
+layout_mode = 2
+text = "Every 5th pop, pops a random bubble"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Panel" to="Panel" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panel" to="Panel" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Panel/VBoxContainer" to="Panel/VBoxContainer" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/VBoxContainer" to="Panel/VBoxContainer" method="_on_mouse_exited"]
