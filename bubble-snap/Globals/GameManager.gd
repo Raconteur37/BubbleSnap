@@ -13,7 +13,7 @@ var waveLabel
 var nextWaveButton
 var popLabel
 
-var totalTime = 60
+var totalTime = 20
 
 func startGame():
 	mainTimer = get_tree().current_scene.find_child("mainTimer")
@@ -28,7 +28,6 @@ func startGame():
 func endWave():
 	inWave = false
 	mainTimer.stop()
-	mainTimer.time_scale = 1.0
 	get_tree().current_scene.find_child("CanvasLayer").add_child(load("res://Cameron/BoonSelection.tscn").instantiate())
 	nextWaveButton.show()
 
