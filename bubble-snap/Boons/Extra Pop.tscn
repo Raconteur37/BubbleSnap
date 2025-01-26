@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ceomvi4r3qnus"]
+[gd_scene load_steps=7 format=3 uid="uid://cerqs4evnfhd4"]
 
 [ext_resource type="Script" path="res://Boons/extra_pop.gd" id="1_afguo"]
 [ext_resource type="Script" path="res://Gwyn/flavorTextBoon.gd" id="2_imdq8"]
