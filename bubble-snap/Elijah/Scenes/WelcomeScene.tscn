@@ -277,6 +277,7 @@ offset_right = 4420.0
 offset_bottom = 1080.0
 texture = ExtResource("8_5x8ay")
 script = ExtResource("6_1bi2y")
+next_scene_path = "res://Elijah/Test.tscn"
 transition_anim = NodePath("AnimationPlayer")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/FadeOut"]

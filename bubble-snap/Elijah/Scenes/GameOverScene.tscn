@@ -158,11 +158,12 @@ tilt_speed = 0.16
 tilt_amplitude = 3.62
 
 [node name="FadeOut" type="TextureRect" parent="CanvasLayer" node_paths=PackedStringArray("transition_anim")]
-offset_left = 2411.0
-offset_right = 4331.0
+offset_left = 2500.0
+offset_right = 4420.0
 offset_bottom = 1080.0
 texture = ExtResource("10_pshg5")
 script = ExtResource("11_c51ct")
+next_scene_path = "res://Elijah/Test.tscn"
 transition_anim = NodePath("AnimationPlayer")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/FadeOut"]
