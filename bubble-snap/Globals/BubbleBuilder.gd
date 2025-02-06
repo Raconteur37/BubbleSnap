@@ -1,8 +1,10 @@
 extends Node
 
-var bubbles = 81
+@export var bubbleButton: Node
 
+var bubbles = 81
 var mainGrid
+
 
 func buildBubbles():
 	var row = -1
@@ -17,7 +19,7 @@ func buildBubbles():
 		mainGrid.add_child(grid)
 		for z in range(bubbleNum):
 			row += 1
-			var bubbleButton = load("res://Cameron/BubbleButton.tscn")
+			var bubbleButton = load("res://Prefabs/BubbleButton.tscn")
 			bubbleButton = bubbleButton.instantiate()
 			bubbleButton.row = col
 			bubbleButton.col = row

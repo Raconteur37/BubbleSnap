@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c8knw1dhp4qyd"
+path="res://.godot/imported/Voicy_Select sound.mp3-c95a84efa29aeb6f48e93fa5d6db0519.mp3str"
+
+[deps]
+
+source_file="res://DevFolders/Cameron/Voicy_Select sound.mp3"
+dest_files=["res://.godot/imported/Voicy_Select sound.mp3-c95a84efa29aeb6f48e93fa5d6db0519.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

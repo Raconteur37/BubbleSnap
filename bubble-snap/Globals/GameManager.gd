@@ -53,7 +53,7 @@ func endWave():
 	nextWaveButton.find_child("Label").text = "NEXT WAVE"
 	inWave = false
 	mainTimer.stop()
-	get_tree().current_scene.find_child("CanvasLayer").add_child(load("res://Cameron/BoonSelection.tscn").instantiate())
+	get_tree().current_scene.find_child("CanvasLayer").add_child(load("res://Prefabs/BoonSelection.tscn").instantiate())
 	nextWaveButton.show()
 	
 func resetGame():

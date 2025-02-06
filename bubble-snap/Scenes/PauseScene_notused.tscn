@@ -1,0 +1,254 @@
+[gd_scene load_steps=21 format=3 uid="uid://bo7l3m03fkttc"]
+
+[ext_resource type="Script" path="res://Scripts/try_again.gd" id="1_1fvqu"]
+[ext_resource type="Texture2D" uid="uid://c41oq5kehcju6" path="res://Sprites/UI/Menus/001.png" id="2_2gv8j"]
+[ext_resource type="Texture2D" uid="uid://ptpcx0xxd205" path="res://Sprites/UI/Menus/001-002.png" id="3_chryk"]
+[ext_resource type="Texture2D" uid="uid://dgej0ej0aig5v" path="res://Sprites/UI/001.png" id="4_512x6"]
+[ext_resource type="Texture2D" uid="uid://cg56r52odpkdk" path="res://Sprites/UI/002.png" id="5_xyk5q"]
+[ext_resource type="Texture2D" uid="uid://b55i16up2lebr" path="res://Sprites/UI/000.png" id="6_mme01"]
+[ext_resource type="Texture2D" uid="uid://225ltb13xv5o" path="res://Sprites/UI/004.png" id="7_j8t02"]
+[ext_resource type="Texture2D" uid="uid://dipobtod0xolk" path="res://Sprites/UI/005.png" id="8_8kla0"]
+[ext_resource type="Texture2D" uid="uid://calmivyq2068g" path="res://Sprites/UI/003.png" id="9_qes5y"]
+[ext_resource type="Script" path="res://Scripts/TitleBob.gd" id="10_s5gw2"]
+[ext_resource type="Texture2D" uid="uid://bdnhgljkxfc7p" path="res://Sprites/UI/Menus/Black.png" id="11_83f2t"]
+[ext_resource type="Script" path="res://Scripts/transition_next_scene.gd" id="12_mymvs"]
+[ext_resource type="Texture2D" uid="uid://bctemkbydwxve" path="res://Sprites/UI/Menus/Black._ball.png" id="13_dlrxy"]
+
+[sub_resource type="Animation" id="Animation_j0fxt"]
+resource_name = "FadeToBlack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2500, 0), Vector2(-2, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_43l21"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2411, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l5rxe"]
+_data = {
+"FadeToBlack": SubResource("Animation_j0fxt"),
+"RESET": SubResource("Animation_43l21")
+}
+
+[sub_resource type="Animation" id="Animation_p3rht"]
+resource_name = "FadeIn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_j6e6v"]
+resource_name = "FadeOut"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6mcu6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x3qad"]
+_data = {
+"FadeIn": SubResource("Animation_p3rht"),
+"FadeOut": SubResource("Animation_j6e6v"),
+"RESET": SubResource("Animation_6mcu6")
+}
+
+[node name="GameOver" type="Control" node_paths=PackedStringArray("try_again_anim")]
+modulate = Color(1, 1, 1, 0)
+z_index = 2
+layout_mode = 3
+anchors_preset = 0
+offset_left = -7.0
+offset_top = 3.0
+offset_right = 1913.0
+offset_bottom = 1083.0
+script = ExtResource("1_1fvqu")
+try_again_anim = NodePath("TryAgainAnimation")
+
+[node name="BackGround" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.768627)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.001
+offset_bottom = 0.0461426
+texture = ExtResource("2_2gv8j")
+expand_mode = 5
+
+[node name="Panel" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.227
+anchor_top = 0.766
+anchor_right = 0.749
+anchor_bottom = 0.967
+offset_left = 535.16
+offset_top = 250.72
+offset_right = 514.28
+offset_bottom = 242.68
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 4
+
+[node name="Base" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = -554.0
+offset_top = -272.0
+offset_right = 524.0
+offset_bottom = 16.0
+texture = ExtResource("3_chryk")
+
+[node name="TryAgain" type="TextureButton" parent="Panel/Base"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.005
+anchor_top = 0.042
+anchor_right = 0.51
+anchor_bottom = 0.885
+offset_left = -0.39
+offset_top = -0.0960007
+offset_right = 0.219971
+offset_bottom = 0.11998
+texture_normal = ExtResource("4_512x6")
+texture_pressed = ExtResource("5_xyk5q")
+texture_hover = ExtResource("6_mme01")
+
+[node name="Label" type="Label" parent="Panel/Base/TryAgain"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 21.0
+offset_right = 504.0
+offset_bottom = 205.0
+theme_override_font_sizes/font_size = 116
+text = "try again"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quit" type="TextureButton" parent="Panel/Base"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.472
+anchor_top = 0.055
+anchor_right = 0.975
+anchor_bottom = 0.906
+offset_left = -0.81604
+offset_top = 2.16
+offset_right = -0.0500488
+offset_bottom = 0.071991
+rotation = -0.00392648
+texture_normal = ExtResource("7_j8t02")
+texture_pressed = ExtResource("8_8kla0")
+texture_hover = ExtResource("9_qes5y")
+
+[node name="Label" type="Label" parent="Panel/Base/Quit"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 19.0
+offset_right = 502.0
+offset_bottom = 200.0
+theme_override_font_sizes/font_size = 156
+text = "quit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.02
+anchor_right = 0.982
+anchor_bottom = 0.731
+offset_left = 0.599998
+offset_top = 47.0
+offset_right = 0.559937
+offset_bottom = 46.52
+pivot_offset = Vector2(923.5, 394.5)
+theme_override_font_sizes/font_size = 381
+text = "game over"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("10_s5gw2")
+bob_speed = 0.185
+bob_amplitude = 11.015
+tilt_speed = 0.16
+tilt_amplitude = 3.62
+
+[node name="FadeOut" type="TextureRect" parent="." node_paths=PackedStringArray("transition_anim")]
+z_index = 4
+layout_mode = 0
+offset_left = 2500.0
+offset_right = 4420.0
+offset_bottom = 1080.0
+texture = ExtResource("11_83f2t")
+script = ExtResource("12_mymvs")
+next_scene_path = "res://Elijah/Test.tscn"
+transition_anim = NodePath("AnimationPlayer")
+
+[node name="TextureRect" type="TextureRect" parent="FadeOut"]
+layout_mode = 0
+offset_left = -474.0
+offset_right = 592.0
+offset_bottom = 1074.0
+texture = ExtResource("13_dlrxy")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FadeOut"]
+libraries = {
+"": SubResource("AnimationLibrary_l5rxe")
+}
+
+[node name="TryAgainAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_x3qad")
+}
+autoplay = "FadeIn"
+
+[connection signal="pressed" from="Panel/Base/TryAgain" to="." method="_on_try_again_pressed"]
+[connection signal="pressed" from="Panel/Base/Quit" to="FadeOut" method="_on_quit_pressed"]

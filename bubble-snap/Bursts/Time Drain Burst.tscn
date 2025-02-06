@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://cp5oqq3d0dc8b"]
 
 [ext_resource type="Script" path="res://Bursts/time_drain_burst.gd" id="1_3rdl6"]
-[ext_resource type="Script" path="res://Gwyn/flavorTextBoon.gd" id="2_06cv4"]
-[ext_resource type="Script" path="res://Gwyn/boonLabel.gd" id="3_wlkrf"]
-[ext_resource type="Texture2D" uid="uid://jgfgqsnajxbh" path="res://Burst Textures/timeBurstNotHalf.png" id="4_38b1l"]
-[ext_resource type="Texture2D" uid="uid://dctcfgur7g0o5" path="res://Gwyn/redPane.png" id="5_8vnwy"]
+[ext_resource type="Script" path="res://Scripts/flavorTextBoon.gd" id="2_06cv4"]
+[ext_resource type="Script" path="res://Scripts/boonLabel.gd" id="3_wlkrf"]
+[ext_resource type="Texture2D" uid="uid://jgfgqsnajxbh" path="res://Sprites/Burst Textures/timeBurstNotHalf.png" id="4_38b1l"]
+[ext_resource type="Texture2D" uid="uid://dctcfgur7g0o5" path="res://Sprites/redPane.png" id="5_8vnwy"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6tafd"]
 

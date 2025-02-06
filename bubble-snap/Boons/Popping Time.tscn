@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://bhp30n7uu71h5"]
 
 [ext_resource type="Script" path="res://Boons/popping_time.gd" id="1_i6agl"]
-[ext_resource type="Script" path="res://Gwyn/flavorTextBoon.gd" id="2_ny85r"]
-[ext_resource type="Script" path="res://Gwyn/boonLabel.gd" id="3_jvird"]
-[ext_resource type="Texture2D" uid="uid://d0tk5d7c4ccm" path="res://Boon Textures/bonusPop.png" id="4_ewkor"]
-[ext_resource type="Texture2D" uid="uid://deqkd80kj4mc5" path="res://Gwyn/bluePane.png" id="5_8n27i"]
+[ext_resource type="Script" path="res://Scripts/flavorTextBoon.gd" id="2_ny85r"]
+[ext_resource type="Script" path="res://Scripts/boonLabel.gd" id="3_jvird"]
+[ext_resource type="Texture2D" uid="uid://d0tk5d7c4ccm" path="res://Sprites/Boon Textures/bonusPop.png" id="4_ewkor"]
+[ext_resource type="Texture2D" uid="uid://deqkd80kj4mc5" path="res://Sprites/bluePane.png" id="5_8n27i"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6tafd"]
 

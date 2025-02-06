@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://cy5ooh6h6ryxf"]
 
-[ext_resource type="Script" path="res://Gwyn/test_boon.gd" id="1_ug638"]
-[ext_resource type="Script" path="res://Gwyn/boonLabel.gd" id="2_2i31v"]
-[ext_resource type="Texture2D" uid="uid://dbahib6skaogd" path="res://Gwyn/boonBackground.PNG" id="2_6hhlc"]
+[ext_resource type="Script" path="res://Scripts/test_boon.gd" id="1_ug638"]
+[ext_resource type="Script" path="res://Scripts/boonLabel.gd" id="2_2i31v"]
+[ext_resource type="Texture2D" uid="uid://dbahib6skaogd" path="res://Sprites/boonBackground.PNG" id="2_6hhlc"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6tafd"]
 

@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://bxdoir4bawst5"]
 
-[ext_resource type="Script" path="res://Gwyn/flavorTextBoon.gd" id="1_k8la3"]
-[ext_resource type="Script" path="res://Cameron/chain_pop_boon.gd" id="1_l2fst"]
-[ext_resource type="Script" path="res://Gwyn/boonLabel.gd" id="2_2wc6t"]
-[ext_resource type="Texture2D" uid="uid://deqkd80kj4mc5" path="res://Gwyn/bluePane.png" id="3_yhnn1"]
-[ext_resource type="Texture2D" uid="uid://dwftr6ocejams" path="res://Boon Textures/ChainBoon.png" id="4_wsset"]
+[ext_resource type="Script" path="res://Scripts/flavorTextBoon.gd" id="1_k8la3"]
+[ext_resource type="Script" path="res://DevFolders/Cameron/chain_pop_boon.gd" id="1_l2fst"]
+[ext_resource type="Script" path="res://Scripts/boonLabel.gd" id="2_2wc6t"]
+[ext_resource type="Texture2D" uid="uid://deqkd80kj4mc5" path="res://Sprites/bluePane.png" id="3_yhnn1"]
+[ext_resource type="Texture2D" uid="uid://dwftr6ocejams" path="res://Sprites/Boon Textures/ChainBoon.png" id="4_wsset"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6tafd"]
 

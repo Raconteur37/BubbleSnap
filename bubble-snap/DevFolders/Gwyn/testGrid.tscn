@@ -1,0 +1,91 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkv07n3jwaqpl"]
+
+[ext_resource type="Script" path="res://Scripts/test_grid.gd" id="1_1d34n"]
+
+[node name="Test" type="Node2D"]
+
+[node name="GridContainer" type="GridContainer" parent="."]
+offset_right = 324.0
+offset_bottom = 295.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+columns = 3
+script = ExtResource("1_1d34n")
+
+[node name="PanelContainer" parent="GridContainer"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+layout_mode = 2
+script = null
+
+[node name="PanelContainer2" parent="GridContainer"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+layout_mode = 2
+script = null
+
+[node name="PanelContainer3" parent="GridContainer"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+layout_mode = 2
+script = null
+
+[node name="PanelContainer4" parent="GridContainer"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+layout_mode = 2
+script = null
+
+[node name="PanelContainer5" parent="GridContainer"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+layout_mode = 2
+script = null
+
+[node name="PanelContainer6" parent="GridContainer"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+layout_mode = 2
+script = null

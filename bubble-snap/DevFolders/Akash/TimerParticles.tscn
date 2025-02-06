@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://bk3mqsou2o0yx"]
+
+[ext_resource type="Script" path="res://DevFolders/Akash/timer_particles.gd" id="1_gn3dv"]
+
+[sub_resource type="Curve" id="Curve_ywqus"]
+_data = [Vector2(0.00320513, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.900256), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_xowwl"]
+colors = PackedColorArray(0.937255, 0.152941, 0, 1, 1, 1, 1, 1)
+
+[node name="TimerParticles" type="CPUParticles2D"]
+position = Vector2(47, 135)
+scale = Vector2(1.37448, 1.74824)
+amount = 100
+lifetime = 0.8
+speed_scale = 1.96
+randomness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(300, 100)
+spread = 0.0
+gravity = Vector2(0, -500)
+radial_accel_min = -50.0
+radial_accel_max = -40.0
+scale_amount_min = 13.0
+scale_amount_max = 13.0
+scale_amount_curve = SubResource("Curve_ywqus")
+color_ramp = SubResource("Gradient_xowwl")
+script = ExtResource("1_gn3dv")
+
+[node name="Timer" type="Timer" parent="."]
