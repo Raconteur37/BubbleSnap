@@ -21,6 +21,7 @@ BubbleBuilder="*res://Globals/BubbleBuilder.gd"
 BubbleManager="*res://Globals/BubbleManager.gd"
 GameManager="*res://Globals/GameManager.gd"
 MusicManager="*res://Globals/MusicManager.tscn"
+ReferenceManager="*res://Globals/ReferenceManager.gd"
 
 [display]
 

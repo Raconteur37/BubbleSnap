@@ -42,7 +42,7 @@ func nextWave():
 	wave += 1
 	if wave == 11:
 		started = false
-		get_tree().change_scene_to_file("res://Elijah/Scenes/WinScene.tscn")
+		get_tree().change_scene_to_file(ReferenceManager.winGameScene)
 	if wave % 3 == 0:
 		totalPopsNeeded += 10;
 	BubbleManager.resetBubbles()
@@ -53,7 +53,7 @@ func endWave():
 	nextWaveButton.find_child("Label").text = "NEXT WAVE"
 	inWave = false
 	mainTimer.stop()
-	get_tree().current_scene.find_child("CanvasLayer").add_child(load("res://Prefabs/BoonSelection.tscn").instantiate())
+	get_tree().current_scene.find_child("CanvasLayer").add_child(load(ReferenceManager.upgradeScene).instantiate())
 	nextWaveButton.show()
 	
 func resetGame():
@@ -70,7 +70,7 @@ func resetGame():
 	BubbleManager.resetBubbles()
 	BoonManager.resetBoons()
 	'''
-	get_tree().change_scene_to_file("res://Elijah/Test.tscn")
+	get_tree().change_scene_to_file(ReferenceManager.mainGameScene)
 	BubbleManager.resetBubbles()
 	BoonManager.resetBoons()
 	wave = 1
@@ -98,7 +98,7 @@ func _process(delta: float) -> void:
 				gameLost = true
 				mainTimer.stop()
 				inWave = false
-				get_tree().current_scene.find_child("CanvasLayer").add_child(load("res://Elijah/Scenes/GameOverScene.tscn").instantiate())
+				get_tree().current_scene.find_child("CanvasLayer").add_child(load(ReferenceManager.gameOverScene).instantiate())
 		if currentPops >= totalPopsNeeded and inWave and not gameLost:
 			popLabel.text = "Pops Needed: " + str(currentPops) + "/" + str(totalPopsNeeded)
 			endWave()
