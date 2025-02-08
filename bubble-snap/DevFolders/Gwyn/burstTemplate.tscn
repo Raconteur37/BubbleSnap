@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/flavorTextBurst.gd" id="2_otasl"]
 [ext_resource type="Script" path="res://Scripts/burstLabel.gd" id="3_shf46"]
 [ext_resource type="Texture2D" uid="uid://dctcfgur7g0o5" path="res://Sprites/redPane.png" id="4_1exo0"]
-[ext_resource type="Script" path="res://Scripts/margin_container.gd" id="4_j30ye"]
+[ext_resource type="Script" path="res://Scripts/marginContainer.gd" id="4_j30ye"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6tafd"]
 

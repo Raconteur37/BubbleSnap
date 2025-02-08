@@ -2,7 +2,7 @@ extends PanelContainer
 
 const boonName = "Bonus Pop"
 const description = "Every [color=red]5[/color]th bubble pop, pops another random bubble"
-const icon = "res://Boon Textures/bonusPop.png"
+const icon = "res://Sprites/Boon Textures/bonusPop.png"
 
 var pops = 0
 
@@ -19,8 +19,9 @@ func activate():
 	print("Pops! " + str(pops))
 	if pops >= activatePops:
 		pops = 0
-		var randBubble = BubbleManager.unPoppedBubbleArray.pick_random()
-		if randBubble != null:
-			$AnimationPlayer.play("Shake")
-			randBubble.pop("Pop")
-			BubbleManager.addPop(randBubble,"Pop")
+		var randBubble
+		while (randBubble == null):
+			randBubble = BubbleManager.unPoppedBubbleArray.pick_random()
+			if randBubble != null:
+				$AnimationPlayer.play("Shake")
+				randBubble.pop("Pop")

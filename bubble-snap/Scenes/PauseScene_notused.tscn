@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=3 uid="uid://bo7l3m03fkttc"]
 
-[ext_resource type="Script" path="res://Scripts/try_again.gd" id="1_1fvqu"]
+[ext_resource type="Script" path="res://Scripts/tryAgain.gd" id="1_1fvqu"]
 [ext_resource type="Texture2D" uid="uid://c41oq5kehcju6" path="res://Sprites/UI/Menus/001.png" id="2_2gv8j"]
 [ext_resource type="Texture2D" uid="uid://ptpcx0xxd205" path="res://Sprites/UI/Menus/001-002.png" id="3_chryk"]
 [ext_resource type="Texture2D" uid="uid://dgej0ej0aig5v" path="res://Sprites/UI/001.png" id="4_512x6"]
@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://calmivyq2068g" path="res://Sprites/UI/003.png" id="9_qes5y"]
 [ext_resource type="Script" path="res://Scripts/TitleBob.gd" id="10_s5gw2"]
 [ext_resource type="Texture2D" uid="uid://bdnhgljkxfc7p" path="res://Sprites/UI/Menus/Black.png" id="11_83f2t"]
-[ext_resource type="Script" path="res://Scripts/transition_next_scene.gd" id="12_mymvs"]
+[ext_resource type="Script" path="res://Scripts/transitionNextScene.gd" id="12_mymvs"]
 [ext_resource type="Texture2D" uid="uid://bctemkbydwxve" path="res://Sprites/UI/Menus/Black._ball.png" id="13_dlrxy"]
 
 [sub_resource type="Animation" id="Animation_j0fxt"]

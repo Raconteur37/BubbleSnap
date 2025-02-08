@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dgej0ej0aig5v" path="res://Sprites/UI/001.png" id="3_bcus1"]
 [ext_resource type="Texture2D" uid="uid://cg56r52odpkdk" path="res://Sprites/UI/002.png" id="4_274tf"]
 [ext_resource type="Texture2D" uid="uid://b55i16up2lebr" path="res://Sprites/UI/000.png" id="5_jegow"]
-[ext_resource type="Script" path="res://Scripts/transition_next_scene.gd" id="6_1bi2y"]
+[ext_resource type="Script" path="res://Scripts/transitionNextScene.gd" id="6_1bi2y"]
 [ext_resource type="Script" path="res://Scripts/TitleBob.gd" id="7_bj088"]
 [ext_resource type="Texture2D" uid="uid://bdnhgljkxfc7p" path="res://Sprites/UI/Menus/Black.png" id="8_5x8ay"]
 [ext_resource type="Texture2D" uid="uid://bctemkbydwxve" path="res://Sprites/UI/Menus/Black._ball.png" id="9_nexaa"]
@@ -59,7 +59,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(9, 0), Vector2(-2533, 0)]
+"values": [Vector2(9, 0), Vector2(-2897, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_m3aut"]
@@ -97,14 +97,14 @@ expand_mode = 5
 
 [node name="Panel" type="Control" parent="CanvasLayer"]
 layout_mode = 3
-anchor_left = 0.227
-anchor_top = 0.766
-anchor_right = 0.749
-anchor_bottom = 0.967
-offset_left = 535.16
-offset_top = 250.72
-offset_right = -467.08
-offset_bottom = 33.6399
+anchor_left = 0.347
+anchor_top = 0.75
+anchor_right = 0.651
+anchor_bottom = 0.942
+offset_left = 304.76
+offset_top = 268.0
+offset_right = -278.92
+offset_bottom = 60.6398
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 4
@@ -112,6 +112,8 @@ size_flags_vertical = 4
 [node name="Base" type="TextureRect" parent="CanvasLayer/Panel"]
 layout_mode = 1
 anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
 offset_left = -321.0
 offset_top = -285.0
 offset_right = 757.0
@@ -124,36 +126,42 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.005
 anchor_top = 0.042
-anchor_right = 0.955
-anchor_bottom = 0.885
-offset_left = 3.61
-offset_top = -0.0959997
-offset_right = -477.49
-offset_bottom = 10.12
+anchor_right = 0.963
+anchor_bottom = 0.92
+offset_left = 18.748
+offset_top = -5.09588
+offset_right = -470.976
+offset_bottom = -4.95987
 scale = Vector2(1.895, 1)
 texture_normal = ExtResource("3_bcus1")
 texture_pressed = ExtResource("4_274tf")
 texture_hover = ExtResource("5_jegow")
 
 [node name="Label" type="Label" parent="CanvasLayer/Panel/Base/StartButton"]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 21.0
-offset_right = 504.0
-offset_bottom = 205.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.044
+anchor_top = 0.083
+anchor_right = 0.928
+anchor_bottom = 0.81
+offset_left = 0.107998
+offset_top = 0.000988007
+offset_right = 0.0959778
+offset_bottom = 0.0698853
 theme_override_font_sizes/font_size = 156
 text = "START"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Welcome" type="Label" parent="CanvasLayer"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -206.0
+anchors_preset = -1
+anchor_left = 0.393
+anchor_right = 0.608
+anchor_bottom = 1.0
+offset_left = -0.559998
 offset_top = 38.0
-offset_right = 207.0
-offset_bottom = 170.0
+offset_right = -0.360107
+offset_bottom = -910.0
 grow_horizontal = 2
 pivot_offset = Vector2(923.5, 394.5)
 theme_override_font_sizes/font_size = 116
@@ -168,13 +176,15 @@ tilt_amplitude = 0.73
 
 [node name="words" type="Label" parent="CanvasLayer/Welcome"]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -905.5
-offset_top = 128.0
-offset_right = 906.5
-offset_bottom = 260.0
+anchors_preset = -1
+anchor_left = -1.692
+anchor_top = 0.97
+anchor_right = 2.695
+anchor_bottom = 1.97
+offset_left = -0.203979
+offset_top = -0.0400085
+offset_right = -0.0350342
+offset_bottom = -0.0400085
 grow_horizontal = 2
 pivot_offset = Vector2(923.5, 394.5)
 theme_override_font_sizes/font_size = 76
@@ -189,13 +199,14 @@ tilt_amplitude = 0.585
 
 [node name="words" type="Label" parent="CanvasLayer/Welcome/words"]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -905.5
-offset_top = 128.0
-offset_right = 906.5
-offset_bottom = 260.0
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.97
+offset_left = 0.5
+offset_top = -4.0
+offset_right = 0.5
+offset_bottom = -0.0400085
 grow_horizontal = 2
 pivot_offset = Vector2(923.5, 394.5)
 theme_override_font_sizes/font_size = 76
@@ -210,13 +221,14 @@ tilt_amplitude = 0.555
 
 [node name="words" type="Label" parent="CanvasLayer/Welcome/words/words"]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -905.5
-offset_top = 128.0
-offset_right = 906.5
-offset_bottom = 260.0
+anchors_preset = -1
+anchor_top = 0.97
+anchor_right = 1.0
+anchor_bottom = 1.97
+offset_left = 0.5
+offset_top = -0.0400085
+offset_right = 0.5
+offset_bottom = -0.0400085
 grow_horizontal = 2
 pivot_offset = Vector2(923.5, 394.5)
 theme_override_font_sizes/font_size = 76
@@ -231,13 +243,14 @@ tilt_amplitude = 0.29
 
 [node name="words" type="Label" parent="CanvasLayer/Welcome/words/words/words"]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -905.5
-offset_top = 128.0
-offset_right = 906.5
-offset_bottom = 260.0
+anchors_preset = -1
+anchor_top = 0.97
+anchor_right = 1.0
+anchor_bottom = 1.97
+offset_left = 0.5
+offset_top = -0.0400085
+offset_right = 0.5
+offset_bottom = -0.0400085
 grow_horizontal = 2
 pivot_offset = Vector2(923.5, 394.5)
 theme_override_font_sizes/font_size = 76
@@ -252,13 +265,14 @@ tilt_amplitude = 0.185
 
 [node name="words" type="Label" parent="CanvasLayer/Welcome/words/words/words/words"]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -905.5
-offset_top = 128.0
-offset_right = 906.5
-offset_bottom = 260.0
+anchors_preset = -1
+anchor_top = 0.97
+anchor_right = 1.0
+anchor_bottom = 1.97
+offset_left = 0.5
+offset_top = -0.0400085
+offset_right = 0.5
+offset_bottom = -0.0400085
 grow_horizontal = 2
 pivot_offset = Vector2(923.5, 394.5)
 theme_override_font_sizes/font_size = 76
@@ -272,19 +286,26 @@ tilt_speed = 0.16
 tilt_amplitude = 0.23
 
 [node name="FadeOut" type="TextureRect" parent="CanvasLayer" node_paths=PackedStringArray("transition_anim")]
-offset_left = 2500.0
-offset_right = 4420.0
-offset_bottom = 1080.0
+anchors_preset = -1
+anchor_left = 1.302
+anchor_right = 2.302
+anchor_bottom = 1.0
+offset_left = 0.159912
+offset_right = 0.160156
 texture = ExtResource("8_5x8ay")
 script = ExtResource("6_1bi2y")
 next_scene_path = "res://Scenes/MainGameScene.tscn"
 transition_anim = NodePath("AnimationPlayer")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/FadeOut"]
-layout_mode = 0
-offset_left = -474.0
-offset_right = 592.0
-offset_bottom = 1074.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.247
+anchor_right = 0.308
+anchor_bottom = 1.0
+offset_left = 0.240021
+offset_right = 0.639954
+offset_bottom = -6.0
 texture = ExtResource("9_nexaa")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/FadeOut"]
@@ -293,18 +314,27 @@ libraries = {
 }
 
 [node name="FadeIn" type="TextureRect" parent="CanvasLayer"]
-offset_left = 9.0
-offset_right = 1929.0
-offset_bottom = 1080.0
+anchors_preset = -1
+anchor_left = 0.005
+anchor_right = 1.005
+anchor_bottom = 1.0
+offset_left = -2906.6
+offset_right = -2906.6
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("8_5x8ay")
 script = ExtResource("10_2xf8w")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/FadeIn"]
-layout_mode = 0
-offset_left = 1424.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.742
+anchor_right = 1.3
+anchor_bottom = 1.0
+offset_left = -0.640137
 offset_top = -2.0
-offset_right = 2490.0
-offset_bottom = 1073.46
+offset_right = -6.00024
+offset_bottom = -6.54004
 scale = Vector2(1.005, 1.005)
 texture = ExtResource("9_nexaa")
 

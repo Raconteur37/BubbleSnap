@@ -1,7 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://bxdoir4bawst5"]
+[gd_scene load_steps=10 format=3 uid="uid://csqjkh101cola"]
 
+[ext_resource type="Script" path="res://Boons/chain_pop_boon.gd" id="1_incj0"]
 [ext_resource type="Script" path="res://Scripts/flavorTextBoon.gd" id="1_k8la3"]
-[ext_resource type="Script" path="res://DevFolders/Cameron/chain_pop_boon.gd" id="1_l2fst"]
 [ext_resource type="Script" path="res://Scripts/boonLabel.gd" id="2_2wc6t"]
 [ext_resource type="Texture2D" uid="uid://deqkd80kj4mc5" path="res://Sprites/bluePane.png" id="3_yhnn1"]
 [ext_resource type="Texture2D" uid="uid://dwftr6ocejams" path="res://Sprites/Boon Textures/ChainBoon.png" id="4_wsset"]
@@ -100,7 +100,7 @@ offset_top = 231.0
 offset_right = 497.0
 offset_bottom = 327.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_6tafd")
-script = ExtResource("1_l2fst")
+script = ExtResource("1_incj0")
 
 [node name="Panel" type="Panel" parent="."]
 self_modulate = Color(1, 1, 1, 0)

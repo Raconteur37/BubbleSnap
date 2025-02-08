@@ -24,6 +24,5 @@ func _process(delta: float) -> void:
 				var randBubble = BubbleManager.unPoppedBubbleArray.pick_random()
 				if randBubble != null:
 					randBubble.pop("Pop")
-					BubbleManager.addPop(randBubble,"Pop")
 	if GameManager.wave != currentWave:
 		activated = false

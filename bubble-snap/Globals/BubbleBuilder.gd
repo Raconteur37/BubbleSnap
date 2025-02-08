@@ -3,7 +3,6 @@ extends Node
 var bubbles = 81
 var mainGrid
 
-
 func buildBubbles():
 	var row = -1
 	var col = -1
@@ -22,12 +21,3 @@ func buildBubbles():
 			bubbleButton.row = col
 			bubbleButton.col = row
 			grid.add_child(bubbleButton)
-
-'''
-func _input(event):
-	if event is InputEventKey and event.pressed:
-		match event.keycode:
-			KEY_W:
-				buildBubbles()
-				GameManager.startGame()
-'''

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bkdw7mij6lo0x"]
 
-[ext_resource type="PackedScene" uid="uid://csqjkh101cola" path="res://DevFolders/Cameron/ChainPopBoon.tscn" id="1_ivram"]
+[ext_resource type="PackedScene" uid="uid://bxdoir4bawst5" path="res://Boons/ChainPopBoon.tscn" id="1_ivram"]
 
 [node name="Main" type="Node2D"]
 

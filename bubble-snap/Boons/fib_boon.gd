@@ -30,4 +30,3 @@ func activate():
 			var randBubble = BubbleManager.unPoppedBubbleArray.pick_random()
 			if randBubble != null:
 				randBubble.pop("Pop")
-				BubbleManager.addPop(randBubble,"Pop")

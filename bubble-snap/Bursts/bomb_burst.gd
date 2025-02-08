@@ -18,4 +18,4 @@ func _on_timer_timeout() -> void:
 					if bubble.col == 4 or bubble.col == 5 or bubble.col == 3:
 						bubble.resetState()
 						animationPlayer.play("Shake")
-						GameManager.currentPops -= 1
+						#GameManager.currentPops -= 1

@@ -22,8 +22,8 @@ func activate():
 			animationPlayer.play("Shake")
 			for button in rowButtons:
 				button.resetState()
-				BubbleManager.lastPopped.resetState()
-				GameManager.currentPops -= 1
+				BubbleManager.subtractPop(button)
+				#GameManager.currentPops -= 1
 			rowButtons.clear()
 			inRowCounter = 0
 	else:

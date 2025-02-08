@@ -2,7 +2,7 @@ extends Control
 
 const boonName = "Chain Pop"
 const description = "Whenever a bubble is popped, there is a [color=red]10[/color]% chance it pops another random bubble"
-const icon = "res://Boon Textures/ChainBoon.png"
+const icon = "res://Sprites/Boon Textures/ChainBoon.png"
 
 var activateChance = 10
 
@@ -15,8 +15,9 @@ func _ready() -> void:
 func activate():
 	var val = randi_range(0,100)
 	if val <= activateChance:
-		var randBubble = BubbleManager.unPoppedBubbleArray.pick_random()
-		if randBubble != null:
-			$AnimationPlayer.play("Shake")
-			randBubble.pop("Pop")
-			BubbleManager.addPop(randBubble,"Pop")
+		var randBubble
+		while (randBubble == null):
+			randBubble = BubbleManager.unPoppedBubbleArray.pick_random()
+			if randBubble != null:
+				$AnimationPlayer.play("Shake")
+				randBubble.pop("Pop")

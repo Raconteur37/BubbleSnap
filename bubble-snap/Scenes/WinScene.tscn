@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://calmivyq2068g" path="res://Sprites/UI/003.png" id="8_yay0p"]
 [ext_resource type="Script" path="res://Scripts/TitleBob.gd" id="9_cerew"]
 [ext_resource type="Texture2D" uid="uid://bdnhgljkxfc7p" path="res://Sprites/UI/Menus/Black.png" id="10_j86gw"]
-[ext_resource type="Script" path="res://Scripts/transition_next_scene.gd" id="11_qfdko"]
+[ext_resource type="Script" path="res://Scripts/transitionNextScene.gd" id="11_qfdko"]
 [ext_resource type="Texture2D" uid="uid://bctemkbydwxve" path="res://Sprites/UI/Menus/Black._ball.png" id="12_jmes6"]
 
 [sub_resource type="Animation" id="Animation_j0fxt"]
@@ -59,26 +59,29 @@ expand_mode = 5
 
 [node name="Quit" type="TextureButton" parent="CanvasLayer"]
 anchors_preset = -1
-anchor_left = 0.472
-anchor_top = 0.055
-anchor_right = 0.975
-anchor_bottom = 0.906
-offset_left = -203.24
-offset_top = 765.6
-offset_right = -626.0
-offset_bottom = 324.52
+anchor_left = 0.508
+anchor_top = 0.874
+anchor_right = 0.508
+anchor_bottom = 0.874
+offset_left = -272.36
+offset_top = -118.92
+offset_right = 270.64
+offset_bottom = 124.08
 rotation = -0.00392648
 texture_normal = ExtResource("6_d233l")
 texture_pressed = ExtResource("7_56dga")
 texture_hover = ExtResource("8_yay0p")
-stretch_mode = 4
+stretch_mode = 0
 
 [node name="Label" type="Label" parent="CanvasLayer/Quit"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.919
+anchor_bottom = 0.799
 offset_left = 14.9488
 offset_top = 13.0588
-offset_right = 498.949
-offset_bottom = 194.059
+offset_right = -0.0680237
+offset_bottom = -0.0980072
 theme_override_font_sizes/font_size = 156
 text = "QUIT"
 horizontal_alignment = 1
@@ -86,13 +89,14 @@ vertical_alignment = 1
 
 [node name="Title" type="Label" parent="CanvasLayer"]
 anchors_preset = -1
-anchor_left = 0.02
-anchor_right = 0.982
-anchor_bottom = 0.731
-offset_left = 0.599998
-offset_top = 47.0
-offset_right = 0.559937
-offset_bottom = 46.52
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -909.0
+offset_top = -138.0
+offset_right = 938.0
+offset_bottom = 54.0
 pivot_offset = Vector2(923.5, 394.5)
 theme_override_font_sizes/font_size = 156
 text = "Thank you for playing"
@@ -105,20 +109,29 @@ tilt_speed = 0.16
 tilt_amplitude = 3.62
 
 [node name="FadeOut" type="TextureRect" parent="CanvasLayer" node_paths=PackedStringArray("transition_anim")]
-offset_left = 2500.0
-offset_right = 4420.0
-offset_bottom = 1080.0
+anchors_preset = -1
+anchor_left = 1.302
+anchor_right = 2.302
+anchor_bottom = 1.0
+offset_left = 0.159912
+offset_right = 0.160156
 texture = ExtResource("10_j86gw")
+expand_mode = 1
 script = ExtResource("11_qfdko")
 next_scene_path = "res://Elijah/Scenes/WelcomeScene.tscn"
 transition_anim = NodePath("AnimationPlayer")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/FadeOut"]
-layout_mode = 0
-offset_left = -474.0
-offset_right = 592.0
-offset_bottom = 1074.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.247
+anchor_right = 0.308
+anchor_bottom = 1.0
+offset_left = 0.240021
+offset_right = 0.639954
+offset_bottom = -6.0
 texture = ExtResource("12_jmes6")
+expand_mode = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/FadeOut"]
 libraries = {

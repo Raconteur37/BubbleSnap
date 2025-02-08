@@ -11,6 +11,8 @@ func _ready() -> void:
 func _on_timer_timeout() -> void:
 	if GameManager.inWave:
 		if BubbleManager.poppedBubbleArray.size() > 0:
-			BubbleManager.poppedBubbleArray.pick_random().resetState()
+			var button = BubbleManager.poppedBubbleArray.pick_random()
+			BubbleManager.subtractPop(button)
+			button.resetState()
 			animationPlayer.play("Shake")
-			GameManager.currentPops -= 1
+			#GameManager.currentPops -= 1

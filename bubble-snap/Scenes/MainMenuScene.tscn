@@ -5,14 +5,14 @@
 [ext_resource type="Texture2D" uid="uid://dgej0ej0aig5v" path="res://Sprites/UI/001.png" id="3_aj54a"]
 [ext_resource type="Texture2D" uid="uid://cg56r52odpkdk" path="res://Sprites/UI/002.png" id="4_r1c5y"]
 [ext_resource type="Texture2D" uid="uid://b55i16up2lebr" path="res://Sprites/UI/000.png" id="5_no6fi"]
-[ext_resource type="Script" path="res://Scripts/transition_next_scene.gd" id="6_lfsox"]
+[ext_resource type="Script" path="res://Scripts/transitionNextScene.gd" id="6_lfsox"]
 [ext_resource type="Texture2D" uid="uid://225ltb13xv5o" path="res://Sprites/UI/004.png" id="7_h7pav"]
 [ext_resource type="Texture2D" uid="uid://dipobtod0xolk" path="res://Sprites/UI/005.png" id="8_qsy1n"]
 [ext_resource type="Texture2D" uid="uid://calmivyq2068g" path="res://Sprites/UI/003.png" id="9_v3xcb"]
 [ext_resource type="Script" path="res://Scripts/TitleBob.gd" id="10_ox8f7"]
 [ext_resource type="Texture2D" uid="uid://bdnhgljkxfc7p" path="res://Sprites/UI/Menus/Black.png" id="11_vqstx"]
 [ext_resource type="Texture2D" uid="uid://bctemkbydwxve" path="res://Sprites/UI/Menus/Black._ball.png" id="12_4yuaa"]
-[ext_resource type="Script" path="res://Scripts/simple_fade_in.gd" id="13_t3jvo"]
+[ext_resource type="Script" path="res://Scripts/simpleFadeIn.gd" id="13_t3jvo"]
 
 [sub_resource type="Animation" id="Animation_j0fxt"]
 resource_name = "FadeToBlack"
@@ -26,7 +26,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(2500, 0), Vector2(-2, 0)]
+"values": [Vector2(2538, 0), Vector2(-2, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_43l21"]
@@ -100,14 +100,14 @@ expand_mode = 5
 
 [node name="Panel" type="Control" parent="CanvasLayer"]
 layout_mode = 3
-anchor_left = 0.227
-anchor_top = 0.766
-anchor_right = 0.749
-anchor_bottom = 0.967
-offset_left = 535.16
-offset_top = 250.72
-offset_right = -467.08
-offset_bottom = 33.6399
+anchor_left = 0.506
+anchor_top = 0.682
+anchor_right = 0.506
+anchor_bottom = 0.82
+offset_left = -0.520081
+offset_top = 341.44
+offset_right = -0.519958
+offset_bottom = 192.4
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 4
@@ -115,9 +115,11 @@ size_flags_vertical = 4
 [node name="Base" type="TextureRect" parent="CanvasLayer/Panel"]
 layout_mode = 1
 anchors_preset = -1
-offset_left = -554.0
+anchor_left = -122880.0
+anchor_right = -122880.0
+offset_left = -539.0
 offset_top = -272.0
-offset_right = 524.0
+offset_right = 539.0
 offset_bottom = 16.0
 texture = ExtResource("2_8tlj6")
 
@@ -137,11 +139,14 @@ texture_pressed = ExtResource("4_r1c5y")
 texture_hover = ExtResource("5_no6fi")
 
 [node name="Label" type="Label" parent="CanvasLayer/Panel/Base/StartButton"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.925
+anchor_bottom = 0.844
 offset_left = 24.0
 offset_top = 21.0
-offset_right = 504.0
-offset_bottom = 205.0
+offset_right = -0.124969
+offset_bottom = -0.0920105
 theme_override_font_sizes/font_size = 156
 text = "START"
 horizontal_alignment = 1
@@ -164,11 +169,14 @@ texture_pressed = ExtResource("8_qsy1n")
 texture_hover = ExtResource("9_v3xcb")
 
 [node name="Label" type="Label" parent="CanvasLayer/Panel/Base/Quit"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.924
+anchor_bottom = 0.823
 offset_left = 18.0
 offset_top = 19.0
-offset_right = 502.0
-offset_bottom = 200.0
+offset_right = 0.267975
+offset_bottom = 0.0110016
 theme_override_font_sizes/font_size = 156
 text = "QUIT"
 horizontal_alignment = 1
@@ -177,12 +185,13 @@ vertical_alignment = 1
 [node name="Title" type="Label" parent="CanvasLayer"]
 anchors_preset = -1
 anchor_left = 0.02
+anchor_top = 0.044
 anchor_right = 0.982
-anchor_bottom = 0.731
-offset_left = 0.599998
-offset_top = 47.0
+anchor_bottom = 0.774
+offset_left = 0.599995
+offset_top = -0.520004
 offset_right = 0.559937
-offset_bottom = 46.52
+offset_bottom = 0.0799561
 pivot_offset = Vector2(923.5, 394.5)
 theme_override_font_sizes/font_size = 551
 text = "burst"
@@ -195,19 +204,26 @@ tilt_speed = 0.16
 tilt_amplitude = 3.62
 
 [node name="FadeOut" type="TextureRect" parent="CanvasLayer" node_paths=PackedStringArray("transition_anim")]
-offset_left = 2411.0
-offset_right = 4331.0
-offset_bottom = 1080.0
+anchors_preset = -1
+anchor_left = 1.322
+anchor_right = 2.322
+anchor_bottom = 1.0
+offset_left = -0.23999
+offset_right = -0.240234
 texture = ExtResource("11_vqstx")
 script = ExtResource("6_lfsox")
-next_scene_path = "res://Elijah/Scenes/WelcomeScene.tscn"
+next_scene_path = "res://Scenes/WelcomeScene.tscn"
 transition_anim = NodePath("AnimationPlayer")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/FadeOut"]
-layout_mode = 0
-offset_left = -474.0
-offset_right = 592.0
-offset_bottom = 1074.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.247
+anchor_right = 0.308
+anchor_bottom = 1.0
+offset_left = 0.240021
+offset_right = 0.639954
+offset_bottom = -6.0
 texture = ExtResource("12_4yuaa")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/FadeOut"]
@@ -216,8 +232,11 @@ libraries = {
 }
 
 [node name="FadeIn" type="TextureRect" parent="CanvasLayer" node_paths=PackedStringArray("fade")]
-offset_right = 1920.0
-offset_bottom = 1080.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("11_vqstx")
 script = ExtResource("13_t3jvo")
 fade = NodePath("AnimationPlayer")

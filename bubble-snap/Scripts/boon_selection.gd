@@ -1,8 +1,8 @@
 extends Control
 
-var commonBoons = ["Bonus Pop", "Extra Time", "Bubble Time"]
-var rareBoons = ["Chain Pop","Popping Time","Chain Pop"]
-var legendaryBoons = ["Double Bubble","Fibonacci","Double Bubble"]
+var commonBoons = ["Bonus Pop", "Bubble Time", "Extra Time", "Extra Hand"]
+var rareBoons = ["Chain Pop"]
+var legendaryBoons = ["Double Bubble"]
 
 var commonBursts = ["Time Drain","Picky Burst"]
 var rareBursts = ["Symetry Burst"] 
@@ -92,7 +92,7 @@ func chooseItems():
 			#itemOneParticle.color_initial_ramp = 
 			for x in range(3):
 				var chosenBoon = commonBoons.pick_random()
-				commonBoons.erase(chosenBoon)
+				#commonBoons.erase(chosenBoon)
 				chosenBoons.append(chosenBoon)
 				
 		"Rare":
@@ -107,7 +107,7 @@ func chooseItems():
 			itemThreeParticle.color = color
 			for x in range(3):
 				var chosenBoon = rareBoons.pick_random()
-				rareBoons.erase(chosenBoon)
+				#rareBoons.erase(chosenBoon)
 				chosenBoons.append(chosenBoon)
 				
 		"Legendary":
@@ -121,7 +121,7 @@ func chooseItems():
 			itemThreeParticle.color = color
 			for x in range(3):
 				var chosenBoon = legendaryBoons.pick_random()
-				legendaryBoons.erase(chosenBoon)
+				#legendaryBoons.erase(chosenBoon)
 				chosenBoons.append(chosenBoon)
 	
 	for z in range(3):
@@ -156,7 +156,6 @@ func chooseItems():
 			itemThreeFrame.show()
 		await get_tree().create_timer((.5)).timeout
 		
-
 func getBoon(boonName):
 	
 	match boonName:
@@ -177,7 +176,7 @@ func getBoon(boonName):
 			return load("res://Boons/Fib Boon.tscn")
 		"Popping Time":
 			return load("res://Boons/Popping Time.tscn")
-
+			
 func decideBurst():
 	if rarity == "Common":
 		get_tree().current_scene.find_child("BurstGrid").add_child(getBurst(commonBursts.pick_random()).instantiate())
@@ -185,7 +184,6 @@ func decideBurst():
 		get_tree().current_scene.find_child("BurstGrid").add_child(getBurst(rareBursts.pick_random()).instantiate())
 	if rarity == "Legendary":
 		get_tree().current_scene.find_child("BurstGrid").add_child(getBurst(legendaryBursts.pick_random()).instantiate())
-
 
 func getBurst(burstName):
 	match burstName:
@@ -200,7 +198,6 @@ func getBurst(burstName):
 			return load("res://Bursts/Time Drain Burst.tscn")
 		"Bomb Burst":
 			return load("res://Bursts/Bomb Burst.tscn")
-
 
 func _on_timer_timeout() -> void:
 	chooseItems()

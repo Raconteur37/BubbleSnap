@@ -165,7 +165,7 @@ theme_override_constants/margin_right = 5
 
 [node name="BoonHoverLabel" type="Label" parent="Panel/MarginContainer/MarginContainer"]
 layout_mode = 2
-text = "Every hand pop has a 5% chance to hand pop an extra bubble
+text = "Every manual pop has a 5% chance to pop an extra bubble
 "
 horizontal_alignment = 1
 vertical_alignment = 1

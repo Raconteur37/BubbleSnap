@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dkv07n3jwaqpl"]
 
-[ext_resource type="Script" path="res://Scripts/test_grid.gd" id="1_1d34n"]
+[ext_resource type="Script" path="res://Scripts/testGrid.gd" id="1_1d34n"]
 
 [node name="Test" type="Node2D"]
 

@@ -2,9 +2,7 @@ extends TextureButton
 
 var audioPlayer
 var particle
-
 var popped : bool = false
-
 var row : int
 var col : int
 
@@ -14,7 +12,7 @@ func _ready() -> void:
 	BubbleManager.addToUnPopped(self)
 
 func pop(type):
-	GameManager.currentPops += 1
+	#GameManager.currentPops += 1
 	popped = true
 	particle.emitting = true
 	disabled = true
@@ -36,3 +34,5 @@ func _on_toggled(toggled_on: bool) -> void:
 	if button_pressed:
 		if GameManager.inWave:
 			pop("Player Pop")
+		else:
+			button_pressed = false;

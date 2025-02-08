@@ -22,7 +22,7 @@ var totalTimeDefault = 20;
 
 func _ready():
 	totalTimeDefault = totalTime;
-
+	
 func startGame():
 	mainTimer = get_tree().current_scene.find_child("mainTimer")
 	timerLabel = get_tree().current_scene.find_child("timerLabel")
@@ -35,7 +35,7 @@ func startGame():
 	mainTimer.start()
 	inWave = true
 	started = true
-
+	
 func nextWave():
 	mainTimer.wait_time = totalTime
 	mainTimer.start()
@@ -57,19 +57,6 @@ func endWave():
 	nextWaveButton.show()
 	
 func resetGame():
-	'''
-	print("got here")
-	atStart = true
-	inWave = false
-	wave = 0
-	mainTimer.stop()
-	mainTimer.wait_time = totalTime
-	waveLabel.text = "Wave: " + str(wave)
-	timerLabel.text = str("%.2f" % mainTimer.time_left)
-	popLabel.text = "Pops Needed: " + str(currentPops) + "/" + str(totalPopsNeeded)
-	BubbleManager.resetBubbles()
-	BoonManager.resetBoons()
-	'''
 	get_tree().change_scene_to_file(ReferenceManager.mainGameScene)
 	BubbleManager.resetBubbles()
 	BoonManager.resetBoons()
@@ -85,8 +72,8 @@ func resetGame():
 	timerLabel.text = str("%.2f" % mainTimer.time_left)
 	popLabel.text = "Pops Needed: " + str(currentPops) + "/" + str(totalPopsNeeded)
 	
-
 func _process(delta: float) -> void:
+	currentPops = BubbleManager.poppedBubbleArray.size()
 	if started:
 		if currentPops <= totalPopsNeeded and inWave and not gameLost:
 			nextWaveButton.hide()
